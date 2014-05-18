@@ -87,8 +87,3 @@ if ( ! function_exists( 'dork_shortcodes_setup' ) ) {
 	add_action( 'after_setup_theme', 'dork_shortcodes_setup' );
 
 } // End if
-
-
-/**
- * 
- */
