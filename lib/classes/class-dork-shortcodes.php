@@ -52,7 +52,7 @@ class Dork_Shortcodes {
 		} else {
 
 			// Generate an error if the configuration file was not found
-			$this->config_error = __( 'Error! Unable to locate the shortcode configuration file.', '__shortcodes__' );
+			$this->config_error = __( 'Hot diggity dog...ya broke it! That darn config file has gone missing!', '__shortcodes__' );
 
 		} // End if / else
 

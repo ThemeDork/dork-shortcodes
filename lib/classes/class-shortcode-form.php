@@ -54,13 +54,13 @@ class Dork_Shortcodes_Form extends Dork_Shortcodes {
 		// Close Php and begin building this form
 		?>
 
-		<form id="dork-shortcode-form">
+		<div id="dork-shortcode-form">
 
 			<div class="shortcode-select-section">
 
 				<div class="shortcode-select-field">
 
-					<span class="shortcode-config-error"><?php echo esc_html( $this->error ); ?></span>
+					<span class="shortcode-config-error"><p><?php echo esc_html( $this->error ); ?></p></span>
 
 					<?php if ( ! empty( $this->shortcodes ) && is_array( $this->shortcodes ) ) { ?>
 
@@ -88,7 +88,7 @@ class Dork_Shortcodes_Form extends Dork_Shortcodes {
 
 			</div><!-- End .shortcode-content -->
 
-		</form><!-- End #dork-shortcode-form -->
+		</div><!-- End #dork-shortcode-form -->
 
 		<?php
 
