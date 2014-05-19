@@ -59,6 +59,7 @@ class Dork_Shortcodes {
 		// Begin registering each of our shortcodes
 		$this->register_shortcodes();
 
+		// Include any necessary files for this plugin
 		$this->file_includes();
 
 		// Setup the meta boxes that will contain our shortcode form
@@ -151,7 +152,8 @@ class Dork_Shortcodes {
 
 
 	/**
-	 *
+	 * Include any additional files we may need to add a little extra functionality to
+	 * this plugin.
 	 *
 	 * @since v1.0.0
 	 */
@@ -160,6 +162,9 @@ class Dork_Shortcodes {
 
 		// Register and enqueue our scripts and styles
 		include_once( DORK_SHORTCODES_DIR . '/lib/enqueue.php' );
+
+		// Build an array of font icons for icon select field
+		include_once( DORK_SHORTCODES_DIR . '/lib/font-icons.php' );
 
 	} // End file_includes()
 

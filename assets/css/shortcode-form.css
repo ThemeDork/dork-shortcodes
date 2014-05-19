@@ -3,11 +3,45 @@
 	height: 100%;
 }
 
+#dork-shortcode-form .clear {
+	background: none;
+	border: 0;
+	clear: both;
+	display: block;
+	float: none;
+	font-size: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
 #dork-shortcode-form .shortcode-select-field {
 	margin: 20px 0;
 	padding: 20px;
 	background-color: #F4F6F8;
 	border: 1px solid #E9EBED;
+}
+
+#dork-shortcode-form .shortcode-select-field select {
+	outline: 0;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 1em;
+	cursor: pointer;
+	color: rgba(0, 0, 0, 0.7);
+	line-height: 1.4;
+	background-color: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	-webkit-border-radius: .3125em;
+	border-radius: .3125em;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 #dork-shortcode-form p {
@@ -32,4 +66,218 @@
 #dork-shortcode-form #shortcode-select {
 	width: 100%;
 	margin: 0;
+}
+
+
+/*
+	Form control styles.
+
+	@since v1.0.0
+*/
+#dork-shortcode-form .dork-control-field {
+	width: 100%;
+	margin-bottom: 2em;
+	padding-bottom: 2em;
+	display: block;
+	border-bottom: 1px solid #EEEEEE;
+}
+
+#dork-shortcode-form .dork-control-field:last-child {
+	padding-bottom: 0;
+	border-bottom: none;
+}
+
+.dork-control-field label {
+	cursor: default;
+	margin: 0 0 0.3em;
+	padding: 0;
+	color: #555555;
+	font-size: 1em;
+	display: block;
+}
+
+.dork-control-field input[type=text] {
+	margin-right: 2%;
+	padding: .65em 1em;
+	font-size: 1em;
+	float: left;
+	width: 60%;
+	background-color: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	outline: 0;
+	color: rgba(0, 0, 0, 0.7);
+	-webkit-border-radius: .3125em;
+	border-radius: .3125em;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	transition: all .3s ease;
+	-webkit-box-shadow: 0 0 rgba(0, 0, 0, 0.3) inset;
+	box-shadow: 0 0 rgba(0, 0, 0, 0.3) inset;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.dork-control-field input[type=text]:focus {
+	color: rgba(0, 0, 0, 0.85);
+	border-color: rgba(0, 0, 0, 0.2);
+	border-bottom-left-radius: 0;
+	border-top-left-radius: 0;
+	-webkit-box-shadow: .3em 0 0 0 rgba(0, 0, 0, 0.2) inset;
+	box-shadow: .3em 0 0 0 rgba(0, 0, 0, 0.2) inset;
+	outline-offset: -2px;
+}
+
+.dork-control-field .dork-checkbox-field {
+	position: relative;
+	display: inline-block;
+	min-width: 1em;
+	min-height: 1em;
+	line-height: 1em;
+	outline: 0;
+	vertical-align: middle;
+}
+
+.dork-control-field input[type=checkbox] {
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	outline: 0;
+	vertical-align: middle;
+}
+
+.dork-control-field .dork-checkbox-field label {
+	cursor: default;
+	padding-left: 1em;
+	outline: none;
+	display: inline;
+	vertical-align: middle;
+	color: #555555;
+	font-size: 1em;
+}
+
+.dork-control-field select {
+	width: 60%;
+	cursor: pointer;
+	margin-right: 2%;
+	float: left;
+	outline: 0;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 1em;
+	color: rgba(0, 0, 0, 0.7);
+	line-height: 1.4;
+	background-color: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	-webkit-border-radius: .3125em;
+	border-radius: .3125em;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.dork-control-field ul {
+	margin: 0;
+	padding: 0;
+}
+
+.dork-control-field ul.dork-icon-select {
+	float: left;
+	width: 60%;
+	margin-right: 2%;
+	height: 100%;
+	max-height: 100px;
+	overflow: auto;
+	padding: 0;
+	background-color: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	outline: 0;
+	-webkit-border-radius: .3125em;
+	border-radius: .3125em;
+	-webkit-box-shadow: 0 0 rgba(0, 0, 0, 0.3) inset;
+	box-shadow: 0 0 rgba(0, 0, 0, 0.3) inset;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.dork-control-field ul.dork-icon-select li {
+	cursor: pointer;
+	padding: .5em 1em;
+	margin: 0;
+	color: rgba(0, 0, 0, 0.7);
+	font-size: 1em;
+	background-color: #FFFFFF;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+.dork-control-field ul.dork-icon-select li:hover {
+	background-color: #F1F1F1;
+	color: rgba(0, 0, 0, 0.85);
+}
+
+.dork-control-field ul.dork-icon-select li.selected {
+	background-color: #F1F1F1;
+}
+
+.dork-control-field ul.dork-icon-select li > i {
+	padding-right: .65em;
+	font-size: 1.2em;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+.dork-control-field ul.dork-icon-select li:hover > i {
+	color: #6ECFF5;
+	-webkit-transform: scale(1.5);
+	-moz-transform: scale(1.5);
+	transform: scale(1.5);
+}
+
+.dork-control-field ul.dork-icon-select li.icon-red > i {
+	color: #D22B46;
+}
+
+.dork-control-field .control-field-desc {
+	float: right;
+	font-size: .825em;
+	color: #666666;
+	width: 35%;
+}
+
+
+/*
+	Shortcode form toolbar styles,
+
+	@since v1.0.0
+*/
+#dork-shortcode-form .shortcode-content-toolbar {
+	background-color: #F4F6F8;
+	border-top: 1px solid #E9EBED;
+	padding: 10px;
+	margin: 0 -10px -10px -10px;
+	display: block;
+}
+
+#dork-shortcode-form .shortcode-toolbar-support {
+	float: left;
+	line-height: 28px;
+	vertical-align: middle;
+}
+
+#dork-shortcode-form .shortcode-toolbar-submit {
+	float: right;
+}
+
+#dork-shortcode-form .shortcode-toolbar-success {
+	display: none;
+	padding-right: 20px;
+	margin: 0;
+	line-height: 28px;
+	vertical-align: middle;
+	color: #60CD9B
 }

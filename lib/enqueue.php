@@ -25,10 +25,19 @@ if ( ! function_exists( 'dork_shortcodes_admin_enqueue' ) ) {
 		if ( is_admin() && $pagenow == 'post-new.php' || $pagenow == 'post.php' ) {
 
 			// Register our admin styles
+			wp_register_style( 'icon-font', DORK_SHORTCODES_URI . '/assets/css/icon-font.css', null, time(), 'all' );
 			wp_register_style( 'shortcode-form', DORK_SHORTCODES_URI . '/assets/css/shortcode-form.css', null, time(), 'all' );
 
+			// Register our admin scripts
+			wp_register_script( 'shortcode-form', DORK_SHORTCODES_URI . '/assets/js/shortcode-form.js', array( 'jquery' ), time(), true );
+
 			// Enqueue our admin styles
+			wp_enqueue_style( 'icon-font' );
 			wp_enqueue_style( 'shortcode-form' );
+
+			// Enqueue our admin scripts
+			wp_enqueue_script( 'jquery' );
+			wp_enqueue_script( 'shortcode-form' );
 
 		} // End if
 
