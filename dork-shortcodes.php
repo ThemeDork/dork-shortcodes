@@ -72,6 +72,13 @@ if ( ! function_exists( 'dork_shortcodes_setup' ) ) {
 
 	function dork_shortcodes_setup() {
 
+		// Load our shortcode configurations
+		if ( is_admin() && file_exists( DORK_SHORTCODES_DIR . '/lib/config.php' ) ) {
+
+			require_once( DORK_SHORTCODES_DIR . '/lib/config.php' );
+
+		} // End if
+
 		// Setup the Dork_Shortcodes class
 		if ( is_admin() && ! class_exists( 'Dork_Shortcodes' ) ) {
 

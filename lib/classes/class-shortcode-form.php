@@ -60,13 +60,15 @@ class Dork_Shortcodes_Form extends Dork_Shortcodes {
 
 				<div class="shortcode-select-field">
 
-					<span class="shortcode-config-error"><p><?php echo esc_html( $this->error ); ?></p></span>
+					<p><span class="shortcode-config-error"><?php echo esc_html( $this->error ); ?></span></p>
 
 					<?php if ( ! empty( $this->shortcodes ) && is_array( $this->shortcodes ) ) { ?>
 
 						<label for="shortcode-select"></label>
 
 						<select id="shortcode-select" autocomplete="off">
+
+							<option value="" selected="selected"><?php esc_html_e( 'Choose a Shortcode', '__shortcodes' ); ?></option>
 
 							<?php foreach ( $this->shortcodes as $shortcode_id => $shortcode ) { ?>
 
