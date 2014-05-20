@@ -88,7 +88,9 @@ class Dork_Shortcodes {
 
 
 	/**
-	 *
+	 * Begin pulling everything together to get this plugin up and running. We will be
+	 * loading the shortcode form class in addition to the shortcode controls class.
+	 * With their powers combined, we will have a super form!
 	 *
 	 * @since v1.0.0
 	 */

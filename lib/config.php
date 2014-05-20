@@ -24,15 +24,15 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 		 * @since v1.0.0
 		 */
 
-		$dork_shortcodes['dork_accordion'] = array(
+		$dork_shortcodes['dork-accordion'] = array(
 			'name'   => __( 'Accordion Shortcode', '__shortcodes__' ),
 			'desc'   => __( '', '__shortcodes__' ),
 			'params' => array(
-				'number' => array(
+				'count' => array(
 					'std'     => '3',
 					'name'    => __( 'Number of Accordion Items', '__shortcodes__' ),
 					'desc'    => __( 'Choose the number of items to add to your accordion. You can always add more later.', '__shortcodes__' ),
-					'key'     => 'accordion-number',
+					'key'     => 'accordion-count',
 					'type'    => 'select',
 					'options' => array(
 						'1'  => __( 'One Item', '__shortcodes__' ),
