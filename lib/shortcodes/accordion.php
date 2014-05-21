@@ -49,20 +49,21 @@ if ( ! function_exists( 'dork_shortcodes_accordion' ) ) {
 
 /**
  * An accordion just wouldn't be an accordion without some content, so lets go ahead
- * and setup the shortcode for our accordion items. The user can add as many items to
- * their accordion as their little heart desires.
+ * and setup the shortcode for our accordion sections. The user can add as many
+ * sections to their accordion as their little heart desires.
  *
  * @since v1.0.0
  */
 
-if ( ! function_exists( 'dork_shortcodes_accordion_item' ) ) {
+if ( ! function_exists( 'dork_shortcodes_accordion_section' ) ) {
 
-	function dork_shortcodes_accordion_item( $atts, $content = null ) {
+	function dork_shortcodes_accordion_section( $atts, $content = null ) {
 
 		// Default shortcode attributes
 		$defaults = array(
 			'title' => '',
 			'icon'  => 'no-icon',
+			'open'  => 'false',
 		);
 
 		// Extract the shortcode attributes
@@ -71,18 +72,21 @@ if ( ! function_exists( 'dork_shortcodes_accordion_item' ) ) {
 		// Set default values to avoid errors
 		$title = ( ( isset( $atts['title'] ) && $atts['title'] != '' ) ? $atts['title'] : '' );
 		$icon  = ( ( isset( $atts['icon'] ) && $atts['icon'] != 'no-icon' ) ? ' ' . $atts['icon'] : '' );
+		$open  = ( ( isset( $atts['open'] ) && $atts['open'] != 'false' ) ? ' ' . 'active' : '' );
 
 		// Begin building the shortcode output
 		$output = '';
-		$output .= '<div class="accordion-title"><a href="#">' . esc_attr( $title ) . '</a></div>';
-		$output .= '<div class="accordion-inner' . esc_attr( $icon ) . '">' . do_shortcode( $content ) . '</div>';
+		$output .= '<div class="accordion-item">';
+		$output .= '<div class="accordion-title' . esc_attr( $open ) . '"><a href="#"><i class="' . esc_attr( $icon ) . '"></i>' . esc_attr( $title ) . '</a><span><i class="dork-icon-plus"></i></span></div>';
+		$output .= '<div class="accordion-inner">' . do_shortcode( $content ) . '</div>';
+		$output .= '</div><!-- End .accordion-section -->';
 
 		// Return the shortcode output
 		return $output;
 
-	} // End dork_shortcodes_accordion_item()
+	} // End dork_shortcodes_accordion_section()
 
 	// Register our accordion items shortcode
-	add_shortcode( 'toggle', 'dork_shortcodes_accordion_item' );
+	add_shortcode( 'accordion_section', 'dork_shortcodes_accordion_section' );
 
 } // End if

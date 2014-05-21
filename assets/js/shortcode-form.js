@@ -78,7 +78,7 @@
                 output = '[accordion basic="' + accordionBasic + '" class="' + accordionClass + '"]' + '<br/>';
 
                 for (var i = 1; i <= accordionCount; i++) {
-                    output += '[toggle title="Accordion Title #' + i + '" icon="' + accordionIcon + '"]Accordion Content #' + i + '[/toggle]' + '<br/>';
+                    output += '[accordion_section title="Accordion Title #' + i + '" icon="' + accordionIcon + '" open="false"]Accordion Content #' + i + '[/accordion_section]' + '<br/>';
                 } // End for
 
                 output += '[/accordion]';

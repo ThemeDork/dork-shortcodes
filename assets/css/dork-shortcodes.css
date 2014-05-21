@@ -1,0 +1,154 @@
+/*
+Accordion shortcode.
+
+@since v1.0.0
+*/
+
+.dork-accordion {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+.dork-accordion .accordion-item {
+	margin-bottom: .75em;
+}
+
+.dork-accordion .accordion-item:last-child {
+	margin-bottom: 0;
+}
+
+.dork-accordion .accordion-title {
+	cursor: pointer;
+	display: block;
+	margin: 0;
+	padding: 0;
+	line-height: 3em;
+	background-color: #FFFFFF;
+	border: 1px solid #DDDDDD;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+.dork-accordion .accordion-title a {
+	margin-left: 1em;
+	text-decoration: none;
+	font-family: inherit;
+	opacity: 0.75;
+	font-size: 1em;
+	font-weight: 400;
+	text-shadow: 0 1px 1px #FFFFFF;
+	color: #333333;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+.dork-accordion .accordion-title a i {
+	margin-right: .75em;
+}
+
+.dork-accordion .accordion-title:hover a {
+	opacity: 1;
+}
+
+.dork-accordion .accordion-title.active a {
+	opacity: 1;
+}
+
+.dork-accordion .accordion-title.active {
+	background-color: #F5F5F5;
+}
+
+.dork-accordion .accordion-title:hover {
+	background-color: #F5F5F5;
+}
+
+.dork-accordion .accordion-title:hover, .dork-accordion .accordion-title:hover > i {
+	opacity: 1;
+}
+
+.dork-accordion .accordion-title > i {
+	font-size: 1em;
+	padding-right: .75em;
+	vertical-align: middle;
+	opacity: 0.75;
+	line-height: 3em;
+}
+
+.dork-accordion .accordion-title > span {
+	border-left: 1px solid #DDDDDD;
+	background-color: #EDEDED;
+	padding: 0 1em;
+	float: right;
+}
+
+.dork-accordion .accordion-title > span i {
+
+	vertical-align: middle;
+	line-height: 2.5em;
+	opacity: 0.65;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+.dork-accordion .accordion-title:hover > span i {
+	-webkit-transition: rotate(180deg);
+	-moz-transition: rotate(180deg);
+	-ms-transition: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+.dork-accordion .accordion-title:hover > span i:before {
+	content: "\f068";
+}
+
+.dork-accordion .accordion-title.active > span i:before {
+	content: "\f068";
+}
+
+.dork-accordion .accordion-inner {
+	height: 100%;
+	display: none;
+	padding: 1em;
+	font-size: 1em;
+	line-height: 1.625em;
+	background-color: #FFFFFF;
+	color: #333333;
+}
+
+.dork-accordion .accordion-title.active + .accordion-inner {
+	display: block;
+}
+
+.dork-accordion.basic-accordion .accordion-title {
+	border-bottom: 1px solid #DDDDDD;
+	border-left: 0;
+	border-right: 0;
+	border-top: 0;
+	padding: 0;
+}
+
+.dork-accordion.basic-accordion .accordion-title > span {
+	background: transparent;
+	border: none;
+}
+
+.dork-accordion.basic-accordion .accordion-title:hover {
+	background-color: #FFFFFF;
+}
+
+.dork-accordion.basic-accordion .accordion-title.active {
+	background-color: #FFFFFF;
+}
+
+.dork-accordion.basic-accordion .accordion-inner {
+	border: none;
+}

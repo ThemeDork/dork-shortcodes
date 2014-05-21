@@ -51,6 +51,41 @@ if ( ! function_exists( 'dork_register_shortcodes' ) ) {
 
 
 /**
+ *
+ *
+ * @since v1.0.0
+ */
+
+if ( ! function_exists( 'dork_shortcodes_formatting' ) ) {
+
+	function dork_shortcodes_formatting( $content ) {
+
+		// Define the formatting tags to be stripped
+		$tags = array(
+			'<p>['    => '[',
+			']</p>'   => ']',
+			']<br>'   => ']',
+			']<br />' => ']',
+			']<br/>'  => ']',
+		);
+
+		// Filter the content and remove unwanted tags
+		$new_content = strtr( $content, $tags );
+
+		// Return our newly formatted content
+		return $new_content;
+
+	} // End dork_shortcodes_formatting()
+
+	// Now we need to add our content filter to several points
+	add_filter( 'the_content', 'dork_shortcodes_formatting' );
+	add_filter( 'the_excerpt', 'dork_shortcodes_formatting' );
+	add_filter( 'widget_text', 'dork_shortcodes_formatting' );
+
+} // End if
+
+
+/**
  * Include any additional files we may need to add a little extra functionality to
  * this plugin.
  *
