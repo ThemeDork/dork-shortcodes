@@ -14,6 +14,14 @@
  * @since v1.0.0
  */
 
+
+/**
+ * Register and enqueue admin scripts and styles. These will only be used within the
+ * admin portion of WordPress, no front-end styles here.
+ *
+ * @since v1.0.0
+ */
+
 if ( ! function_exists( 'dork_shortcodes_admin_enqueue' ) ) {
 
 	function dork_shortcodes_admin_enqueue() {
@@ -43,7 +51,39 @@ if ( ! function_exists( 'dork_shortcodes_admin_enqueue' ) ) {
 
 	} // End dork_shortcodes_admin_enqueue()
 
-	// Now we need to send it to WordPress
+	// Enqueue the scripts and styles
 	add_action( 'admin_enqueue_scripts', 'dork_shortcodes_admin_enqueue' );
+
+} // End if
+
+
+/**
+ * Register and enqueue front-end scripts and styles. These will only be used within
+ * the front-end portion of the theme, no admin styles here.
+ *
+ * @since v1.0.0
+ */
+
+if ( ! function_exists( 'dork_shortcodes_front_enqueue' ) ) {
+
+	function dork_shortcodes_front_enqueue() {
+
+		// Register our front-end styles
+		wp_register_style( 'dork-shortcodes', DORK_SHORTCODES_URI . '/assets/css/dork-shortcodes.css', null, time(), 'all' );
+
+		// Register our front-end scripts
+		wp_register_script( 'dork-shortcodes', DORK_SHORTCODES_URI . '/assets/js/dork-shortcodes.js', array( 'jquery' ), time(), true );
+
+		// Enqueue our front-end styles
+		wp_enqueue_style( 'dork-shortcodes' );
+
+		// Enqueue our front-end scripts
+		wp_enqueue_script( 'jquery' );
+		wp_enqueue_script( 'dork-shortcodes' );
+
+	} // End dork_shortcodes_front_enqueue()
+
+	// Enqueue the scripts and styles
+	add_action( 'wp_enqueue_scripts', 'dork_shortcodes_front_enqueue' );
 
 } // End if

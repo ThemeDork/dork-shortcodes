@@ -56,12 +56,6 @@ class Dork_Shortcodes {
 
 		} // End if / else
 
-		// Begin registering each of our shortcodes
-		$this->register_shortcodes();
-
-		// Include any necessary files for this plugin
-		$this->file_includes();
-
 		// Setup the meta boxes that will contain our shortcode form
 		add_action( 'add_meta_boxes', array( $this, 'setup_meta_boxes' ) );
 
@@ -121,53 +115,5 @@ class Dork_Shortcodes {
 		} // End if
 
 	} // End form_setup()
-
-
-	/**
-	 * Cycle through each of the available shortcodes and begin registering them with
-	 * WordPress one by one. This should also make extending the plugin much easier
-	 * down the road.
-	 *
-	 * @since v1.0.0
-	 */
-
-	public function register_shortcodes() {
-
-		// Only register our shortcodes in the admin
-		if ( is_admin() ) {
-
-			// Rather than creating some long list of includes, lets just grab load them
-			// all at once.
-			foreach ( glob( DORK_SHORTCODES_DIR . '/lib/shortcodes/*.php' ) as $filename ) {
-
-				if ( $filename ) {
-
-					include( $filename );
-
-				} // End if
-
-			} // End foreach
-
-		} // End if
-
-	} // End register_shortcodes()
-
-
-	/**
-	 * Include any additional files we may need to add a little extra functionality to
-	 * this plugin.
-	 *
-	 * @since v1.0.0
-	 */
-
-	public function file_includes() {
-
-		// Register and enqueue our scripts and styles
-		include_once( DORK_SHORTCODES_DIR . '/lib/enqueue.php' );
-
-		// Build an array of font icons for icon select field
-		include_once( DORK_SHORTCODES_DIR . '/lib/font-icons.php' );
-
-	} // End file_includes()
 
 } // End Dork_Shortcodes

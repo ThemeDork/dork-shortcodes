@@ -72,6 +72,9 @@ if ( ! function_exists( 'dork_shortcodes_setup' ) ) {
 
 	function dork_shortcodes_setup() {
 
+		// Load our general plugin functions
+		require_once( DORK_SHORTCODES_DIR . '/lib/functions.php' );
+
 		// Load our shortcode configurations
 		if ( is_admin() && file_exists( DORK_SHORTCODES_DIR . '/lib/config.php' ) ) {
 

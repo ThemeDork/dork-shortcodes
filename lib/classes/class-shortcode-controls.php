@@ -90,7 +90,7 @@ class Dork_Shortcodes_Controls {
 
 					foreach ( $options as $option_id => $option ) {
 
-						$selected = ( ( $option_id = $std ) ? ' selected' : '' );
+						$selected = ( ( $option_id == $std ) ? ' selected' : '' );
 						$output .= '<option value="' . esc_attr( $option_id ) . '"' . esc_attr( $selected ) . '>' . esc_html( ':: ' . $option ) . '</option>';
 
 					} // End foreach
