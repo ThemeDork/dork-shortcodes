@@ -3,7 +3,8 @@
 
     var shortcodeSelect = $('#shortcode-select'),
         shortcodeSubmit = $('#shortcode-submit'),
-        iconSelect      = $('.dork-icon-select li');
+        iconSelect      = $('.dork-icon-select li'),
+        colorSelect     = $('.dork-color-select li');
 
 
     /**
@@ -19,10 +20,8 @@
             shortcodeContent = $('.shortcode-content-display'),
             shortcodeForm    = $('#dork-' + shortcode + '-form');
 
-
         // Disable our shortcode submit button if no selection
         shortcodeSubmit.attr('disabled', true);
-
 
         // Verify that a shortcode is selected before continuing
         if (shortcode !== '') {
@@ -35,7 +34,6 @@
             shortcodeSubmit.removeAttr('disabled');
 
         } // End if
-
 
         // Prevent default
         return false;
@@ -56,17 +54,23 @@
             shortcode       = shortcodeSelect.val(),
             output;
 
-
         // Accordion shortcode variables
         var accordionCount = $('#accordion-count-select').val(),
             accordionIcon  = $('#accordion-icon-icon-select').find('.selected').data('id'),
             accordionBasic = $('#accordion-basic-checkbox').prop('checked'),
             accordionClass = $('#accordion-class-text').val();
 
+        // Alert shortcode variables
+        var alertHeading = $('#alert-heading-text').val(),
+            alertContent = $('#alert-content-textarea').val(),
+            alertColor   = $('#alert-color-color-select').find('.selected').data('id'),
+            alertIcon    = $('#alert-icon-icon-select').find('.selected').data('id'),
+            alertSize    = $('#alert-size-select').val(),
+            alertDismiss = $('#alert-dismiss-checkbox').prop('checked'),
+            alertClass   = $('#alert-class-text').val();
 
         // No need to run anything if a shortcode hasn't been selected
         if (shortcode !== '') {
-
 
             /**
              * Accordion shortcode.
@@ -83,8 +87,16 @@
 
                 output += '[/accordion]';
 
-            } // End if
+                /**
+                 * Alert shortcode.
+                 *
+                 * @since v1.0.0
+                 */
+            } else if (shortcode === 'dork-alert'){
 
+                output = '[alert heading="' + alertHeading + '" color="' + alertColor + '" icon="' + alertIcon + '" size="' + alertSize + '" dismiss="' + alertDismiss + '" class="' + alertClass + '"]' + alertContent + '[/alert]';
+
+            }
 
             // Insert our shortcode into the tinyMCE editor
             tinyMCE.activeEditor.execCommand('mceInsertContent', false, output);
@@ -103,7 +115,6 @@
      *
      * @since v1.0.0
      */
-
     iconSelect.on('click', function() {
 
         var iconSiblings = $(this).siblings();
@@ -114,6 +125,28 @@
         // Add the selected class to the user selected item
         $(this).addClass('selected');
 
+        // Prevent default
+        return false;
+
+    });
+
+
+    /**
+     * Add select functionality to our custom color select fields.
+     *
+     * @since v1.0.0
+     */
+    colorSelect.on('click', function() {
+
+        var colorSiblings = $(this).siblings();
+
+        // Remove the selected class from items
+        colorSiblings.removeClass('selected');
+
+        // Add the selected class to the user selected item
+        $(this).addClass('selected');
+
+        // Prevent default
         return false;
 
     });

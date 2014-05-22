@@ -71,6 +71,76 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 			)
 		);
 
+
+		/**
+		 * Alert shortcode config.
+		 *
+		 * @since v1.0.0
+		 */
+
+		$dork_shortcodes['dork-alert'] = array(
+			'name'   => __( 'Alert Messages', '__shortcodes__' ),
+			'desc'   => __( '', '__shortcodes__' ),
+			'params' => array(
+				'heading' => array(
+					'std'  => __( 'My Super Awesome Heading!', '__shortcodes__' ),
+					'name' => __( 'Alert Heading', '__shortcodes__' ),
+					'desc' => __( 'Optional. Although not required, the alert heading offers a great way for you to catch the users attention and really make an impact.', '__shortcodes__' ),
+					'key'  => 'alert-heading',
+					'type' => 'text',
+				),
+				'content' => array(
+					'std'  => __( 'Some like, totally informative content, dude...', '__shortcodes__' ),
+					'name' => __( 'Alert Content', '__shortcodes__' ),
+					'desc' => __( 'Create the content that will displayed within your alert message. You are welcome to put anything here such as a site notification, short informative message, public service announcement or whatever else you may dream up.', '__shortcodes__' ),
+					'key'  => 'alert-content',
+					'type' => 'textarea',
+				),
+				'color' => array(
+					'std'  => 'muted',
+					'name' => __( 'Alert Color', '__shortcodes__' ),
+					'desc' => __( 'Choose the color, or style, of your new alert message. You have several options to choose from, so choose the one that best suits your alerts purpose.', '__shortcodes__' ),
+					'key'  => 'alert-color',
+					'type' => 'color-select',
+				),
+				'icon' => array(
+					'std'  => 'no-icon',
+					'name' => __( 'Alert Icon', '__shortcodes__' ),
+					'desc' => __( 'Optional. If you would like to add a custom icon to your new alert message, you may choose one here. The icon will be displayed to the left of your alert content.', '__shortcodes__' ),
+					'key'  => 'alert-icon',
+					'type' => 'icon-select',
+				),
+				'size' => array(
+					'std'     => 'alert-default',
+					'name'    => __( 'Alert Size', '__shortcodes__' ),
+					'desc'    => __( 'Choose a size that best fits your content or the purpose of your alert message. There are several pre-defined sizes to choose from, the choice is yours.', '__shortcodes__' ),
+					'key'     => 'alert-size',
+					'type'    => 'select',
+					'options' => array(
+						'alert-small'   => __( 'Small Alert', '__shortcodes__' ),
+						'alert-default' => __( 'Default Alert', '__shortcodes__' ),
+						'alert-large'   => __( 'Large Alert', '__shortcodes__' ),
+						'alert-huge'    => __( 'Huge Alert', '__shortcodes__' ),
+						'alert-massive' => __( 'Massive Alert', '__shortcodes__' ),
+					),
+				),
+				'dismiss' => array(
+					'std'  => 1,
+					'name' => __( 'Allow user to dismiss alert?', '__shortcodes__' ),
+					'desc' => __( '', '__shortcodes__' ),
+					'key'  => 'alert-dismiss',
+					'type' => 'checkbox',
+				),
+				'class' => array(
+					'std'  => __( 'custom-css-class', '__shortcodes__' ),
+					'name' => __( 'Custom CSS Class', '__shortcodes__' ),
+					'desc' => __( 'Optional. Define a custom class that can be used to apply your own styles to this element.', '__shortcodes__' ),
+					'key'  => 'alert-class',
+					'type' => 'text',
+				),
+			)
+		);
+
 		// Return our shortcode configuration array
 		return $dork_shortcodes;
 

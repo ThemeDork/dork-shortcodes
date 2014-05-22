@@ -2,11 +2,10 @@
     "use strict";
 
     /**
-     * Accordion shortcode functionality, uses jQuery UI accordion.
+     * Accordion shortcode functionality.
      *
      * @since v1.0.0
      */
-
     if ($('.dork-accordion').length) {
 
         var accordion = $('.dork-accordion'),
@@ -37,5 +36,19 @@
         });
 
     }
+
+    /**
+     * Alert shortcode functionality.
+     *
+     * @since v1.0.0
+     */
+    $('.dork-alert .alert-dismiss').on('click', function() {
+
+        $(this).parent().fadeOut('500');
+
+        // Prevent default
+        return false;
+
+    });
 
 })(jQuery);

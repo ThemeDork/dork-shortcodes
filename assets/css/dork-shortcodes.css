@@ -3,7 +3,6 @@ Accordion shortcode.
 
 @since v1.0.0
 */
-
 .dork-accordion {
 	max-width: 100%;
 	height: auto;
@@ -151,4 +150,149 @@ Accordion shortcode.
 
 .dork-accordion.basic-accordion .accordion-inner {
 	border: none;
+}
+
+/*
+Alert shortcode.
+
+@since v1.0.0
+*/
+.dork-alert {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: auto;
+	min-height: 20px;
+	border: 1px solid;
+	padding: .75em;
+	margin: .75em 0;
+	line-height: 1.5;
+	-webkit-border-radius: .25em;
+	-moz-border-radius: .25em;
+	border-radius: .25em;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.dork-alert i.alert-dismiss {
+	position: absolute;
+	cursor: pointer;
+	right: 0;
+	top: 0;
+	padding: .75em .75em 0 0;
+	font-size: 1.2em;
+	opacity: 0.75;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+.dork-alert i.alert-dismiss:hover {
+	opacity: 1;
+}
+
+.dork-alert i.alert-icon {
+	display: inline-block;
+	font-size: 3.5em;
+	vertical-align: middle;
+	padding: 0;
+	margin-right: .35em;
+}
+
+.dork-alert .alert-heading {
+	font-size: 1.25em;
+	font-weight: 700;
+}
+
+.dork-alert .alert-content {
+	font-size: 1em;
+	font-weight: normal;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.dork-alert.alert-muted {
+	background-color: #FAFAFA;
+	border-color: #EBEBEB;
+	color: #8F8F8F;
+}
+
+.dork-alert.alert-info {
+	background-color: #B8E1F1;
+	border-color: #A1C7D5;
+	color: #52889B;
+}
+
+.dork-alert.alert-success {
+	background-color: #D8EFC1;
+	border-color: #B4D892;
+	color: #79985B;
+}
+
+.dork-alert.alert-warning {
+	background-color: #FEEBB7;
+	border-color: #E7D195;
+	color: #B49133;
+}
+
+.dork-alert.alert-danger {
+	background-color: #F9BCC3;
+	border-color: #F09DA7;
+	color: #B76973;
+}
+
+.dork-alert.alert-inverted {
+	background-color: #555555;
+	border-color: #333333;
+	color: #FAFAFA;
+}
+
+.dork-alert.alert-small .alert-content {
+	font-size: .875em;
+}
+
+.dork-alert.alert-small i.alert-icon {
+	font-size: 3em;
+}
+
+.dork-alert.alert-small .alert-heading {
+	font-size: 1.175em;
+}
+
+.dork-alert.alert-default .alert-content {
+	 font-size: 1em;
+ }
+
+.dork-alert.alert-default i.alert-icon {
+	font-size: 3.5em;
+}
+
+.dork-alert.alert-default .alert-heading {
+	font-size: 1.25em;
+}
+
+.dork-alert.alert-large .alert-content {
+	font-size: 1.125em;
+}
+
+.dork-alert.alert-large i.alert-icon {
+	font-size: 3.75em;
+}
+
+.dork-alert.alert-large .alert-heading {
+	font-size: 1.375em;
+}
+
+.dork-alert.alert-huge .alert-content {
+	font-size: 1.275em;
+}
+
+.dork-alert.alert-huge i.alert-icon {
+	font-size: 4em;
+}
+
+.dork-alert.alert-huge .alert-heading {
+	font-size: 1.475em;
 }
