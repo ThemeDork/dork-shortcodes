@@ -4,7 +4,9 @@
     var shortcodeSelect = $('#shortcode-select'),
         shortcodeSubmit = $('#shortcode-submit'),
         iconSelect      = $('.dork-icon-select li'),
-        colorSelect     = $('.dork-color-select li');
+        colorSelect     = $('.dork-color-select li'),
+        colorPicker     = $('.dork-color-picker'),
+        colorPreview    = $('.color-picker-preview');
 
 
     /**
@@ -69,6 +71,20 @@
             alertDismiss = $('#alert-dismiss-checkbox').prop('checked'),
             alertClass   = $('#alert-class-text').val();
 
+        // Button shortcode variables
+        var buttonText      = $('#button-text-text').val(),
+            buttonLink      = $('#button-link-text').val(),
+            buttonIcon      = $('#button-icon-icon-select').find('.selected').data('id'),
+            buttonColor     = $('#button-color-text').val(),
+            buttonFontColor = $('#button-font-color-text').val(),
+            buttonFullwidth = $('#button-fullwidth-checkbox').prop('checked'),
+            buttonTarget    = $('#button-target-checkbox').prop('checked'),
+            buttonRounded   = $('#button-rounded-checkbox').prop('checked'),
+            buttonAnimated  = $('#button-animated-checkbox').prop('checked'),
+            buttonPosition  = $('#button-position-select').val(),
+            buttonSize      = $('#button-size-select').val(),
+            buttonClass     = $('#button-class-text').val();
+
         // No need to run anything if a shortcode hasn't been selected
         if (shortcode !== '') {
 
@@ -92,9 +108,18 @@
                  *
                  * @since v1.0.0
                  */
-            } else if (shortcode === 'dork-alert'){
+            } else if (shortcode === 'dork-alert') {
 
                 output = '[alert heading="' + alertHeading + '" color="' + alertColor + '" icon="' + alertIcon + '" size="' + alertSize + '" dismiss="' + alertDismiss + '" class="' + alertClass + '"]' + alertContent + '[/alert]';
+
+                /**
+                 * Button shortcode.
+                 *
+                 * @since v1.0.0
+                 */
+            } else if (shortcode === 'dork-button') {
+
+                output = '[button link="' + buttonLink + '" icon="' + buttonIcon + '" icon_position="' + buttonPosition + '" color="' + buttonColor + '" font_color="' + buttonFontColor + '" full_width="' + buttonFullwidth + '" new_window="' + buttonTarget + '" rounded="' + buttonRounded + '" animated="' + buttonAnimated + '" size="' + buttonSize + '" class="' + buttonClass + '"]' + buttonText + '[/button]';
 
             }
 
@@ -149,6 +174,34 @@
         // Prevent default
         return false;
 
+    });
+
+
+    /**
+     * Add functionality to our color picker fields.
+     *
+     * @since v1.0.0
+     */
+
+    // Set preview color based on default value
+    colorPicker.each(function() {
+        $(this).parent().find(colorPreview).css('color', this.value);
+    });
+
+    // Attach the color picker to input field and update when value changes
+    colorPicker.colpick({
+        layout: 'full',
+        submit: 0,
+        colorScheme: 'light',
+        onChange: function(hsb,hex,rgb,el,bySetColor) {
+            $(el).parent().find('.color-picker-preview i').css('color', '#' + hex);
+            if ( ! bySetColor) { $(el).val('#' + hex); }
+        },
+        onBeforeShow: function(el) {
+            $(this).colpickSetColor(this.value);
+        }
+    }).keyup(function() {
+        $(this).colpickSetColor(this.value);
     });
 
 })(jQuery);

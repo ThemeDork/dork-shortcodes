@@ -80,12 +80,10 @@ class Dork_Shortcodes_Controls {
 			 */
 
 			case 'checkbox':
-				$output .= '<div class="dork-control-field">';
-				$output .= '<div class ="dork-checkbox-field">';
+				$output .= '<div class="dork-checkbox-field">';
 				$checked = ( 1 == $std ) ? ' checked' : '';
 				$output .= '<input type="checkbox" id="' . esc_attr( $key ) . '-checkbox" name="' . esc_attr( $pname ) . '" autocomplete="off"' . esc_attr( $checked ) . ' />';
 				$output .= '<label for="' . esc_attr( $key ) . '-checkbox">' . esc_html( $pname ) . '</label>';
-				$output .= '</div>';
 				$output .= '</div>';
 				break;
 
@@ -114,6 +112,23 @@ class Dork_Shortcodes_Controls {
 				} // End if
 
 				$output .= '</select>';
+				$output .= '<div class="control-field-desc">' . esc_html( $desc ) . '</div>';
+				$output .= '<div class="clear"></div>';
+				$output .= '</div>';
+				break;
+
+
+			/**
+			 * Build our custom color picker control.
+			 *
+			 * @since v1.0.0
+			 */
+
+			case 'color':
+				$output .= '<div class="dork-control-field">';
+				$output .= '<label for="' . esc_attr( $key ) . '-color">' . esc_html( $pname ) . '</label>';
+				$output .= '<input type="text" id="' . esc_attr( $key ) . '-text" class="dork-color-picker" name="' . esc_attr( $pname ) . '" value="' . esc_attr( $std ) . '" autocomplete="off" />';
+				$output .= '<div class="color-picker-preview"><i class="dork-icon-circle"></i></div>';
 				$output .= '<div class="control-field-desc">' . esc_html( $desc ) . '</div>';
 				$output .= '<div class="clear"></div>';
 				$output .= '</div>';
@@ -182,6 +197,17 @@ class Dork_Shortcodes_Controls {
 				$output .= '<div class="control-field-desc">' . esc_html( $desc ) . '</div>';
 				$output .= '<div class="clear"></div>';
 				$output .= '</div>';
+				break;
+
+
+			/**
+			 * Build our custom spacer control.
+			 *
+			 * @since v1.0.0
+			 */
+
+			case 'spacer':
+				$output .= '<hr class="dork-control-spacer" />';
 				break;
 
 		} // End switch()

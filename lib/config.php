@@ -61,6 +61,9 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 					'key'  => 'accordion-basic',
 					'type' => 'checkbox',
 				),
+				'spacer' => array(
+					'type' => 'spacer',
+				),
 				'class' => array(
 					'std'  => __( 'custom-css-class', '__shortcodes__' ),
 					'name' => __( 'Custom CSS Class', '__shortcodes__' ),
@@ -131,11 +134,127 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 					'key'  => 'alert-dismiss',
 					'type' => 'checkbox',
 				),
+				'spacer' => array(
+					'type' => 'spacer',
+				),
 				'class' => array(
 					'std'  => __( 'custom-css-class', '__shortcodes__' ),
 					'name' => __( 'Custom CSS Class', '__shortcodes__' ),
 					'desc' => __( 'Optional. Define a custom class that can be used to apply your own styles to this element.', '__shortcodes__' ),
 					'key'  => 'alert-class',
+					'type' => 'text',
+				),
+			)
+		);
+
+
+		/**
+		 * Button shortcode config.
+		 *
+		 * @since v1.0.0
+		 */
+
+		$dork_shortcodes['dork-button'] = array(
+			'name'   => __( 'Buttons', '__shortcodes__' ),
+			'desc'   => __( '', '__shortcodes__' ),
+			'params' => array(
+				'text' => array(
+					'std'  => __( 'Click Me Maybe?', '__shortcodes__' ),
+					'name' => __( 'Button Text', '__shortcodes__' ),
+					'desc' => __( 'Create the text that will be displayed on your new button. You can say as much, or as little as you want.', '__shortcodes__' ),
+					'key'  => 'button-text',
+					'type' => 'text',
+				),
+				'url' => array(
+					'std'  => 'http://www.google.com',
+					'name' => __( 'Button Link', '__shortcodes__' ),
+					'desc' => __( 'Where would you like the user to go after they click on your button? Provide the link to that page in this field.', '__shortcodes__' ),
+					'key'  => 'button-link',
+					'type' => 'text',
+				),
+				'icon' => array(
+					'std'  => 'no-icon',
+					'name' => __( 'Button Icon', '__shortcodes__' ),
+					'desc' => __( 'Optional. Add a little bit of flare to your new button with a custom icon. There are hundreds to choose from, pick the one you love.' ),
+					'key'  => 'button-icon',
+					'type' => 'icon-select',
+				),
+				'color' => array(
+					'std'  => '#E7E7E7',
+					'name' => __( 'Button Color', '__shortcodes__' ),
+					'desc' => __( 'Choose the background color for your button.', '__shortcodes__' ),
+					'key'  => 'button-color',
+					'type' => 'color',
+				),
+				'font-color' => array(
+					'std'  => '#777777',
+					'name' => __( 'Font Color', '__shortcodes__' ),
+					'desc' => __( 'Choose the font color for your button, especially helpful for dark buttons that need a lighter font.', '__shortcodes__' ),
+					'key'  => 'button-font-color',
+					'type' => 'color',
+				),
+				'fullwidth' => array(
+					'std'  => 0,
+					'name' => __( 'Full width button?', '__shortcodes__' ),
+					'desc' => __( '', '__shortcodes__' ),
+					'key'  => 'button-fullwidth',
+					'type' => 'checkbox',
+				),
+				'target' => array(
+					'std'  => 1,
+					'name' => __( 'Open in new window?', '__shortcodes__' ),
+					'desc' => __( '', '__shortcodes__' ),
+					'key'  => 'button-target',
+					'type' => 'checkbox',
+				),
+				'rounded' => array(
+					'std'  => 0,
+					'name' => __( 'Rounded corners?', '__shortcodes__' ),
+					'desc' => __( '', '__shortcodes__' ),
+					'key'  => 'button-rounded',
+					'type' => 'checkbox',
+				),
+				'animated' => array(
+					'std' => 1,
+					'name' => __( 'Animated icon button?', '__shortcodes__' ),
+					'desc' => __( '', '__shortcodes__' ),
+					'key'  => 'button-animated',
+					'type' => 'checkbox',
+				),
+				'spacer' => array(
+					'type' => 'spacer',
+				),
+				'position' => array(
+					'std'     => 'left',
+					'name'    => __( 'Button Icon Position', '__shortcodes__' ),
+					'desc'    => __( 'If you have decided to add an icon to your button, you can choose whether to place it to the left or right of your button text.', '__shortcodes__' ),
+					'key'     => 'button-position',
+					'type'    => 'select',
+					'options' => array(
+						'left'  => __( 'Align Icon to the Left', '__shortcodes__' ),
+						'right' => __( 'Align Icon to the Right', '__shortcodes__' ),
+					),
+				),
+				'size' => array(
+					'std'     => 'default',
+					'name'    => __( 'Button Size', '__shortcodes__' ),
+					'desc'    => __( 'Choose from a variety of button sizes to fit just about any purpose. Make an impact or keep it subtle, its up to you.', '__shortcodes__' ),
+					'key'     => 'button-size',
+					'type'    => 'select',
+					'options' => array(
+						'mini'    => __( 'Mini Button', '__shortcodes__' ),
+						'small'   => __( 'Small Button', '__shortcodes__' ),
+						'default' => __( 'Default Button', '__shortcodes__' ),
+						'large'   => __( 'Large Button', '__shortcodes__' ),
+						'huge'    => __( 'Huge Button', '__shortcodes__' ),
+						'massive' => __( 'Massive Button', '__shortcodes__' ),
+					),
+				),
+				'class' => array(
+					'std'  => __( 'custom-css-class', '__shortcodes__' ),
+					'name' => __( 'Custom CSS Class', '__shortcodes__' ),
+					'desc' => __( 'Optional. Define a custom class that can be used to apply your own styles to this element.', '__shortcodes__' ),
+					'key'  => 'button-class',
 					'type' => 'text',
 				),
 			)

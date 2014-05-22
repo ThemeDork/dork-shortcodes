@@ -296,3 +296,128 @@ Alert shortcode.
 .dork-alert.alert-huge .alert-heading {
 	font-size: 1.475em;
 }
+
+
+/*
+Button shortcode.
+
+@since v1.0.0
+*/
+.dork-button {
+	display: inline-block;
+	cursor: pointer;
+	min-height: 10px;
+	padding: 8px 12px;
+	margin: 10px;
+	border: none;
+	outline: none;
+	height: auto;
+	width: auto;
+	text-decoration: none;
+	font-size: 14px;
+	vertical-align: middle;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+.dork-button:hover {
+	background-image: -webkit-gradient(linear, left, top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.08)));
+	background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.08));
+	background-image: -moz-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.08));
+	background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.08));
+}
+
+.dork-button i {
+	font-size: 16px;
+	margin: 0 10px 0 0;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+.dork-button.button-animated:hover i {
+	margin-right: 15px;
+	-webkit-transition: rotate(360deg);
+	-moz-transition: rotate(360deg);
+	-ms-transition: rotate(360deg);
+	transform: rotate(360deg);
+}
+
+.dork-button.button-icon-right i {
+	font-size: 16px;
+	margin: 0 0 0 10px;
+}
+
+.dork-button.button-animated.button-icon-right:hover i {
+	margin: 0 0 0 20px;
+	-webkit-transition: rotate(360deg);
+	-moz-transition: rotate(360deg);
+	-ms-transition: rotate(360deg);
+	transform: rotate(360deg);
+}
+
+.dork-button.button-rounded {
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.dork-button.button-fullwidth {
+	width: 100%;
+	text-align: center;
+	padding: 10px 0;
+	margin: 15px 0;
+}
+
+.dork-button.button-mini {
+	font-size: 11px;
+	padding: 6px 10px;
+}
+
+.dork-button.button-mini i {
+	font-size: 12px;
+}
+
+.dork-button.button-mini.button-fullwidth {
+	padding: 6px 0;
+}
+
+.dork-button.button-small {
+	font-size: 12px;
+	padding: 6px 10px;
+}
+
+.dork-button.button-small i {
+	font-size: 13px;
+}
+
+.dork-button.button-small.button-fullwidth {
+	padding: 6px 0;
+}
+
+.dork-button.button-large {
+	font-size: 16px;
+	padding: 10px 15px;
+}
+
+.dork-button.button-large i {
+	font-size: 18px;
+}
+
+.dork-button.button-large.button-fullwidth {
+	padding: 10px 0;
+}
+
+.dork-button.button-huge {
+	font-size: 18px;
+	padding: 10px 15px;
+}
+
+.dork-button.button-huge i {
+	font-size: 20px;
+}
+
+.dork-button.button-huge.button-fullwidth {
+	padding: 10px 0;
+}

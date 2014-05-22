@@ -74,11 +74,17 @@
 
 	@since v1.0.0
 */
+
+.dork-control-spacer {
+	border: none;
+	border-top: 1px solid #EEEEEE;
+	margin-bottom: 1.5em;
+	clear: both;
+}
+
 #dork-shortcode-form .dork-control-field {
-	width: 100%;
 	margin-bottom: 2em;
 	padding-bottom: 2em;
-	display: block;
 	border-bottom: 1px solid #EEEEEE;
 }
 
@@ -129,25 +135,32 @@
 	outline-offset: -2px;
 }
 
-.dork-control-field .dork-checkbox-field {
+.dork-checkbox-field {
 	position: relative;
 	display: inline-block;
+	border: 1px solid #E9EBED;
+	margin: 0 1em 1.5em 0;
+	padding: 1em;
 	min-width: 1em;
 	min-height: 1em;
-	line-height: 1em;
+	line-height: 1;
 	outline: 0;
 	vertical-align: middle;
+	background-color: #F4F6F8;
+	-webkit-border-radius: .35em;
+	-moz-border-radius: .35em;
+	border-radius: .35em;
 }
 
-.dork-control-field input[type=checkbox] {
+input[type=checkbox] {
 	border: 1px solid rgba(0, 0, 0, 0.15);
 	outline: 0;
 	vertical-align: middle;
 }
 
-.dork-control-field .dork-checkbox-field label {
+.dork-checkbox-field label {
 	cursor: default;
-	padding-left: 1em;
+	padding-left: .5em;
 	outline: none;
 	display: inline;
 	vertical-align: middle;
@@ -174,6 +187,22 @@
 	-moz-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+}
+
+.dork-control-field input[type=text].dork-color-picker {
+	display: inline;
+	margin-right: 0.5em;
+	width: 57%;
+}
+
+.dork-control-field .color-picker-preview {
+	font-size: 2em;
+	display: inline;
+}
+
+.dork-control-field .color-picker-preview i {
+	margin-top: .2em;
+	margin-right: 2%;
 }
 
 .dork-control-field ul {
