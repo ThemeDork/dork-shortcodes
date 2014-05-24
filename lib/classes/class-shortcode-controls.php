@@ -136,6 +136,23 @@ class Dork_Shortcodes_Controls {
 
 
 			/**
+			 * Build our custom range slider control.
+			 *
+			 * @since v1.0.0
+			 */
+
+			case 'slider':
+				$output .= '<div class="dork-control-field">';
+				$output .= '<label for="' . esc_attr( $key ) . '-slider">' . esc_html( $pname ) . '</label>';
+				$output .= '<div id="' . esc_attr( $key ) . '-slider" class="dork-range-slider" data-start="' . esc_attr( $std ) . '"></div>';
+				$output .= '<span id="' . esc_attr( $key ) . '-slider-value" class="range-slider-value"></span>';
+				$output .= '<div class="control-field-desc">' . esc_html( $desc ) . '</div>';
+				$output .= '<div class="clear"></div>';
+				$output .= '</div>';
+				break;
+
+
+			/**
 			 * Build our custom color select control.
 			 *
 			 * @since v1.0.0

@@ -25,7 +25,7 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 		 */
 
 		$dork_shortcodes['dork-accordion'] = array(
-			'name'   => __( 'Accordion Shortcode', '__shortcodes__' ),
+			'name'   => __( 'Accordion', '__shortcodes__' ),
 			'desc'   => __( '', '__shortcodes__' ),
 			'params' => array(
 				'count' => array(
@@ -149,6 +149,84 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 
 
 		/**
+		 * Blockquote shortcode config.
+		 *
+		 * @since v1.0.0
+		 */
+
+		$dork_shortcodes['dork-blockquote'] = array(
+			'name'   => __( 'Blockquote', '__shortcodes__' ),
+			'desc'   => __( '', '__shortcodes__' ),
+			'params' => array(
+				'content' => array(
+					'std'  => __( 'A nickel ain\'t worth a dime anymore.', '__shortcodes__' ),
+					'name' => __( 'Blockquote Content', '__shortcodes__' ),
+					'desc' => __( 'Create the content, or quote, for your new blockquote. You can include as much or as little as you like, after all, great quotes come in a variety of sizes.', '__shortcodes__' ),
+					'key'  => 'blockquote-content',
+					'type' => 'textarea',
+				),
+				'cite' => array(
+					'std'  => __( '~Yogi Berra', '__shortcodes__' ),
+					'name' => __( 'Blockquote Citation', '__shortcodes__' ),
+					'desc' => __( 'Optional. Consider including a source, or citation, for your blockquote. Surely there is someone you can credit for these words of wisdom.', '__shortcodes__' ),
+					'key'  => 'blockquote-cite',
+					'type' => 'text',
+				),
+				'link' => array(
+					'std'  => 'http://www.google.com',
+					'name' => __( 'Citation Link', '__shortcodes__' ),
+					'desc' => __( 'Optional. If you would like to include a link to the source of your quote you may do so here. This will create a link from the citation you defined above.', '__shortcodes__' ),
+					'key'  => 'blockquote-link',
+					'type' => 'text',
+				),
+				'target' => array(
+					'std'  => 1,
+					'name' => __( 'Open citation link in new window?', '__shortcodes__' ),
+					'desc' => __( '', '__shortcodes__' ),
+					'key'  => 'blockquote-target',
+					'type' => 'checkbox',
+				),
+				'basic' => array(
+					'std'  => 0,
+					'name' => __( 'Basic blockquote with light background?', '__shortcodes__' ),
+					'desc' => __( '', '__shortcodes__' ),
+					'key'  => 'blockquote-basic',
+					'type' => 'checkbox',
+				),
+				'spacer' => array(
+					'type' => 'spacer',
+				),
+				'color' => array(
+					'std' => '#00B5AD',
+					'name' => __( 'Accent Color', '__shortcodes__' ),
+					'desc' => __( 'Choose an accent color for your blockquote. This will modify both the left border and the citation color, but only if you have not chosen the basic blockquote above.', '__shortcodes__' ),
+					'key'  => 'blockquote-color',
+					'type' => 'color',
+				),
+				'position' => array(
+					'std'     => 'left',
+					'name'    => __( 'Citation Position', '__shortcodes__' ),
+					'desc'    => __( 'Choose a pre-defined position for your blockquote citation. You can align it to the left, center or right depending on your preferences.', '__shortcodes__' ),
+					'key'     => 'blockquote-position',
+					'type'    => 'select',
+					'options' => array(
+						'left'   => __( 'Aligned to the Left', '__shortcodes__' ),
+						'center' => __( 'Aligned to the Center', '__shortcodes__' ),
+						'right'  => __( 'Aligned to the Right', '__shortcodes__' ),
+					),
+				),
+				'class' => array(
+					'std'  => __( 'custom-css-class', '__shortcodes__' ),
+					'name' => __( 'Custom CSS Class', '__shortcodes__' ),
+					'desc' => __( 'Optional. Define a custom class that can be used to apply your own styles to this element.', '__shortcodes__' ),
+					'key'  => 'blockquote-class',
+					'type' => 'text',
+				),
+			)
+		);
+
+
+		/**
 		 * Button shortcode config.
 		 *
 		 * @since v1.0.0
@@ -215,7 +293,7 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 					'type' => 'checkbox',
 				),
 				'animated' => array(
-					'std' => 1,
+					'std'  => 1,
 					'name' => __( 'Animated icon button?', '__shortcodes__' ),
 					'desc' => __( '', '__shortcodes__' ),
 					'key'  => 'button-animated',
@@ -255,6 +333,223 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 					'name' => __( 'Custom CSS Class', '__shortcodes__' ),
 					'desc' => __( 'Optional. Define a custom class that can be used to apply your own styles to this element.', '__shortcodes__' ),
 					'key'  => 'button-class',
+					'type' => 'text',
+				),
+			)
+		);
+
+
+		/**
+		 * Divider shortcode config.
+		 *
+		 * @since v1.0.0
+		 */
+
+		$dork_shortcodes['dork-divider'] = array(
+			'name'   => __( 'Dividers', '__shortcodes__' ),
+			'desc'   => __( '', '__shortcodes__' ),
+			'params' => array(
+				'style' => array(
+					'std'     => '',
+					'name'    => __( 'Divider Style', '__shortcodes__' ),
+					'desc'    => __( 'Choose a pre-defined style for your new divider. There are several to choose from and each is unique.', '__shortcodes__' ),
+					'key'     => 'divider-style',
+					'type'    => 'select',
+					'options' => array(
+						'single'        => __( 'Single Solid Line', '__shortcodes__' ),
+						'single-thick'  => __( 'Single Thick Solid Line', '__shortcodes__' ),
+						'single-fade'   => __( 'Single Faded Line', '__shortcodes__' ),
+						'dotted'        => __( 'Single Dotted Line', '__shortcodes__' ),
+						'dashed'        => __( 'Single Dashed Line', '__shortcodes__' ),
+						'double'        => __( 'Double Solid Line', '__shortcodes__' ),
+						'double-dotted' => __( 'Double Dotted Line', '__shortcodes__' ),
+						'double-dashed' => __( 'Double Dashed Line', '__shortcodes__' ),
+					),
+				),
+				'margin-top' => array(
+					'std'  => '30',
+					'name' => __( 'Divider Top Margin', '__shortcodes__' ),
+					'desc' => __( 'Choose the amount of spacing, the margin, that you have above your divider. Allows for more separation of content.', '__shortcodes__' ),
+					'key'  => 'divider-margin-top',
+					'type' => 'slider',
+				),
+				'margin-bottom' => array(
+					'std'  => '30',
+					'name' => __( 'Divider Bottom Margin', '__shortcodes__' ),
+					'desc' => __( 'Choose the amount of spacing, the margin, that you have below your divider. Allows for more separation of content.', '__shortcodes__' ),
+					'key'  => 'divider-margin-bottom',
+					'type' => 'slider',
+				),
+				'color' => array(
+					'std'  => '#E5E5E5',
+					'name' => __( 'Divider Color', '__shortcodes__' ),
+					'desc' => __( 'Choose a color for your new divider. You can keep it simple or make it stand out, the choice is yours.', '__shortcodes__' ),
+					'key'  => 'divider-color',
+					'type' => 'color',
+				),
+				'class' => array(
+					'std'  => __( 'custom-css-class', '__shortcodes__' ),
+					'name' => __( 'Custom CSS Class', '__shortcodes__' ),
+					'desc' => __( 'Optional. Define a custom class that can be used to apply your own styles to this element.', '__shortcodes__' ),
+					'key'  => 'divider-class',
+					'type' => 'text',
+				),
+			)
+		);
+
+
+		/**
+		 * Dropcap shortcode config.
+		 *
+		 * @since v1.0.0
+		 */
+
+		$dork_shortcodes['dork-dropcap'] = array(
+			'name'   => __( 'Dropcaps', '__shortcodes__' ),
+			'desc'   => __( '', '__shortcodes__' ),
+			'params' => array(
+				'symbol' => array(
+					'std'  => __( 'A', '__shortcodes__' ),
+					'name' => __( 'Dropcap Symbol', '__shortcodes__' ),
+					'desc' => __( 'Define the symbol / letter that you would like to use as your dropcap. Typically the first letter of the first word, but its your dropcap.', '__shortcodes__' ),
+					'key'  => 'dropcap-symbol',
+					'type' => 'text',
+				),
+				'style' => array(
+					'std'     => 'circle',
+					'name'    => __( 'Dropcap Style', '__shortcodes__' ),
+					'desc'    => __( 'Choose one of several pre-defined styles for your new dropcap, to give your page a unique appearance.', '__shortcodes__' ),
+					'key'     => 'dropcap-style',
+					'type'    => 'select',
+					'options' => array(
+						'circle' => __( 'Symbol on Circular Background', '__shortcodes__' ),
+						'square' => __( 'Symbol on Square Background', '__shortcodes__' ),
+						'plain'  => __( 'Symbol with No Background', '__shortcodes__' ),
+					),
+				),
+				'color' => array(
+					'std'  => '#EBEBEB',
+					'name' => __( 'Dropcap Background Color', '__shortcodes__' ),
+					'desc' => __( 'Choose the color for your dropcap background. This only applies if you chose a circular or square dropcap from the style selections.', '__shortcodes__' ),
+					'key'  => 'dropcap-color',
+					'type' => 'color',
+				),
+				'font-color' => array(
+					'std'  => '#333333',
+					'name' => __( 'Dropcap Font Color', '__shortcodes__' ),
+					'desc' => __( 'Choose the font color for your new dropcap. Applies to all dropcap styles.', '__shortcodes__' ),
+					'key'  => 'dropcap-font-color',
+					'type' => 'color',
+				),
+				'size' => array(
+					'std'     => 'default',
+					'name'    => __( 'Dropcap Size', '__shortcodes__' ),
+					'desc'    => __( 'Choose from several pre-defined sizes for your dropcap. This primarily affects the font size, however there are some padding modifications as well.', '__shortcodes__' ),
+					'key'     => 'dropcap-size',
+					'type'    => 'select',
+					'options' => array(
+						'small'   => __( 'Small Dropcap', '__shortcodes__' ),
+						'default' => __( 'Default Dropcap', '__shortcodes__' ),
+						'large'   => __( 'Large Dropcap', '__shortcodes__' ),
+					),
+				),
+				'class' => array(
+					'std'  => __( 'custom-css-class', '__shortcodes__' ),
+					'name' => __( 'Custom CSS Class', '__shortcodes__' ),
+					'desc' => __( 'Optional. Define a custom class that can be used to apply your own styles to this element.', '__shortcodes__' ),
+					'key'  => 'dropcap-class',
+					'type' => 'text',
+				),
+			)
+		);
+
+
+		/**
+		 * Headline shortcode config.
+		 *
+		 * @since v1.0.0
+		 */
+
+		$dork_shortcodes['dork-headline'] = array(
+			'name'   => __( 'Headline', '__shortcodes__' ),
+			'desc'   => __( '', '__shortcodes__' ),
+			'params' => array(
+				'text' => array(
+					'std'  => __( 'Hello! Look at me...', '__shortcodes__' ),
+					'name' => __( 'Headline Text', '__shortcodes__' ),
+					'desc' => __( 'What would you like your headline to say? You can use this field to define that text.', '__shortcodes__' ),
+					'key'  => 'headline-text',
+					'type' => 'text',
+				),
+				'icon' => array(
+					'std'  => 'no-icon',
+					'name' => __( 'Headline Icon', '__shortcodes__' ),
+					'desc' => __( 'Optional. If you would like to display an icon alongside your headline, you may choose one here.', '__shortcodes__' ),
+					'key'  => 'headline-icon',
+					'type' => 'icon-select',
+				),
+				'animated' => array(
+					'std' => 1,
+					'name' => __( 'Animate headline icon on hover?', '__shortcodes__' ),
+					'desc' => __( '', '__shortcodes__' ),
+					'key'  => 'headline-animated',
+					'type' => 'checkbox',
+				),
+				'spacer' => array(
+					'type' => 'spacer',
+				),
+				'color' => array(
+					'std'  => '#2B2B2B',
+					'name' => __( 'Headline Color', '__shortcodes__' ),
+					'desc' => __( 'Choose a color for your headline. This setting will affect the font color of your headline.', '__shortcodes__' ),
+					'key'  => 'headline-color',
+					'type' => 'color',
+				),
+				'style' => array(
+					'std'     => 'center',
+					'name'    => __( 'Headline Style', '__shortcodes__' ),
+					'desc'    => __( 'Choose from several pre-defined styles for your headline. These will modify the alignment of your headline text.', '__shortcodes__' ),
+					'key'     => 'headline-style',
+					'type'    => 'select',
+					'options' => array(
+						'left'   => __( 'Aligned to the Left', '__shortcodes__' ),
+						'center' => __( 'Aligned to the Center', '__shortcodes__' ),
+						'right'  => __( 'Aligned to the Right', '__shortcodes__' ),
+					),
+				),
+				'size' => array(
+					'std'     => 'default',
+					'name'    => __( 'Headline Size', '__shortcodes__' ),
+					'desc'    => __( 'Choose from a variety of pre-defined sizes for your new headline. These will primarily affect the font size of your headline.', '__shortcodes__' ),
+					'key'     => 'headline-size',
+					'type'    => 'select',
+					'options' => array(
+						'mini'    => __( 'Mini Headline', '__shortcodes__' ),
+						'small'   => __( 'Small Headline', '__shortcodes__' ),
+						'default' => __( 'Default Headline', '__shortcodes__' ),
+						'large'   => __( 'Large Headline', '__shortcodes__' ),
+						'huge'    => __( 'Huge Headline', '__shortcodes__' ),
+					),
+				),
+				'margin-top' => array(
+					'std'  => '30',
+					'name' => __( 'Headline Top Margin', '__shortcodes__' ),
+					'desc' => __( 'Choose the amount of spacing, the margin, that you have above your headline. Allows for more separation of content.', '__shortcodes__' ),
+					'key'  => 'headline-margin-top',
+					'type' => 'slider',
+				),
+				'margin-bottom' => array(
+					'std'  => '30',
+					'name' => __( 'Headline Bottom Margin', '__shortcodes__' ),
+					'desc' => __( 'Choose the amount of spacing, the margin, that you have below your headline. Allows for more separation of content.', '__shortcodes__' ),
+					'key'  => 'headline-margin-bottom',
+					'type' => 'slider',
+				),
+				'class' => array(
+					'std'  => __( 'custom-css-class', '__shortcodes__' ),
+					'name' => __( 'Custom CSS Class', '__shortcodes__' ),
+					'desc' => __( 'Optional. Define a custom class that can be used to apply your own styles to this element.', '__shortcodes__' ),
+					'key'  => 'headline-class',
 					'type' => 'text',
 				),
 			)

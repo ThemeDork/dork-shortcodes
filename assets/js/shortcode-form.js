@@ -6,7 +6,8 @@
         iconSelect      = $('.dork-icon-select li'),
         colorSelect     = $('.dork-color-select li'),
         colorPicker     = $('.dork-color-picker'),
-        colorPreview    = $('.color-picker-preview');
+        colorPreview    = $('.color-picker-preview'),
+        rangeSlider     = $('.dork-range-slider');
 
 
     /**
@@ -85,6 +86,42 @@
             buttonSize      = $('#button-size-select').val(),
             buttonClass     = $('#button-class-text').val();
 
+        // Blockquote shortcode variables
+        var blockquoteContent  = $('#blockquote-content-textarea').val(),
+            blockquoteCite     = $('#blockquote-cite-text').val(),
+            blockquoteLink     = $('#blockquote-link-text').val(),
+            blockquoteTarget   = $('#blockquote-target-checkbox').prop('checked'),
+            blockquoteBasic    = $('#blockquote-basic-checkbox').prop('checked'),
+            blockquoteColor    = $('#blockquote-color-text').val(),
+            blockquotePosition = $('#blockquote-position-select').val(),
+            blockquoteClass    = $('#blockquote-class-text').val();
+
+        // Divider shortcode variables
+        var dividerStyle        = $('#divider-style-select').val(),
+            dividerMarginTop    = $('#divider-margin-top-slider-value').html(),
+            dividerMarginBottom = $('#divider-margin-bottom-slider-value').html(),
+            dividerColor        = $('#divider-color-text').val(),
+            dividerClass        = $('#divider-class-text').val();
+
+        // Dropcap shortcode variables
+        var dropcapSymbol    = $('#dropcap-symbol-text').val(),
+            dropcapStyle     = $('#dropcap-style-select').val(),
+            dropcapColor     = $('#dropcap-color-text').val(),
+            dropcapFontColor = $('#dropcap-font-color-text').val(),
+            dropcapSize      = $('#dropcap-size-select').val(),
+            dropcapClass     = $('#dropcap-class-text').val();
+
+        // Headline shortcode variables
+        var headlineText         = $('#headline-text-text').val(),
+            headlineIcon         = $('#headline-icon-icon-select').find('.selected').data('id'),
+            headlineAnimated     = $('#headline-animated-checkbox').prop('checked'),
+            headlineColor        = $('#headline-color-text').val(),
+            headlineStyle        = $('#headline-style-select').val(),
+            headlineSize         = $('#headline-size-select').val(),
+            headlineMarginTop    = $('#headline-margin-top-slider-value').html(),
+            headlineMarginBottom = $('#headline-margin-bottom-slider-value').html(),
+            headlineClass        = $('#headline-class-text').val();
+
         // No need to run anything if a shortcode hasn't been selected
         if (shortcode !== '') {
 
@@ -113,6 +150,15 @@
                 output = '[alert heading="' + alertHeading + '" color="' + alertColor + '" icon="' + alertIcon + '" size="' + alertSize + '" dismiss="' + alertDismiss + '" class="' + alertClass + '"]' + alertContent + '[/alert]';
 
                 /**
+                 * Blockquote shortcode.
+                 *
+                 * @since v1.0.0
+                 */
+            } else if (shortcode === 'dork-blockquote') {
+
+                output = '[blockquote cite="' + blockquoteCite + '" link="' + blockquoteLink + '" new_window="' + blockquoteTarget + '" basic="' + blockquoteBasic + '" accent_color="' + blockquoteColor + '" position="' + blockquotePosition + '" class="' + blockquoteClass + '"]' + blockquoteContent + '[/blockquote]';
+
+                /**
                  * Button shortcode.
                  *
                  * @since v1.0.0
@@ -120,6 +166,33 @@
             } else if (shortcode === 'dork-button') {
 
                 output = '[button link="' + buttonLink + '" icon="' + buttonIcon + '" icon_position="' + buttonPosition + '" color="' + buttonColor + '" font_color="' + buttonFontColor + '" full_width="' + buttonFullwidth + '" new_window="' + buttonTarget + '" rounded="' + buttonRounded + '" animated="' + buttonAnimated + '" size="' + buttonSize + '" class="' + buttonClass + '"]' + buttonText + '[/button]';
+
+                /**
+                 * Divider shortcode.
+                 *
+                 * @since v1.0.0
+                 */
+            } else if (shortcode === 'dork-divider') {
+
+                output = '[divider style="' + dividerStyle + '" top_margin="' + dividerMarginTop + '" bottom_margin="' + dividerMarginBottom + '" color="' + dividerColor + '" class="' + dividerClass + '"]';
+
+                /**
+                 * Dropcap shortcode.
+                 *
+                 * @since v1.0.0
+                 */
+            } else if (shortcode === 'dork-dropcap') {
+
+                output = '[dropcap style="' + dropcapStyle + '" bg_color="' + dropcapColor + '" font_color="' + dropcapFontColor + '" size="' + dropcapSize + '" class="' + dropcapClass + '"]' + dropcapSymbol + '[/dropcap]';
+
+                /**
+                 * Headline shortcode.
+                 *
+                 * @since v1.0.0
+                 */
+            } else if (shortcode === 'dork-headline') {
+
+                output = '[headline icon="' + headlineIcon + '" animated="' + headlineAnimated + '" color="' + headlineColor + '" style="' + headlineStyle + '" size="' + headlineSize + '" top_margin="' + headlineMarginTop + '" bottom_margin="' + headlineMarginBottom + '" class="' + headlineClass + '"]' + headlineText + '[/headline]';
 
             }
 
@@ -202,6 +275,33 @@
         }
     }).keyup(function() {
         $(this).colpickSetColor(this.value);
+    });
+
+
+    /**
+     *
+     */
+    rangeSlider.each(function() {
+        $(this).noUiSlider({
+            start        : $(this).data('start'),
+            orientation  : 'horizontal',
+            connect: 'lower',
+            range        : {
+                'min': 0,
+                'max': 100
+            },
+            serialization: {
+                lower : [
+                    $.Link({
+                        target: $(this).next('.range-slider-value')
+                    })
+                ],
+                format: {
+                    postfix: 'px',
+                    decimals: 0
+                }
+            }
+        });
     });
 
 })(jQuery);

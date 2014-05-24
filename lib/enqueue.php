@@ -38,6 +38,7 @@ if ( ! function_exists( 'dork_shortcodes_admin_enqueue' ) ) {
 			wp_register_style( 'shortcode-form', DORK_SHORTCODES_URI . '/assets/css/shortcode-form.css', null, time(), 'all' );
 
 			// Register our admin scripts
+			wp_register_script( 'nouislider', DORK_SHORTCODES_URI . '/assets/js/jquery.nouislider.min.js', array( 'jquery' ), time(), true );
 			wp_register_script( 'colpick', DORK_SHORTCODES_URI . '/assets/js/colpick.js', array( 'jquery' ), time(), true );
 			wp_register_script( 'shortcode-form', DORK_SHORTCODES_URI . '/assets/js/shortcode-form.js', array( 'jquery' ), time(), true );
 
@@ -48,6 +49,7 @@ if ( ! function_exists( 'dork_shortcodes_admin_enqueue' ) ) {
 
 			// Enqueue our admin scripts
 			wp_enqueue_script( 'jquery' );
+			wp_enqueue_script( 'nouislider' );
 			wp_enqueue_script( 'colpick' );
 			wp_enqueue_script( 'shortcode-form' );
 

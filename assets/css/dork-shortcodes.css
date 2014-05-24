@@ -99,9 +99,9 @@ Accordion shortcode.
 }
 
 .dork-accordion .accordion-title:hover > span i {
-	-webkit-transition: rotate(180deg);
-	-moz-transition: rotate(180deg);
-	-ms-transition: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
 	transform: rotate(180deg);
 }
 
@@ -120,7 +120,7 @@ Accordion shortcode.
 	font-size: 1em;
 	line-height: 1.625em;
 	background-color: #FFFFFF;
-	color: #333333;
+	color: #888888;
 }
 
 .dork-accordion .accordion-title.active + .accordion-inner {
@@ -299,6 +299,83 @@ Alert shortcode.
 
 
 /*
+Blockquote shortcode.
+
+@since v1.0.0
+*/
+blockquote.dork-blockquote {
+	display: block;
+	position: relative;
+	border-left: 3px solid #00B5AD;
+	margin: 0;
+	color: inherit !important;
+	font-size: 16px;
+	line-height: 1.4;
+	font-family: inherit !important;
+	padding: 5px 0 5px 20px;
+	font-style: normal;
+	font-weight: 500;
+	vertical-align: baseline;
+}
+
+blockquote.dork-blockquote a {
+	cursor: pointer;
+	text-decoration: none;
+	font-family: inherit;
+	font-style: italic;
+	font-size: 16px;
+}
+
+blockquote.dork-blockquote span {
+	display: block;
+	text-align: left;
+	padding: 5px 0 0 0;
+	text-decoration: none;
+	font-family: inherit;
+	font-style: italic;
+	font-size: 16px;
+}
+
+blockquote.dork-blockquote.blockquote-cite-left span, blockquote.dork-blockquote.blockquote-cite-left a {
+	text-align: left;
+}
+
+blockquote.dork-blockquote.blockquote-cite-center span, blockquote.dork-blockquote.blockquote-cite-center a {
+	text-align: center;
+}
+
+blockquote.dork-blockquote.blockquote-cite-right span, blockquote.dork-blockquote.blockquote-cite-right a {
+	text-align: right;
+}
+
+blockquote.dork-blockquote.blockquote-basic {
+	background-color: #F2F2F2;
+	color: inherit !important;
+	font-size: inherit !important;
+	line-height: inherit !important;
+	border: none;
+	text-align: left;
+	padding: 15px 20px 15px 70px;
+}
+
+blockquote.dork-blockquote.blockquote-basic span, blockquote.dork-blockquote.blockquote-basic a {
+	color: #ADADAD !important;
+	font-weight: 500;
+	text-decoration: none;
+	font-family: inherit;
+}
+
+blockquote.dork-blockquote .blockquote-icon {
+	display: block;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	font-size: 34px;
+	color: #DADADA;
+}
+
+
+/*
 Button shortcode.
 
 @since v1.0.0
@@ -338,9 +415,9 @@ Button shortcode.
 
 .dork-button.button-animated:hover i {
 	margin-right: 15px;
-	-webkit-transition: rotate(360deg);
-	-moz-transition: rotate(360deg);
-	-ms-transition: rotate(360deg);
+	-webkit-transform: rotate(360deg);
+	-moz-transform: rotate(360deg);
+	-ms-transform: rotate(360deg);
 	transform: rotate(360deg);
 }
 
@@ -351,9 +428,9 @@ Button shortcode.
 
 .dork-button.button-animated.button-icon-right:hover i {
 	margin: 0 0 0 20px;
-	-webkit-transition: rotate(360deg);
-	-moz-transition: rotate(360deg);
-	-ms-transition: rotate(360deg);
+	-webkit-transform: rotate(360deg);
+	-moz-transform: rotate(360deg);
+	-ms-transform: rotate(360deg);
 	transform: rotate(360deg);
 }
 
@@ -420,4 +497,246 @@ Button shortcode.
 
 .dork-button.button-huge.button-fullwidth {
 	padding: 10px 0;
+}
+
+
+/*
+Divider shortcode.
+
+@since v1.0.0
+*/
+hr.dork-divider {
+	width: 100%;
+	display: block;
+	height: 1px;
+	max-height: 1px;
+	outline: none;
+	background: none;
+	padding: 0;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	border: none;
+	clear: both;
+}
+
+hr.dork-divider.divider-single {
+	border-top: 1px solid #E5E5E5;
+}
+
+hr.dork-divider.divider-single-thick {
+	height: 3px;
+	max-height: 3px;
+	border-top: 3px solid #E5E5E5;
+}
+
+hr.dork-divider.divider-dotted {
+	border-top: 1px dotted #E5E5E5;
+}
+
+hr.dork-divider.divider-dashed {
+	border-top: 1px dashed #E5E5E5;
+}
+
+hr.dork-divider.divider-double {
+	height: 2px;
+	max-height: 2px;
+	border-top: 1px solid #E5E5E5;
+	border-bottom: 1px solid #E5E5E5;
+}
+
+hr.dork-divider.divider-double-dotted {
+	height: 2px;
+	max-height: 2px;
+	border-top: 1px dotted #E5E5E5;
+	border-bottom: 1px dotted #E5E5E5;
+}
+
+hr.dork-divider.divider-double-dashed {
+	height: 2px;
+	max-height: 2px;
+	border-top: 1px dashed #E5E5E5;
+	border-bottom: 1px dashed #E5E5E5;
+}
+
+hr.dork-divider.divider-single-fade {
+	background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));
+	background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));
+	background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));
+	background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));
+	background-image:         linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));
+}
+
+
+/*
+	Dropcap shortcode.
+
+	@since v1.0.0
+*/
+.dork-dropcap {
+	display: inline-block;
+	float: left;
+	font-weight: bold;
+	font-family: inherit;
+	color: inherit;
+	margin: 6px 6px 0 0;
+}
+
+.dork-dropcap.dropcap-plain {
+	font-size: 50px;
+	line-height: 30px;
+}
+
+.dork-dropcap.dropcap-plain.dropcap-small {
+	font-size: 40px;
+	line-height: 25px;
+}
+
+.dork-dropcap.dropcap-plain.dropcap-large {
+	font-size: 60px;
+	line-height: 40px;
+}
+
+.dork-dropcap.dropcap-circle {
+	 font-size: 26px;
+	 height: 30px;
+	 width: 30px;
+	 padding: 5px;
+	 background: #EBEBEB;
+	 border-radius: 50%;
+	 text-align: center;
+	 line-height: 30px;
+ }
+
+.dork-dropcap.dropcap-circle.dropcap-small {
+	font-size: 20px;
+	height: 25px;
+	width: 25px;
+	line-height: 25px;
+}
+
+.dork-dropcap.dropcap-circle.dropcap-large {
+	font-size: 34px;
+	height: 39px;
+	width: 39px;
+	line-height: 39px;
+}
+
+.dork-dropcap.dropcap-square {
+	font-size: 26px;
+	height: 30px;
+	width: 30px;
+	padding: 5px;
+	background: #EBEBEB;
+	text-align: center;
+	line-height: 30px;
+}
+
+.dork-dropcap.dropcap-square.dropcap-small {
+	font-size: 20px;
+	height: 25px;
+	width: 25px;
+	line-height: 25px;
+}
+
+.dork-dropcap.dropcap-square.dropcap-large {
+	font-size: 34px;
+	height: 39px;
+	width: 39px;
+	line-height: 39px;
+}
+
+
+/*
+	Headline shortcode.
+
+	@since v1.0.0
+*/
+.dork-headline {
+	display: block;
+	margin: 20px 0;
+	overflow: hidden;
+	font-family: inherit;
+	font-weight: normal;
+	color: inherit;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.dork-headline.headline-animated i {
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+.dork-headline.headline-animated:hover i {
+	-webkit-transform: rotate(360deg);
+	-moz-transform: rotate(360deg);
+	-ms-transform: rotate(360deg);
+	transform: rotate(360deg);
+}
+
+.dork-headline span {
+	display: inline-block;
+	position: relative;
+}
+
+.dork-headline span:before {
+	right: 100%;
+	margin-right: 15px;
+}
+
+.dork-headline span:before, .dork-headline span:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	height: 8px;
+	width: 9999px;
+	display: block;
+	margin-top: -4px;
+	background: url('../images/headline.png') repeat-x;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.dork-headline span:after {
+	left: 100%;
+	margin-left: 15px;
+}
+
+.dork-headline span i {
+	margin: 0 5px;
+}
+
+.dork-headline.headline-left {
+	text-align: left;
+}
+
+.dork-headline.headline-center {
+	text-align: center;
+}
+
+.dork-headline.headline-right {
+	text-align: right;
+}
+
+.dork-headline.headline-default {
+	font-size: 18px;
+}
+
+.dork-headline.headline-huge {
+	font-size: 26px;
+}
+
+.dork-headline.headline-large {
+	font-size: 22px;
+}
+
+.dork-headline.headline-small {
+	font-size: 16px;
+}
+
+.dork-headline.headline-mini {
+	font-size: 14px;
 }
