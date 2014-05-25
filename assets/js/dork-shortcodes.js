@@ -19,12 +19,12 @@
 
                 if ($(this).next().is(':hidden')) {
 
-                    title.removeClass('active').next().slideUp(500);
-                    $(this).toggleClass('active').next().slideDown(500);
+                    title.removeClass('active').next().slideUp('slow');
+                    $(this).toggleClass('active').next().slideDown('slow');
 
                 } else if ($(this).hasClass('active')) {
 
-                    $(this).removeClass('active').next().slideUp(500);
+                    $(this).removeClass('active').next().slideUp(2000);
 
                 }
 

@@ -19,7 +19,7 @@ class Dork_Shortcodes {
 	private $config;
 
 	// Shortcode array
-	protected $shortcode_arr = [];
+	protected $shortcode_arr = array();
 
 	// Config errors
 	protected $config_error;

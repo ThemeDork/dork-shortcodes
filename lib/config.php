@@ -555,6 +555,38 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 			)
 		);
 
+
+		/**
+		 * Highlight shortcode config.
+		 *
+		 * @since v1.0.0
+		 */
+
+		$dork_shortcodes['dork-highlight'] = array(
+			'name'   => __( 'Highlights', '__shortcodes__' ),
+			'desc'   => __( '', '__shortcodes__' ),
+			'params' => array(
+				'content' => array(
+					'std'  => __( 'Finally, the highlight of the party...', '__shortcodes__' ),
+					'name' => __( 'Highlight Content', '__shortcodes__' ),
+					'desc' => __( 'Create the content that you would like to highlight. This content can be pretty much anything you want.', '__shortcodes__' ),
+					'key'  => 'highlight-content',
+					'type' => 'textarea',
+				),
+				'color' => array(
+					'std' => '#00A0DC',
+					'name' => __( 'Highlight Color', '__shortcodes__' ),
+					'desc' => __( 'Choose the background color for your new highlight. Something bright is always a good choice, but its up to you.', '__shortcodes__' ),
+					'key'  => 'highlight-color',
+					'type' => 'color',
+				),
+				'font-color' => array(
+					'std' => '',
+					'name' => __( 'Highlight Font Color', '__shortcodes__' ),
+				),
+			)
+		);
+
 		// Return our shortcode configuration array
 		return $dork_shortcodes;
 
