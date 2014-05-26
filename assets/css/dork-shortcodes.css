@@ -27,8 +27,7 @@
 	font-size: 11px !important;
 	margin-top: -7px;
 	color: #ADADAD;
-	background-image: none;
-	background-position: 0 0;
+	background: none 0 0;
 	width: auto;
 	height: auto;
 	-webkit-transition: all .3s ease-in-out;
@@ -65,10 +64,9 @@
 
 .dork-accordion li > a i {
 	display: inline-block;
-	margin: 0;
 	padding-right: 10px;
 	vertical-align: middle;
-	margin-top: -4px;
+	margin: -4px 0 0;
 	font-size: 24px;
 	line-height: 24px;
 	opacity: 0.7;
@@ -553,7 +551,7 @@ hr.dork-divider.divider-single-fade {
 	 border-radius: 50%;
 	 text-align: center;
 	 line-height: 30px;
- }
+}
 
 .dork-dropcap.dropcap-circle.dropcap-small {
 	font-size: 20px;
@@ -593,12 +591,11 @@ hr.dork-divider.divider-single-fade {
 	line-height: 39px;
 }
 
-
-/*
-	Headline shortcode.
-
-	@since v1.0.0
-*/
+/**
+ * Headline shortcode.
+ *
+ * @since v1.0.0
+ */
 .dork-headline {
 	display: block;
 	margin: 20px 0;
