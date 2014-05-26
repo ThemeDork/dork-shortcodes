@@ -16,10 +16,9 @@
      *
      * @since v1.0.0
      */
-    shortcodeSelect.on('change', function() {
+    shortcodeSelect.on('change', function (e) {
 
         var shortcode        = $(this).val(),
-            shortcodeSubmit  = $('#shortcode-submit'),
             shortcodeContent = $('.shortcode-content-display'),
             shortcodeForm    = $('#dork-' + shortcode + '-form');
 
@@ -39,7 +38,7 @@
         } // End if
 
         // Prevent default
-        return false;
+        e.preventDefault();
 
     });
 
@@ -50,7 +49,7 @@
      *
      * @since v1.0.0
      */
-    shortcodeSubmit.on('click', function() {
+    shortcodeSubmit.on('click', function (e) {
 
         // Get the currently selected shortcode
         var shortcodeSelect = $('#shortcode-select'),
@@ -203,10 +202,9 @@
 
 
         // Prevent default
-        return false;
+        e.preventDefault();
 
     });
-
 
     /**
      * Add select functionality to our custom icon select fields.
@@ -279,7 +277,9 @@
 
 
     /**
+     * Add functionality to the range slider control.
      *
+     * @since v1.0.0
      */
     rangeSlider.each(function() {
         $(this).noUiSlider({

@@ -84,7 +84,6 @@ if ( ! function_exists( 'dork_shortcodes_formatting' ) ) {
 
 } // End if
 
-
 /**
  * Include any additional files we may need to add a little extra functionality to
  * this plugin.

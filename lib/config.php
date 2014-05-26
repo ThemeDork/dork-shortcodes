@@ -64,6 +64,13 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 				'spacer' => array(
 					'type' => 'spacer',
 				),
+				'color' => array(
+					'std' => '#21CDEC',
+					'name' => __( 'Accent Color', '__shortcodes__' ),
+					'desc' => __( 'Choose the accent color for your accordion items. This will affect the arrow and icons while in an active state.', '__shortcodes__' ),
+					'key'  => 'accordion-color',
+					'type' => 'color',
+				),
 				'class' => array(
 					'std'  => __( 'custom-css-class', '__shortcodes__' ),
 					'name' => __( 'Custom CSS Class', '__shortcodes__' ),
@@ -73,7 +80,6 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 				),
 			)
 		);
-
 
 		/**
 		 * Alert shortcode config.
@@ -146,7 +152,6 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 				),
 			)
 		);
-
 
 		/**
 		 * Blockquote shortcode config.
@@ -224,7 +229,6 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 				),
 			)
 		);
-
 
 		/**
 		 * Button shortcode config.
@@ -338,7 +342,6 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 			)
 		);
 
-
 		/**
 		 * Divider shortcode config.
 		 *
@@ -396,7 +399,6 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 				),
 			)
 		);
-
 
 		/**
 		 * Dropcap shortcode config.
@@ -462,7 +464,6 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 				),
 			)
 		);
-
 
 		/**
 		 * Headline shortcode config.
@@ -555,7 +556,6 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 			)
 		);
 
-
 		/**
 		 * Highlight shortcode config.
 		 *
@@ -586,6 +586,7 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 				),
 			)
 		);
+
 
 		// Return our shortcode configuration array
 		return $dork_shortcodes;

@@ -1,162 +1,114 @@
-/*
-Accordion shortcode.
+/**
+ * Accordion shortcode.
+ *
+ * @since v1.0.0
+ */
 
-@since v1.0.0
-*/
 .dork-accordion {
+	position: relative;
 	max-width: 100%;
 	height: auto;
 	display: block;
 }
 
-.dork-accordion .accordion-item {
-	margin-bottom: .75em;
-}
-
-.dork-accordion .accordion-item:last-child {
-	margin-bottom: 0;
-}
-
-.dork-accordion .accordion-title {
-	cursor: pointer;
-	display: block;
-	margin: 0;
+.dork-accordion li {
+	list-style: none;
+	margin-bottom: 5px;
 	padding: 0;
-	line-height: 3em;
+}
+
+.dork-accordion li > a:before {
+	font-family: FontAwesome;
+	content: '\f054';
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	display: block;
+	font-size: 11px !important;
+	margin-top: -7px;
+	color: #ADADAD;
+	background-image: none;
+	background-position: 0 0;
+	width: auto;
+	height: auto;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+
+.dork-accordion li > .active:before {
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	transform: rotate(90deg);
+	margin-top: -8px;
+}
+
+.dork-accordion li > a {
+	position: relative;
+	display: block;
+	cursor: pointer;
 	background-color: #FFFFFF;
-	border: 1px solid #DDDDDD;
-	width: 100%;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-ms-box-sizing: border-box;
-	box-sizing: border-box;
-	-webkit-transition: all .3s ease;
-	-moz-transition: all .3s ease;
-	transition: all .3s ease;
+	border: 1px solid #ECECEC;
+	color: #555555;
+	border-radius: 3px;
+	padding: 10px;
+	font-size: 14px;
+	font-weight: 500;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
 }
 
-.dork-accordion .accordion-title a {
-	margin-left: 1em;
-	text-decoration: none;
-	font-family: inherit;
-	opacity: 0.75;
-	font-size: 1em;
-	font-weight: 400;
-	text-shadow: 0 1px 1px #FFFFFF;
-	color: #333333;
-	-webkit-transition: all .3s ease;
-	-moz-transition: all .3s ease;
-	transition: all .3s ease;
-}
-
-.dork-accordion .accordion-title a i {
-	margin-right: .75em;
-}
-
-.dork-accordion .accordion-title:hover a {
-	opacity: 1;
-}
-
-.dork-accordion .accordion-title.active a {
-	opacity: 1;
-}
-
-.dork-accordion .accordion-title.active {
-	background-color: #F5F5F5;
-}
-
-.dork-accordion .accordion-title:hover {
-	background-color: #F5F5F5;
-}
-
-.dork-accordion .accordion-title:hover, .dork-accordion .accordion-title:hover > i {
-	opacity: 1;
-}
-
-.dork-accordion .accordion-title > i {
-	font-size: 1em;
-	padding-right: .75em;
+.dork-accordion li > a i {
+	display: inline-block;
+	margin: 0;
+	padding-right: 10px;
 	vertical-align: middle;
-	opacity: 0.75;
-	line-height: 3em;
+	margin-top: -4px;
+	font-size: 24px;
+	line-height: 24px;
+	opacity: 0.7;
+	-webkit-transition: opacity .3s ease-in-out;
+	-moz-transition: opacity .3s ease-in-out;
+	-o-transition: opacity .3s ease-in-out;
+	transition: opacity .3s ease-in-out;
 }
 
-.dork-accordion .accordion-title > span {
-	border-left: 1px solid #DDDDDD;
-	background-color: #EDEDED;
-	padding: 0 1em;
-	float: right;
+.dork-accordion li > a:focus {
+	color: #555555;
+	outline: none;
 }
 
-.dork-accordion .accordion-title > span i {
-
-	vertical-align: middle;
-	line-height: 2.5em;
-	opacity: 0.65;
-	-webkit-transition: all .3s ease;
-	-moz-transition: all .3s ease;
-	transition: all .3s ease;
+.dork-accordion li > a:hover i {
+	opacity: 1;
 }
 
-.dork-accordion .accordion-title:hover > span i {
-	-webkit-transform: rotate(180deg);
-	-moz-transform: rotate(180deg);
-	-ms-transform: rotate(180deg);
-	transform: rotate(180deg);
-}
-
-.dork-accordion .accordion-title:hover > span i:before {
-	content: "\f068";
-}
-
-.dork-accordion .accordion-title.active > span i:before {
-	content: "\f068";
+.dork-accordion li > a:hover, .dork-accordion li > .active {
+	background-color: #F0F0F0;
+	border-color: #ECECEC;
 }
 
 .dork-accordion .accordion-inner {
-	height: 100%;
 	display: none;
-	padding: 1em;
-	font-size: 1em;
-	line-height: 1.625em;
-	background-color: #FFFFFF;
-	color: #888888;
+	overflow: hidden;
+	padding: 20px 15px 5px 15px;
+	margin: 0;
+	font-size: 14px;
+	font-family: inherit;
+	color: inherit;
+	line-height: 22px;
 }
 
-.dork-accordion .accordion-title.active + .accordion-inner {
-	display: block;
-}
+/**
+ * Alert shortcode.
+ *
+ * @since v1.0.0
+ */
 
-.dork-accordion.basic-accordion .accordion-title {
-	border-bottom: 1px solid #DDDDDD;
-	border-left: 0;
-	border-right: 0;
-	border-top: 0;
-	padding: 0;
-}
-
-.dork-accordion.basic-accordion .accordion-title > span {
-	background: transparent;
-	border: none;
-}
-
-.dork-accordion.basic-accordion .accordion-title:hover {
-	background-color: #FFFFFF;
-}
-
-.dork-accordion.basic-accordion .accordion-title.active {
-	background-color: #FFFFFF;
-}
-
-.dork-accordion.basic-accordion .accordion-inner {
-	border: none;
-}
-
-/*
-Alert shortcode.
-
-@since v1.0.0
-*/
 .dork-alert {
 	display: block;
 	position: relative;
@@ -172,7 +124,6 @@ Alert shortcode.
 	border-radius: .25em;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -184,9 +135,10 @@ Alert shortcode.
 	padding: .75em .75em 0 0;
 	font-size: 1.2em;
 	opacity: 0.75;
-	-webkit-transition: all .3s ease;
-	-moz-transition: all .3s ease;
-	transition: all .3s ease;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
 }
 
 .dork-alert i.alert-dismiss:hover {
@@ -297,12 +249,11 @@ Alert shortcode.
 	font-size: 1.475em;
 }
 
-
-/*
-Blockquote shortcode.
-
-@since v1.0.0
-*/
+/**
+ * Blockquote shortcode.
+ *
+ * @since v1.0.0
+ */
 blockquote.dork-blockquote {
 	display: block;
 	position: relative;
@@ -374,12 +325,11 @@ blockquote.dork-blockquote .blockquote-icon {
 	color: #DADADA;
 }
 
-
-/*
-Button shortcode.
-
-@since v1.0.0
-*/
+/**
+ * Button shortcode.
+ *
+ * @since v1.0.0
+ */
 .dork-button {
 	display: inline-block;
 	cursor: pointer;
@@ -499,12 +449,11 @@ Button shortcode.
 	padding: 10px 0;
 }
 
-
-/*
-Divider shortcode.
-
-@since v1.0.0
-*/
+/**
+ * Divider shortcode.
+ *
+ * @since v1.0.0
+ */
 hr.dork-divider {
 	width: 100%;
 	display: block;
@@ -566,12 +515,11 @@ hr.dork-divider.divider-single-fade {
 	background-image:         linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));
 }
 
-
-/*
-	Dropcap shortcode.
-
-	@since v1.0.0
-*/
+/**
+ * Dropcap shortcode.
+ *
+ * @since v1.0.0
+ */
 .dork-dropcap {
 	display: inline-block;
 	float: left;

@@ -32,9 +32,9 @@ if ( ! function_exists( 'dork_shortcodes_accordion' ) ) {
 
 		// Begin building the shortcode output
 		$output = '';
-		$output .= '<div class="dork-accordion' . esc_attr( $basic ) . esc_attr( $class ) . '">';
+		$output .= '<ul class="dork-accordion' . esc_attr( $basic ) . esc_attr( $class ) . '">';
 		$output .= do_shortcode( $content );
-		$output .= '</div>';
+		$output .= '</ul>';
 
 		// Return the shortcode output
 		return $output;
@@ -76,10 +76,10 @@ if ( ! function_exists( 'dork_shortcodes_accordion_section' ) ) {
 
 		// Begin building the shortcode output
 		$output = '';
-		$output .= '<div class="accordion-item">';
-		$output .= '<div class="accordion-title' . esc_attr( $open ) . '"><a href="#"><i class="' . esc_attr( $icon ) . '"></i>' . esc_attr( $title ) . '</a><span><i class="dork-icon-plus"></i></span></div>';
+		$output .= '<li>';
+		$output .= '<a class="accordion-title' . esc_attr( $open ) . '"><i class="' . esc_attr( $icon ) . '"></i>' . esc_attr( $title ) . '</a>';
 		$output .= '<div class="accordion-inner">' . do_shortcode( $content ) . '</div>';
-		$output .= '</div><!-- End .accordion-section -->';
+		$output .= '</li>';
 
 		// Return the shortcode output
 		return $output;
