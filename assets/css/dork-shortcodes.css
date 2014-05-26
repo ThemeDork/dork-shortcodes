@@ -22,7 +22,7 @@
 	content: '\f054';
 	position: absolute;
 	top: 50%;
-	right: 10px;
+	right: 15px;
 	display: block;
 	font-size: 11px !important;
 	margin-top: -7px;
@@ -53,7 +53,7 @@
 	border: 1px solid #ECECEC;
 	color: #555555;
 	border-radius: 3px;
-	padding: 10px;
+	padding: 8px 0 8px 15px;
 	font-size: 14px;
 	font-weight: 500;
 	-webkit-transition: all .3s ease-in-out;

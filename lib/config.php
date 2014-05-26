@@ -581,8 +581,28 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 					'type' => 'color',
 				),
 				'font-color' => array(
-					'std' => '',
+					'std' => '#FFFFFF',
 					'name' => __( 'Highlight Font Color', '__shortcodes__' ),
+					'desc' => __( 'Choose a font color for your highlight. A light font would be best suited for a darker highlight and so forth.', '__shortcodes__' ),
+					'key'  => 'highlight-font-color',
+					'type' => 'color',
+				),
+				'rounded' => array(
+					'std' => 1,
+					'name' => __( 'Rounded corners on this highlight?', '__shortcodes__' ),
+					'desc' => __( '', '__shortcodes__' ),
+					'key'  => 'highlight-rounded',
+					'type' => 'checkbox',
+				),
+				'spacer' => array(
+					'type' => 'spacer',
+				),
+				'class' => array(
+					'std'  => __( 'custom-css-class', '__shortcodes__' ),
+					'name' => __( 'Custom CSS Class', '__shortcodes__' ),
+					'desc' => __( 'Optional. Define a custom class that can be used to apply your own styles to this element.', '__shortcodes__' ),
+					'key'  => 'highlight-class',
+					'type' => 'text',
 				),
 			)
 		);
