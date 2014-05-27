@@ -683,3 +683,35 @@ hr.dork-divider.divider-single-fade {
 .dork-headline.headline-mini {
 	font-size: 14px;
 }
+
+/**
+ * Highlight shortcode.
+ *
+ * @since v1.0.0
+ */
+.dork-highlight {
+	padding: 2px 5px;
+	margin: 0;
+	font-family: inherit;
+	font-size: inherit;
+	text-decoration: none;
+	font-weight: inherit;
+}
+
+.dork-highlight.highlight-rounded {
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-transition: -webkit-border-radius .3s ease;
+	-moz-transition: -moz-border-radius .3s ease;
+	-o-transition: -o-border-radius .3s ease;
+	transition: border-radius .3s ease;
+}
+
+.dork-highlight.highlight-rounded:hover {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	-o-border-radius: 0;
+	border-radius: 0;
+}

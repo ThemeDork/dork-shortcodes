@@ -121,6 +121,13 @@
             headlineMarginBottom = $('#headline-margin-bottom-slider-value').html(),
             headlineClass        = $('#headline-class-text').val();
 
+        // Highlight shortcode variables
+        var highlightContent   = $('#highlight-content-textarea').val(),
+            highlightColor     = $('#highlight-color-text').val(),
+            highlightFontColor = $('#highlight-font-color-text').val(),
+            highlightRounded   = $('#highlight-rounded-checkbox').prop('checked'),
+            highlightClass     = $('#highlight-class-text').val();
+
         // No need to run anything if a shortcode hasn't been selected
         if (shortcode !== '') {
 
@@ -193,13 +200,21 @@
 
                 output = '[headline icon="' + headlineIcon + '" animated="' + headlineAnimated + '" color="' + headlineColor + '" style="' + headlineStyle + '" size="' + headlineSize + '" top_margin="' + headlineMarginTop + '" bottom_margin="' + headlineMarginBottom + '" class="' + headlineClass + '"]' + headlineText + '[/headline]';
 
+                /**
+                 * Highlight shortcode.
+                 *
+                 * @since v1.0.0
+                 */
+            } else if (shortcode === 'dork-highlight') {
+
+                output = '[highlight bg_color="' + highlightColor + '" font_color="' + highlightFontColor + '" rounded="' + highlightRounded + '" class="' + highlightClass + '"]' + highlightContent + '[/highlight]';
+
             }
 
             // Insert our shortcode into the tinyMCE editor
-            tinyMCE.activeEditor.execCommand('mceInsertContent', false, output);
+            window.send_to_editor(output);
 
         }
-
 
         // Prevent default
         e.preventDefault();
