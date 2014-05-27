@@ -34,7 +34,7 @@ if ( ! function_exists( 'dork_shortcodes_admin_enqueue' ) ) {
 
 			// Register our admin styles
 			wp_register_style( 'colpick', DORK_SHORTCODES_URI . '/assets/css/colpick.css', null, time(), 'all' );
-			wp_register_style( 'icon-font', DORK_SHORTCODES_URI . '/assets/css/icon-font.css', null, time(), 'all' );
+			wp_register_style( 'icon-font', DORK_SHORTCODES_URI . '/assets/css/icon-font.min.css', null, time(), 'all' );
 			wp_register_style( 'shortcode-form', DORK_SHORTCODES_URI . '/assets/css/shortcode-form.css', null, time(), 'all' );
 
 			// Register our admin scripts
@@ -75,7 +75,7 @@ if ( ! function_exists( 'dork_shortcodes_front_enqueue' ) ) {
 	function dork_shortcodes_front_enqueue() {
 
 		// Register our front-end styles
-		wp_register_style( 'icon-font', DORK_SHORTCODES_URI . '/assets/css/icon-font.css', null, time(), 'all' );
+		wp_register_style( 'icon-font', DORK_SHORTCODES_URI . '/assets/css/icon-font.min.css', null, time(), 'all' );
 		wp_register_style( 'dork-shortcodes', DORK_SHORTCODES_URI . '/assets/css/dork-shortcodes.css', null, time(), 'all' );
 
 		// Register our front-end scripts
