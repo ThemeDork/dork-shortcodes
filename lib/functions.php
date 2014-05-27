@@ -51,7 +51,9 @@ if ( ! function_exists( 'dork_register_shortcodes' ) ) {
 
 
 /**
- *
+ * Format our shortcodes to avoid conflict with the paragraph and break tags added by
+ * the WordPress editor. This will strip those tags from only our shortcodes as they
+ * are not needed.
  *
  * @since v1.0.0
  */
