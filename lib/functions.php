@@ -14,6 +14,34 @@
 
 
 /**
+ *
+ *
+ * @since v1.0.0
+ */
+
+if ( ! function_exists( 'dork_register_shortcodes_scripts' ) ) {
+
+	function dork_register_shortcodes_scripts() {
+		wp_enqueue_style( 'dork-accordion2', DORK_SHORTCODES_URI . '/assets/css/accordion.min.css', null, time(), 'all' );
+		// No need to worry about these in the admin
+		if ( ! is_admin() ) {
+
+			// Register our shortcode scripts
+
+			// Register our shortcode styles
+
+
+		} // End if
+
+	} // End dork_register_shortcodes_scripts()
+
+	// Run the function on init
+	add_action( 'wp_enqueue_scripts', 'dork_register_shortcodes_scripts' );
+
+} // End if
+
+
+/**
  * Cycle through each of the available shortcodes and begin registering them with
  * WordPress one by one. This should also make extending the plugin much easier
  * down the road.

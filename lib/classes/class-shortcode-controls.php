@@ -128,7 +128,7 @@ class Dork_Shortcodes_Controls {
 				$output .= '<div class="dork-control-field">';
 				$output .= '<label for="' . esc_attr( $key ) . '-color">' . esc_html( $pname ) . '</label>';
 				$output .= '<input type="text" id="' . esc_attr( $key ) . '-text" class="dork-color-picker" name="' . esc_attr( $pname ) . '" value="' . esc_attr( $std ) . '" autocomplete="off" />';
-				$output .= '<div class="color-picker-preview"><i class="dork-icon-circle"></i></div>';
+				$output .= '<div class="color-picker-preview"><i class="icon circle"></i></div>';
 				$output .= '<div class="control-field-desc">' . esc_html( $desc ) . '</div>';
 				$output .= '<div class="clear"></div>';
 				$output .= '</div>';

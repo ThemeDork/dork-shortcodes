@@ -54,6 +54,13 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 					'key'  => 'accordion-color',
 					'type' => 'color',
 				),
+				'font-color' => array(
+					'std'  => '#555555',
+					'name' => __( 'Font Color for Active Items', '__shortcodes__' ),
+					'desc' => __( 'If you changed the background color above, you may need to modify the font color for better visibility.', '__shortcodes__' ),
+					'key'  => 'accordion-font-color',
+					'type' => 'color',
+				),
 				'basic' => array(
 					'std'  => 0,
 					'name' => __( 'Basic accordion with no background or borders?', '__shortcodes__' ),

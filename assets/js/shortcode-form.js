@@ -56,7 +56,13 @@
             shortcode       = shortcodeSelect.val(),
             output;
 
-
+        // Accordion shortcode parameters
+        var accordionItems     = $('#accordion-items-select').val(),
+            accordionColor     = $('#accordion-color-text').val(),
+            accordionFontColor = $('#accordion-font-color-text').val(),
+            accordionBasic     = $('#accordion-basic-checkbox').prop('checked'),
+            accordionRounded   = $('#accordion-rounded-checkbox').prop('checked'),
+            accordionClass     = $('#accordion-class-text').val();
 
         // No need to run anything if a shortcode hasn't been selected
         if (shortcode !== '') {
@@ -68,6 +74,14 @@
              */
             if (shortcode === 'dork-accordion') {
 
+                // Form output
+                output = '[accordion basic="' + accordionBasic + '" active_color="' + accordionColor + '" font_color="' + accordionFontColor + '" rounded="' + accordionRounded + '" class="' + accordionClass + '"]' + '<br/>';
+
+                for (var i = 1; i <= accordionItems; i++) {
+                    output += '[accordion_item title="Accordion Title #' + i + '" open="false"]Accordion Content #' + i + '[/accordion_item]' + '<br/>';
+                } // End for
+
+                output += '[/accordion]';
 
             }
 

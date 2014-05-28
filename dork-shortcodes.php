@@ -38,7 +38,6 @@ define( 'DORK_SHORTCODES_URI', plugins_url( '', __FILE__ ) );
 define( 'DORK_SHORTCODES_SUPPORT', 'http://help.themedork.com' );
 define( 'DORK_SHORTCODES_VERSION', '1.0.0' );
 
-
 /**
  * Prepare the plugin for translation / localization. This will allow users to the
  * ability to translate strings into their respective languages.
