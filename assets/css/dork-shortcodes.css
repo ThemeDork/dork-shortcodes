@@ -14,10 +14,7 @@
 }
 
 .dork-accordion.accordion-rounded {
-	-webkit-border-radius: 0.3125em !important;
-	-moz-border-radius: 0.3125em !important;
-	-o-border-radius: 0.3125em !important;
-	border-radius:    0.3125em !important;
+	border-radius:    0.325em;
 }
 
 .dork-accordion .accordion-title {
@@ -92,4 +89,77 @@
 
 .dork-accordion.accordion-basic .accordion-content {
 	padding: 0.5em 0;
+}
+
+/**
+ * Alert shortcode.
+ *
+ * @since v1.0.0
+ */
+.dork-alert {
+	position: relative;
+	min-height: 18px;
+	margin: 1em 0;
+	height: auto;
+	background-color: #E5E5E5;
+	padding: 1em;
+	line-height: 1.4;
+	color: #555555;
+	-webkit-transition: opacity 0.3s ease, color 0.3s ease, background-color 0.3s ease, -webkit-box-shadow 0.3s ease;
+	-moz-transition: opacity 0.3s ease, color 0.3s ease, background-color 0.3s ease, -moz-box-shadow 0.3s ease;
+	transition: opacity 0.3s ease, color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	border-radius: 0.325em;
+}
+
+.dork-alert .alert-heading {
+	margin: 0;
+	font-size: 1.33em;
+	font-weight: bold;
+}
+
+.dork-alert > .alert-close.dork-icon {
+	cursor: pointer;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 2.5em;
+	height: 2.5em;
+	opacity: 0.7;
+	padding: 0.75em 0 0 0.75em;
+	-webkit-transition: opacity 0.3s linear;
+	-moz-transition: opacity 0.3s linear;
+	transition: opacity 0.3s linear;
+	z-index: 10;
+}
+
+.dork-alert .alert-close.dork-icon:hover {
+	opacity: 1;
+}
+
+.dork-alert > .dork-icon {
+	display: table;
+	width: 100%;
+}
+
+.dork-alert > .dork-icon:not(.alert-close) {
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 3.8em;
+	opacity: 0.5;
+}
+
+.dork-alert.visible {
+	display: block !important;
+}
+
+.dork-alert.animating, .dork-alert.visible {
+	display: table !important;
+}
+
+.dork-alert.hidden {
+	display: none !important;
 }

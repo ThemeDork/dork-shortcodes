@@ -124,7 +124,7 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 					'std'  => 1,
 					'name' => __( 'Add a shadow to the alert?', '__shortcodes__' ),
 					'desc' => __( '', '__shortcodes__' ),
-					'key'  => 'alert-dismiss',
+					'key'  => 'alert-shadow',
 					'type' => 'checkbox',
 				),
 				'spacer' => array(

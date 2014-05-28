@@ -62,6 +62,20 @@
             accordionRounded   = $('#accordion-rounded-checkbox').prop('checked'),
             accordionClass     = $('#accordion-class-text').val();
 
+        // Alert shortcode parameters
+        var alertHeading   = $('#alert-heading-text').val(),
+            alertContent   = $('#alert-content-textarea').val(),
+            alertIcon      = $('#alert-icon-icon-select').find('.selected').data('id'),
+            alertDismiss   = $('#alert-dismiss-checkbox').prop('checked'),
+            alertCompact   = $('#alert-compact-checkbox').prop('checked'),
+            alertShadow    = $('#alert-shadow-checkbox').prop('checked'),
+            alertPreColor  = $('#alert-pre-color-select').val(),
+            alertColor     = $('#alert-color-text').val(),
+            alertFontColor = $('#alert-font-color-text').val(),
+            alertSize      = $('#alert-size-select').val(),
+            alertClass     = $('#alert-class-text').val();
+
+
         // No need to run anything if a shortcode hasn't been selected
         if (shortcode !== '') {
 
@@ -80,6 +94,16 @@
                 } // End for
 
                 output += '[/accordion]';
+
+                /**
+                 * Alert shortcode.
+                 *
+                 * @since v1.0.0
+                 */
+            } else if (shortcode === 'dork-alert') {
+
+                // Form output
+                output = '[alert heading="' + alertHeading + '" icon="' + alertIcon + '" dismiss="' + alertDismiss + '" compact="' + alertCompact + '" shadow="' + alertShadow + '" color_scheme="' + alertPreColor + '" bg_color="' + alertColor + '" font_color="' + alertFontColor + '" size="' + alertSize + '" class="' + alertClass + '"]' + alertContent + '[/alert]';
 
             }
 
