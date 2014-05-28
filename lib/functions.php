@@ -14,66 +14,26 @@
 
 
 /**
- *
- *
- * @since v1.0.0
- */
-
-if ( ! function_exists( 'dork_register_shortcodes_scripts' ) ) {
-
-	function dork_register_shortcodes_scripts() {
-		wp_enqueue_style( 'dork-accordion2', DORK_SHORTCODES_URI . '/assets/css/accordion.min.css', null, time(), 'all' );
-		// No need to worry about these in the admin
-		if ( ! is_admin() ) {
-
-			// Register our shortcode scripts
-
-			// Register our shortcode styles
-
-
-		} // End if
-
-	} // End dork_register_shortcodes_scripts()
-
-	// Run the function on init
-	add_action( 'wp_enqueue_scripts', 'dork_register_shortcodes_scripts' );
-
-} // End if
-
-
-/**
- * Cycle through each of the available shortcodes and begin registering them with
- * WordPress one by one. This should also make extending the plugin much easier
- * down the road.
+ * Include any additional files we may need to add a little extra functionality to
+ * this plugin.
  *
  * @since v1.0.0
  */
 
-if ( ! function_exists( 'dork_register_shortcodes' ) ) {
+if ( ! function_exists( 'dork_shortcodes_file_includes' ) ) {
 
-	function dork_register_shortcodes() {
+	function dork_shortcodes_file_includes() {
 
-		// Only register our shortcodes outside of the admin
-		if ( ! is_admin() ) {
+		// Register and enqueue our scripts and styles
+		include_once( DORK_SHORTCODES_DIR . '/lib/enqueue.php' );
 
-			// Rather than creating some long list of includes, lets just load them
-			// all at once.
-			foreach ( glob( DORK_SHORTCODES_DIR . '/lib/shortcodes/*.php' ) as $filename ) {
+		// Build an array of font icons for icon select field
+		include_once( DORK_SHORTCODES_DIR . '/lib/font-icons.php' );
 
-				if ( $filename ) {
-
-					include_once( $filename );
-
-				} // End if
-
-			} // End foreach
-
-		} // End if
-
-	} // End dork_register_shortcodes()
+	} // End dork_shortcodes_file_includes()
 
 	// Run the function on init
-	add_action( 'init', 'dork_register_shortcodes' );
+	add_action( 'init', 'dork_shortcodes_file_includes' );
 
 } // End if
 
@@ -114,26 +74,39 @@ if ( ! function_exists( 'dork_shortcodes_formatting' ) ) {
 
 } // End if
 
+
 /**
- * Include any additional files we may need to add a little extra functionality to
- * this plugin.
+ * Cycle through each of the available shortcodes and begin registering them with
+ * WordPress one by one. This should also make extending the plugin much easier
+ * down the road.
  *
  * @since v1.0.0
  */
 
-if ( ! function_exists( 'dork_shortcodes_file_includes' ) ) {
+if ( ! function_exists( 'dork_register_shortcodes' ) ) {
 
-	function dork_shortcodes_file_includes() {
+	function dork_register_shortcodes() {
 
-		// Register and enqueue our scripts and styles
-		include_once( DORK_SHORTCODES_DIR . '/lib/enqueue.php' );
+		// Only register our shortcodes outside of the admin
+		if ( ! is_admin() ) {
 
-		// Build an array of font icons for icon select field
-		include_once( DORK_SHORTCODES_DIR . '/lib/font-icons.php' );
+			// Rather than creating some long list of includes, lets just load them
+			// all at once.
+			foreach ( glob( DORK_SHORTCODES_DIR . '/lib/shortcodes/*.php' ) as $filename ) {
 
-	} // End dork_shortcodes_file_includes()
+				if ( $filename ) {
+
+					include_once( $filename );
+
+				} // End if
+
+			} // End foreach
+
+		} // End if
+
+	} // End dork_register_shortcodes()
 
 	// Run the function on init
-	add_action( 'init', 'dork_shortcodes_file_includes' );
+	add_action( 'init', 'dork_register_shortcodes' );
 
 } // End if

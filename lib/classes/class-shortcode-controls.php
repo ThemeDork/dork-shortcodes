@@ -204,7 +204,7 @@ class Dork_Shortcodes_Controls {
 						if ( 'no-icon' == $icon_id ) { $icon_red = ' icon-red'; $selected = ' selected'; }
 
 						// Generate the individual options for each icon
-						$output .= '<li class="icon-select-option ' . esc_attr( $icon_red ) . esc_attr( $selected ) . '" data-id="' . esc_attr( $icon_id ) . '"><i class="' . esc_attr( $icon_id ) . '"></i>' . esc_html( $icon ) . '</li>';
+						$output .= '<li class="icon-select-option ' . esc_attr( $icon_red ) . esc_attr( $selected ) . '" data-id="' . esc_attr( $icon_id ) . '"><i class="dork-icon ' . esc_attr( $icon_id ) . '"></i>' . esc_html( $icon ) . '</li>';
 
 					} // End foreach
 

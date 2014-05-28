@@ -47,20 +47,6 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 						'10' => __( 'Ten Items', '__shortcodes__' ),
 					),
 				),
-				'color' => array(
-					'std'  => '#E5E5E5',
-					'name' => __( 'Background Color for Active Items', '__shortcodes__' ),
-					'desc' => __( 'Choose a background color for the title section of active / open accordion items. This does not affect the accordion content background.', '__shortcodes__' ),
-					'key'  => 'accordion-color',
-					'type' => 'color',
-				),
-				'font-color' => array(
-					'std'  => '#555555',
-					'name' => __( 'Font Color for Active Items', '__shortcodes__' ),
-					'desc' => __( 'If you changed the background color above, you may need to modify the font color for better visibility.', '__shortcodes__' ),
-					'key'  => 'accordion-font-color',
-					'type' => 'color',
-				),
 				'basic' => array(
 					'std'  => 0,
 					'name' => __( 'Basic accordion with no background or borders?', '__shortcodes__' ),
@@ -83,6 +69,113 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 					'name' => __( 'Add a Custom CSS Class', '__shortcodes__ ' ),
 					'desc' => __( 'If you would like to add and/or override the styles for this element, you may add a custom class to make doing so easier.', '__shortcodes__' ),
 					'key'  => 'accordion-class',
+					'type' => 'text',
+				),
+			)
+		);
+
+
+		/**
+		 * Alert shortcode config.
+		 *
+		 * @since v1.0.0
+		 */
+
+		$dork_shortcodes['dork-alert'] = array(
+			'name'   => __( 'Alert Message', '__shortcodes__' ),
+			'desc'   => __( '', '__shortcodes__' ),
+			'params' => array(
+				'heading' => array(
+					'std'  => __( 'Hey! Look at me...', '__shortcodes__' ),
+					'name' => __( 'Alert Heading', '__shortcodes__' ),
+					'desc' => __( 'Optional. If you would like to add a bold heading to your alert message, you may define the content for that here.', '__shortcodes__' ),
+					'key'  => 'alert-heading',
+					'type' => 'text',
+				),
+				'content' => array(
+					'std'  => __( 'Please, please don\'t alert me...', '__shortcodes__' ),
+					'name' => __( 'Alert Content', '__shortcodes__' ),
+					'desc' => __( 'Set the content or message that you would like to display on this alert. Make it important, or have fun with it, the choice is yours.', '__shortcodes__' ),
+					'key'  => 'alert-content',
+					'type' => 'textarea',
+				),
+				'icon' => array(
+					'std'  => 'no-icon',
+					'name' => __( 'Alert Icon', '__shortcodes__' ),
+					'desc' => __( 'Optional. If you would like to add a large icon to the left of your alert heading and content, please choose one here.', '__shortcodes__' ),
+					'key'  => 'alert-icon',
+					'type' => 'icon-select',
+				),
+				'dismiss' => array(
+					'std'  => 1,
+					'name' => __( 'Allow user to dismiss alert?', '__shortcodes__' ),
+					'desc' => __( '', '__shortcodes__' ),
+					'key'  => 'alert-dismiss',
+					'type' => 'checkbox',
+				),
+				'compact' => array(
+					'std'  => 0,
+					'name' => __( 'Keep this alert compact?', '__shortcodes__' ),
+					'desc' => __( '', '__shortcodes__' ),
+					'key'  => 'alert-compact',
+					'type' => 'checkbox',
+				),
+				'shadow' => array(
+					'std'  => 1,
+					'name' => __( 'Add a shadow to the alert?', '__shortcodes__' ),
+					'desc' => __( '', '__shortcodes__' ),
+					'key'  => 'alert-dismiss',
+					'type' => 'checkbox',
+				),
+				'spacer' => array(
+					'type' => 'spacer',
+				),
+				'pre-color' => array(
+					'std' => '',
+					'name' => __( 'Alert Color Schemes', '__shortcodes__' ),
+					'desc' => __( 'If you would rather not choose custom custom colors, you can select from a pre-defined color scheme here.', '__shortcodes__' ),
+					'key'  => 'alert-pre-color',
+					'type' => 'select',
+					'options' => array(
+						'info' => __( 'Info Alert / Blue', '__shortcodes__' ),
+						'success' => __( 'Success Alert / Green', '__shortcodes__' ),
+						'warning' => __( 'Warning Alert / Yellow', '__shortcodes__' ),
+						'error' => __( 'Error Alert / Red', '__shortcodes__' ),
+					),
+				),
+				'color' => array(
+					'std'  => '#E5E5E5',
+					'name' => __( 'Alert Background Color', '__shortcodes__' ),
+					'desc' => __( 'Choose a custom background color for your alert message. This will only work if you have not chosen a pre-defined color scheme above.', '__shortcodes__' ),
+					'key'  => 'alert-color',
+					'type' => 'color',
+				),
+				'font-color' => array(
+					'std' => '#555555',
+					'name' => __( 'Alert Font Color', '__shortcodes__' ),
+					'desc' => __( 'Choose a custom font color for your alert message. This will only work if you have not chosen a pre-defined color scheme above.', '__shortcodes__' ),
+					'key'  => 'alert-font-color',
+					'type' => 'color',
+				),
+				'size' => array(
+					'std'     => 'default',
+					'name'    => __( 'Alert Size', '__shortcodes__' ),
+					'desc'    => __( 'Choose a pre-defined size for your alert message. This primarily affects the font size, allowing for more visibility.', '__shortcodes__' ),
+					'key'     => 'alert-size',
+					'type'    => 'select',
+					'options' => array(
+						'small'   => __( 'Small Alert', '__shortcodes__' ),
+						'default' => __( 'Default Alert', '__shortcodes__' ),
+						'large'   => __( 'Large Alert', '__shortcodes__' ),
+						'huge'    => __( 'Huge Alert', '__shortcodes__' ),
+						'massive' => __( 'Massive Alert', '__shortcodes__' ),
+					),
+				),
+				'class' => array(
+					'std'  => __( 'my-custom-class', '__shortcodes__' ),
+					'name' => __( 'Add a Custom CSS Class', '__shortcodes__ ' ),
+					'desc' => __( 'If you would like to add and/or override the styles for this element, you may add a custom class to make doing so easier.', '__shortcodes__' ),
+					'key'  => 'alert-class',
 					'type' => 'text',
 				),
 			)

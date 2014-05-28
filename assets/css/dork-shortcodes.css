@@ -1,0 +1,95 @@
+/**
+ * Accordion shortcode.
+ *
+ * @since v1.0.0
+ */
+.dork-accordion {
+	width: 100%;
+	font-size: inherit;
+	background-color: #FFFFFF;
+	-webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+	-o-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.dork-accordion.accordion-rounded {
+	-webkit-border-radius: 0.3125em !important;
+	-moz-border-radius: 0.3125em !important;
+	-o-border-radius: 0.3125em !important;
+	border-radius:    0.3125em !important;
+}
+
+.dork-accordion .accordion-title {
+	cursor: pointer;
+	margin: 0;
+	padding: 0.75em 1em;
+	color: #555555;
+	border-top: 1px solid rgba(0, 0, 0, 0.05);
+	-webkit-transition: background-color 0.2s ease;
+	-moz-transition: background-color 0.2s ease;
+	-o-transtion: background-color 0.2s ease;
+	transition: background-color 0.2s ease;
+}
+
+.dork-accordion .accordion-title:first-child {
+	border-top: none;
+}
+
+.dork-accordion .accordion-title .accordion-icon {
+	display: inline-block;
+	float: none;
+	margin: 0 0.5em 0 0;
+	-webkit-transition: -webkit-transform 0.2s ease, opacity 0.2s ease;
+	-moz-transition: -moz-transform 0.2s ease, opacity 0.2s ease;
+	-o-transition: -o-transform 0.2s ease, opacity 0.2s ease;
+	transition: transform 0.2s ease, opacity 0.2s ease;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+}
+
+.dork-accordion .accordion-title.active {
+	background-color: #E5E5E5;
+}
+
+.dork-accordion .accordion-title.active .accordion-icon {
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+.dork-accordion .accordion-content {
+	display: none;
+	margin: 0;
+	padding: 1.3em 1em;
+}
+
+.dork-accordion .accordion-content.active {
+	display: block;
+}
+
+.dork-accordion.accordion-basic {
+	background-color: transparent !important;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-o-box-shadow: none;
+	box-shadow: none;
+}
+
+.dork-accordion.accordion-basic .accordion-title {
+	background-color: transparent !important;
+	border-top: none;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.dork-accordion.accordion-basic .accordion-title.active {
+	background-color: transparent !important;
+}
+
+.dork-accordion.accordion-basic .accordion-content {
+	padding: 0.5em 0;
+}
