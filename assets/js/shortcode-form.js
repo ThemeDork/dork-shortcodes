@@ -95,6 +95,13 @@
             headingBotMargin = $('#heading-bottom-margin-slider-value').html(),
             headingClass     = $('#heading-class-text').val();
 
+        // Tooltip shortcode parameters
+        var tooltipTitle = $('#tooltip-title-text').val(),
+            tooltipContent = $('#tooltip-content-textarea').val(),
+            tooltipSize = $('#tooltip-size-select').val(),
+            tooltipStyle = $('#tooltip-style-select').val(),
+            tooltipClass = $('#tooltip-class-text').val();
+
         // No need to run anything if a shortcode hasn't been selected
         if (shortcode !== '') {
 
@@ -125,6 +132,16 @@
                 output = '[alert heading="' + alertHeading + '" icon="' + alertIcon + '" dismiss="' + alertDismiss + '" compact="' + alertCompact + '" shadow="' + alertShadow + '" color_scheme="' + alertPreColor + '" bg_color="' + alertColor + '" font_color="' + alertFontColor + '" size="' + alertSize + '" class="' + alertClass + '"]' + alertContent + '[/alert]';
 
                 /**
+                 * Heading shortcode.
+                 *
+                 * @since v1.0.0
+                 */
+            } else if (shortcode === 'dork-heading') {
+
+                // Form output
+                output = '[heading icon="' + headingIcon + '" position="' + headingPosition + '" size="' + headingSize + '" style="' + headingStyle + '" color="' + headingColor + '" top_margin="' + headingTopMargin + '" bottom_margin="' + headingBotMargin + '" class="' + headingClass + '"]' + headingText + '[/heading]';
+
+                /**
                  * Progress bar shortcode.
                  *
                  * @since v1.0.0
@@ -135,14 +152,14 @@
                 output = '[progress percentage="' + progressPercent + '" color_scheme="' + progressPreColor + '" bg_color="' + progressColor + '" striped="' + progressStriped + '" animated="' + progressAnimated + '" class="' + progressClass + '"]' + progressLabel + '[/progress]';
 
                 /**
-                 * Content heading shortcode.
+                 * Tooltip shortcode.
                  *
                  * @since v1.0.0
                  */
-            } else if (shortcode === 'dork-heading') {
+            } else if (shortcode === 'dork-tooltip') {
 
                 // Form output
-                output = '[heading icon="' + headingIcon + '" position="' + headingPosition + '" size="' + headingSize + '" style="' + headingStyle + '" color="' + headingColor + '" top_margin="' + headingTopMargin + '" bottom_margin="' + headingBotMargin + '" class="' + headingClass + '"]' + headingText + '[/heading]';
+                output = '[tooltip title="' + tooltipTitle + '" description="' + tooltipContent + '" size="' + tooltipSize + '" style="' + tooltipStyle + '" class="' + tooltipClass + '"][/tooltip]';
 
             }
 

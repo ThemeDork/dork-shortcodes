@@ -200,13 +200,6 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 					'key'  => 'heading-text',
 					'type' => 'text',
 				),
-				'icon' => array(
-					'std'  => 'no-icon',
-					'name' => __( 'Heading Icon', '__shortcodes__' ),
-					'desc' => __( 'Optional. If you would like to display an icon along side your heading, or even all by itself, you can choose one here.', '__shortcodes__' ),
-					'key'  => 'heading-icon',
-					'type' => 'icon-select',
-				),
 				'position' => array(
 					'std'     => 'center',
 					'name'    => __( 'Heading Position', '__shortcodes__' ),
@@ -220,40 +213,39 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 					),
 				),
 				'size' => array(
-					'std'     => 'default',
+					'std'     => 'h3',
 					'name'    => __( 'Heading Size', '__shortcodes__' ),
 					'desc'    => __( 'Choose a pre-defined size for your content heading. This will increase, or decrease, the font size of your heading.', '__shortcodes__' ),
 					'key'     => 'heading-size',
 					'type'    => 'select',
 					'options' => array(
-						'tiny'    => __( 'Tiny Heading', '__shortcodes__' ),
-						'small'   => __( 'Small Heading', '__shortcodes__' ),
-						'default' => __( 'Default Heading', '__shortcodes__' ),
-						'large'   => __( 'Large Heading', '__shortcodes__' ),
-						'huge'    => __( 'Huge Heading', '__shortcodes__' ),
+						'h5' => __( 'Tiny Heading', '__shortcodes__' ),
+						'h4' => __( 'Small Heading', '__shortcodes__' ),
+						'h3' => __( 'Default Heading', '__shortcodes__' ),
+						'h2' => __( 'Large Heading', '__shortcodes__' ),
+						'h1' => __( 'Huge Heading', '__shortcodes__' ),
 					),
 				),
 				'style' => array(
 					'std'     => 'block',
 					'name'    => __( 'Heading Style', '__shortcodes__' ),
-					'desc'    => __( 'Pick a style for your content heading. There are several styles to choose from based on your preferences and needs.', '__shortcodes__' ),
+					'desc'    => __( 'Pick a style for your content heading. There are a couple styles to choose from based on your preferences and needs.', '__shortcodes__' ),
 					'key'     => 'heading-style',
 					'type'    => 'select',
 					'options' => array(
-						'basic' => __( 'Basic Heading / No Lines or Backgrounds', '__shortcodes__' ),
-						'lined' => __( 'Heading with Single Separator Line', '__shortcodes__' ),
-						'block' => __( 'Block Style Heading with Background', '__shortcodes__' ),
+						'basic'   => __( 'Basic Heading / No Lines or Backgrounds', '__shortcodes__' ),
+						'lined'   => __( 'Heading with Single Separator Line', '__shortcodes__' ),
 					),
 				),
 				'color' => array(
 					'std'  => '#555555',
 					'name' => __( 'Heading Color', '__shortcodes__' ),
-					'desc' => __( 'If you would like to modify the color of your heading, you may do so here. If you have chosen a block style heading, this will modify the background color, otherwise this will modify the font color.', '__shortcodes__' ),
+					'desc' => __( 'If you would like to modify the color of your heading, you may do so here. This setting will modify the font color of your heading.', '__shortcodes__' ),
 					'key'  => 'heading-color',
 					'type' => 'color',
 				),
 				'top-margin' => array(
-					'std' => '20',
+					'std'  => '20',
 					'name' => __( 'Heading Top Margin', '__shortcodes__' ),
 					'desc' => __( 'Adjust the margin, or spacing, above your content heading.', '__shortcodes__' ),
 					'key'  => 'heading-top-margin',
@@ -263,7 +255,7 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 					),
 				),
 				'bottom-margin' => array(
-					'std' => '20',
+					'std'  => '20',
 					'name' => __( 'Heading Bottom Margin', '__shortcodes__' ),
 					'desc' => __( 'Adjust the margin, or spacing, below your content heading.', '__shortcodes__' ),
 					'key'  => 'heading-bottom-margin',
@@ -353,6 +345,63 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 					'name' => __( 'Add a Custom CSS Class', '__shortcodes__ ' ),
 					'desc' => __( 'If you would like to add and/or override the styles for this element, you may add a custom class to make doing so easier.', '__shortcodes__' ),
 					'key'  => 'progress-class',
+					'type' => 'text',
+				),
+			)
+		);
+
+
+		/**
+		 * Tooltip shortcode config.
+		 *
+		 * @since v1.0.0
+		 */
+
+		$dork_shortcodes['dork-tooltip'] = array(
+			'name'   => __( 'Tooltip', '__shortcodes__' ),
+			'desc'   => __( '', '__shortcodes__' ),
+			'params' => array(
+				'title' => array(
+					'std'  => __( 'What a funky title...', '__shortcodes__' ),
+					'name' => __( 'Tooltip Title', '__shortcodes__' ),
+					'desc' => __( 'Optional. You have the option to add a title to your tooltip. Should you choose to do so, you may create the title here.', '__shortcodes__' ),
+					'key'  => 'tooltip-title',
+					'type' => 'text',
+				),
+				'content' => array(
+					'std'  => __( 'Pop it like its hot...', '__shortcodes__' ),
+					'name' => __( 'Tooltip Description', '__shortcodes__' ),
+					'desc' => __( 'Create the description for your new tooltip. It can say anything you want. so get creative!', '__shortcodes__' ),
+					'key'  => 'tooltip-content',
+					'type' => 'textarea',
+				),
+				'size' => array(
+					'std'     => 'small',
+					'name'    => __( 'Tooltip Size', '__shortcodes__' ),
+					'desc'    => __( 'You have a couple of choices when it comes to the size of your tooltip. You may choose a large or small tooltip based on your needs.', '__shortcodes__' ),
+					'key'     => 'tooltip-size',
+					'type'    => 'select',
+					'options' => array(
+						'small' => __( 'Small Tooltip', '__shortcodes__' ),
+						'large' => __( 'Large Tooltip', '__shortcodes__' ),
+					),
+				),
+				'style' => array(
+					'std'     => 'light',
+					'name'    => __( 'Tooltip Style', '__shortcodes__' ),
+					'desc'    => __( 'Choose a style for your tooltip. There are currently two options available. light and dark.', '__shortcodes__' ),
+					'key'     => 'tooltip-style',
+					'type'    => 'select',
+					'options' => array(
+						'light' => __( 'Light Tooltip', '__shortcodes__' ),
+						'dark'  => __( 'Dark Tooltip', '__shortcodes__' ),
+					),
+				),
+				'class' => array(
+					'std'  => __( 'my-custom-class', '__shortcodes__' ),
+					'name' => __( 'Add a Custom CSS Class', '__shortcodes__ ' ),
+					'desc' => __( 'If you would like to add and/or override the styles for this element, you may add a custom class to make doing so easier.', '__shortcodes__' ),
+					'key'  => 'tooltip-class',
 					'type' => 'text',
 				),
 			)
