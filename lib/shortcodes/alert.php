@@ -39,22 +39,41 @@ if ( ! function_exists( 'dork_shortcodes_alert' ) ) {
 		$dismiss    = ( ( isset( $atts['dismiss'] ) && $atts['dismiss'] != 'true' ) ? '' : ' ' . 'alert-dismiss' );
 		$compact    = ( ( isset( $atts['compact'] ) && $atts['compact'] != 'false' ) ? ' ' . 'alert-compact' : '' );
 		$shadow     = ( ( isset( $atts['shadow'] ) && $atts['shadow'] != 'true' ) ? '' : ' ' . 'alert-shadow' );
-		$scheme     = ( ( isset( $atts['color_scheme'] ) && $atts['color_scheme'] != '' ) ? $atts['color_scheme'] : '' );
+		$scheme     = ( ( isset( $atts['color_scheme'] ) && $atts['color_scheme'] != '' ) ? ' ' . $atts['color_scheme'] : '' );
 		$bg_color   = ( ( isset( $atts['bg_color'] ) && $atts['bg_color'] != '' ) ? $atts['bg_color'] : '#E5E5E5' );
 		$font_color = ( ( isset( $atts['font_color'] ) && $atts['font_color'] != '' ) ? $atts['font_color'] : '#555555' );
 		$size       = ( ( isset( $atts['size'] ) && $atts['size'] != '' ) ? $atts['size'] : 'default' );
 		$class      = ( ( isset( $atts['class'] ) && $atts['class'] != '' ) ? ' ' . $atts['class'] : '' );
 
+		// Provide support for color schemes
+		if ( $scheme != '' ) {
+
+			$bg_color = '';
+			$font_color = '';
+
+		} else {
+
+			$bg_color = 'background-color: ' . esc_attr( $bg_color ) . ';';
+			$font_color = 'color: ' . esc_attr( $font_color ) . ';';
+
+		} // End if
+
+		// Check if a heading has been added
+		$has_heading = ( ( $heading ) ? ' ' . 'has-heading' : '' );
+
+		// Enqueue our alert scripts
+		wp_enqueue_script( 'dork-alert' );
+
 		// Begin building the shortcode output
 		$output = '';
-		$output .= '<div class="dork-alert' . esc_attr( $class ) . '">';
+		$output .= '<div class="dork-alert ' . esc_attr( $size ) . esc_attr( $scheme ) . esc_attr( $has_heading ) . esc_attr( $shadow ) . esc_attr( $compact ) . esc_attr( $class ) . '" style="' . esc_attr( $bg_color ) . ' ' . esc_attr( $font_color ) . '">';
 
 		if ( $dismiss ) {
 			$output .= '<i class="alert-close dork-icon times"></i>';
 		}
 
 		if ( $icon != '' ) {
-			$output .= '<i class="dork-icon ' . esc_attr( $icon ) . '"></i>';
+			$output .= '<i class="alert-icon dork-icon ' . esc_attr( $icon ) . '"></i>';
 		}
 
 		$output .= '<div class="alert-content">';

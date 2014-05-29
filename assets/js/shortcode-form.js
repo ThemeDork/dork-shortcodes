@@ -75,6 +75,25 @@
             alertSize      = $('#alert-size-select').val(),
             alertClass     = $('#alert-class-text').val();
 
+        // Progress bar shortcode parameters
+        var progressLabel    = $('#progress-label-text').val(),
+            progressPercent  = $('#progress-completion-slider-value').html(),
+            progressPreColor = $('#progress-pre-color-select').val(),
+            progressColor    = $('#progress-color-text').val(),
+            progressStriped  = $('#progress-striped-checkbox').prop('checked'),
+            progressAnimated = $('#progress-animated-checkbox').prop('checked'),
+            progressClass    = $('#progress-class-text').val();
+
+        // Content heading shortcode parameters
+        var headingText      = $('#heading-text-text').val(),
+            headingIcon      = $('#heading-icon-icon-select').find('.selected').data('id'),
+            headingPosition  = $('#heading-position-select').val(),
+            headingSize      = $('#heading-size-select').val(),
+            headingStyle     = $('#heading-style-select').val(),
+            headingColor     = $('#heading-color-text').val(),
+            headingTopMargin = $('#heading-top-margin-slider-value').html(),
+            headingBotMargin = $('#heading-bottom-margin-slider-value').html(),
+            headingClass     = $('#heading-class-text').val();
 
         // No need to run anything if a shortcode hasn't been selected
         if (shortcode !== '') {
@@ -104,6 +123,26 @@
 
                 // Form output
                 output = '[alert heading="' + alertHeading + '" icon="' + alertIcon + '" dismiss="' + alertDismiss + '" compact="' + alertCompact + '" shadow="' + alertShadow + '" color_scheme="' + alertPreColor + '" bg_color="' + alertColor + '" font_color="' + alertFontColor + '" size="' + alertSize + '" class="' + alertClass + '"]' + alertContent + '[/alert]';
+
+                /**
+                 * Progress bar shortcode.
+                 *
+                 * @since v1.0.0
+                 */
+            } else if (shortcode === 'dork-progress') {
+
+                // Form output
+                output = '[progress percentage="' + progressPercent + '" color_scheme="' + progressPreColor + '" bg_color="' + progressColor + '" striped="' + progressStriped + '" animated="' + progressAnimated + '" class="' + progressClass + '"]' + progressLabel + '[/progress]';
+
+                /**
+                 * Content heading shortcode.
+                 *
+                 * @since v1.0.0
+                 */
+            } else if (shortcode === 'dork-heading') {
+
+                // Form output
+                output = '[heading icon="' + headingIcon + '" position="' + headingPosition + '" size="' + headingSize + '" style="' + headingStyle + '" color="' + headingColor + '" top_margin="' + headingTopMargin + '" bottom_margin="' + headingBotMargin + '" class="' + headingClass + '"]' + headingText + '[/heading]';
 
             }
 
@@ -208,7 +247,7 @@
                     })
                 ],
                 format: {
-                    postfix: 'px',
+                    postfix: $(this).data('units'),
                     decimals: 0
                 }
             }
