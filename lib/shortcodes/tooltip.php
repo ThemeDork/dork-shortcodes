@@ -19,9 +19,7 @@ if ( ! function_exists( 'dork_shortcodes_tooltip' ) ) {
 		// Default shortcode attributes
 		$defaults = array(
 			'title'       => '',
-			'description' => '',
-			'size'        => 'small',
-			'style'       => 'light',
+			'placement'   => 'top',
 			'class'       => '',
 		);
 
@@ -33,14 +31,11 @@ if ( ! function_exists( 'dork_shortcodes_tooltip' ) ) {
 
 		// Set defaults to avoid errors
 		$title       = ( ( isset( $atts['title'] ) && $atts['title'] != '' ) ? $atts['title'] : '' );
-		$description = ( ( isset( $atts['description'] ) && $atts['description'] != '' ) ? $atts['description'] : '' );
-		$size        = ( ( isset( $atts['size'] ) && $atts['size'] != '' ) ? ' ' . 'tooltip-' . $atts['size'] : ' ' . 'tooltip-small' );
-		$style       = ( ( isset( $atts['style'] ) && $atts['style'] != '' ) ? ' ' . 'tooltip-' . $atts['style'] : 'tooltip-light' );
-		$class       = ( ( isset( $atts['class'] ) && $atts['class'] != '' ) ? $atts['class'] : '' );
+		$placement   = ( ( isset( $atts['placement'] ) && $atts['placement'] != '' ) ? $atts['placement'] : 'top' );
 
 		// Begin building the shortcode output
 		$output = '';
-		$output .= '<span class="dork-tooltip" data-title="hello" data-content="hey there">';
+		$output .= '<span href="#" class="dork-tooltip' . '" data-original-title="' . esc_attr( $title ) . '" data-placement="' . esc_attr( $placement ) . '">';
 		$output .= do_shortcode( $content );
 		$output .= '</span>';
 

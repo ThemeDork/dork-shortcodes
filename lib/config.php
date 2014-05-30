@@ -184,7 +184,7 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 
 
 		/**
-		 * Content heading shortcode config.
+		 * Heading shortcode config.
 		 *
 		 * @since v1.0.0
 		 */
@@ -276,6 +276,58 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 
 
 		/**
+		 * Highlight shortcode config.
+		 *
+		 * @since v1.0.0
+		 */
+
+		$dork_shortcodes['dork-highlight'] = array(
+			'name'   => __( 'Highlight', '__shortcodes__' ),
+			'desc'   => __( '', '__shortcodes__' ),
+			'params' => array(
+				'content' => array(
+					'std'  => __( 'I am the highlight of the party...', '__shortcodes__' ),
+					'name' => __( 'Highlight Content', '__shortcodes__' ),
+					'desc' => __( 'Create the content that you would like to highlight. This can be as much, or as little, as you like.', '__shortcodes__' ),
+					'key'  => 'highlight-content',
+					'type' => 'text',
+				),
+				'color' => array(
+					'std'  => '#BF2ABF',
+					'name' => __( 'Highlight Color', '__shortcodes__' ),
+					'desc' => __( 'Choose a background color for your new highlight. Make it bright, or keep it simple, its up to you!', '__shortcodes__' ),
+					'key'  => 'highlight-color',
+					'type' => 'color',
+				),
+				'font-color' => array(
+					'std'  => '#F5F5F5',
+					'name' => __( 'Highlight Font Color', '__shortcodes__' ),
+					'desc' => __( 'Choose a font color for your highlight. Consider using a lighter font if you have a dark background.', '__shortcodes__' ),
+					'key'  => 'highlight-font-color',
+					'type' => 'color',
+				),
+				'rounded' => array(
+					'std'  => 1,
+					'name' => __( 'Rounded corners on this highlight?', '__shortcodes__' ),
+					'desc' => __( '', '__shortcodes__' ),
+					'key'  => 'highlight-rounded',
+					'type' => 'checkbox',
+				),
+				'spacer' => array(
+					'type' => 'spacer',
+				),
+				'class' => array(
+					'std'  => __( 'my-custom-class', '__shortcodes__' ),
+					'name' => __( 'Add a Custom CSS Class', '__shortcodes__ ' ),
+					'desc' => __( 'If you would like to add and/or override the styles for this element, you may add a custom class to make doing so easier.', '__shortcodes__' ),
+					'key'  => 'highlight-class',
+					'type' => 'text',
+				),
+			)
+		);
+
+
+		/**
 		 * Progress bar shortcode config.
 		 *
 		 * @since v1.0.0
@@ -352,6 +404,98 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 
 
 		/**
+		 * Styled list shortcode config.
+		 *
+		 * @since v1.0.0
+		 */
+
+		$dork_shortcodes['dork-list'] = array(
+			'name'   => __( 'Styled List', '__shortcodes__' ),
+			'desc'   => __( '', '__shortcodes__' ),
+			'params' => array(
+				'items' => array(
+					'std'     => '3',
+					'name'    => __( 'Number of List Items', '__shortcodes__' ),
+					'desc'    => __( 'Choose the number od list items to create. You can always add more later if you want to.', '__shortcodes__' ),
+					'key'     => 'list-items',
+					'type'    => 'select',
+					'options' => array(
+						'1'  => __( 'One Item', '__shortcodes__' ),
+						'2'  => __( 'Two Items', '__shortcodes__' ),
+						'3'  => __( 'Three Items', '__shortcodes__' ),
+						'4'  => __( 'Four Items', '__shortcodes__' ),
+						'5'  => __( 'Five Items', '__shortcodes__' ),
+						'6'  => __( 'Six Items', '__shortcodes__' ),
+						'7'  => __( 'Seven Items', '__shortcodes__' ),
+						'8'  => __( 'Eight Items', '__shortcodes__' ),
+						'9'  => __( 'Nine Items', '__shortcodes__' ),
+						'10' => __( 'Ten Items', '__shortcodes__' ),
+					),
+				),
+				'icon' => array(
+					'std'  => 'no-icon',
+					'name' => __( 'List Icon', '__shortcodes__' ),
+					'desc' => __( 'Optional. If you would like to display an icon along side each list item, you may choose that icon here.', '__shortcodes__' ),
+					'key'  => 'list-icon',
+					'type' => 'icon-select',
+				),
+				'color' => array(
+					'std'  => '#555555',
+					'name' => __( 'List Icon Color', '__shortcodes__' ),
+					'desc' => __( 'If you are using an icon for your list items, you can choose a color for that icon here.', '__shortcodes__' ),
+					'key'  => 'list-color',
+					'type' => 'color',
+				),
+				'circular' => array(
+					'std'  => 0,
+					'name' => __( 'Inverted icon with circular background?', '__shortcodes__' ),
+					'desc' => __( '', '__shortcodes__' ),
+					'key'  => 'list-circular',
+					'type' => 'checkbox',
+				),
+				'animated' => array(
+					'std'  => 1,
+					'name' => __( 'Animate each list item when hovered?', '__shortcodes__' ),
+					'desc' => __( '', '__shortcodes__' ),
+					'key'  => 'list-animated',
+					'type' => 'checkbox',
+				),
+				'divided' => array(
+					'std'  => 0,
+					'name' => __( 'Add divider between list items?', '__shortcodes__' ),
+					'desc' => __( '', '__shortcodes__' ),
+					'key'  => 'list-divided',
+					'type' => 'checkbox',
+				),
+				'spacer' => array(
+					'type' => 'spacer',
+				),
+				'size' => array(
+					'std'     => 'default',
+					'name'    => __( 'List Size', '__shortcodes__' ),
+					'desc'    => __( 'Choose the size of your list items. This primarily affects the font size for your list items, but can add much more impact to an otherwise boring list.', '__shortcodes__' ),
+					'key'     => 'list-size',
+					'type'    => 'select',
+					'options' => array(
+						'tiny'    => __( 'Tiny List Size', '__shortcodes__' ),
+						'small'   => __( 'Small List Size', '__shortcodes__' ),
+						'default' => __( 'Default List Size', '__shortcodes__' ),
+						'large'   => __( 'Large List Size', '__shortcodes__' ),
+						'huge'    => __( 'Huge List Size', '__shortcodes__' ),
+					),
+				),
+				'class' => array(
+					'std'  => __( 'my-custom-class', '__shortcodes__' ),
+					'name' => __( 'Add a Custom CSS Class', '__shortcodes__ ' ),
+					'desc' => __( 'If you would like to add and/or override the styles for this element, you may add a custom class to make doing so easier.', '__shortcodes__' ),
+					'key'  => 'list-class',
+					'type' => 'text',
+				),
+			)
+		);
+
+
+		/**
 		 * Tooltip shortcode config.
 		 *
 		 * @since v1.0.0
@@ -368,41 +512,18 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 					'key'  => 'tooltip-title',
 					'type' => 'text',
 				),
-				'content' => array(
-					'std'  => __( 'Pop it like its hot...', '__shortcodes__' ),
-					'name' => __( 'Tooltip Description', '__shortcodes__' ),
-					'desc' => __( 'Create the description for your new tooltip. It can say anything you want. so get creative!', '__shortcodes__' ),
-					'key'  => 'tooltip-content',
-					'type' => 'textarea',
-				),
-				'size' => array(
-					'std'     => 'small',
-					'name'    => __( 'Tooltip Size', '__shortcodes__' ),
-					'desc'    => __( 'You have a couple of choices when it comes to the size of your tooltip. You may choose a large or small tooltip based on your needs.', '__shortcodes__' ),
-					'key'     => 'tooltip-size',
+				'placement' => array(
+					'std'     => 'top',
+					'name'    => __( 'Tooltip Placement', '__shortcodes__' ),
+					'desc'    => __( 'Choose a placement for your tooltip. There are several options available to fit your content.', '__shortcodes__' ),
+					'key'     => 'tooltip-placement',
 					'type'    => 'select',
 					'options' => array(
-						'small' => __( 'Small Tooltip', '__shortcodes__' ),
-						'large' => __( 'Large Tooltip', '__shortcodes__' ),
+						'top'    => __( 'Tooltip on Top', '__shortcodes__' ),
+						'left'   => __( 'Tooltip on Left', '__shortcodes__' ),
+						'right'  => __( 'Tooltip on Right','__shortcodes__' ),
+						'bottom' => __( 'Tooltip on Bottom','__shortcodes__' ),
 					),
-				),
-				'style' => array(
-					'std'     => 'light',
-					'name'    => __( 'Tooltip Style', '__shortcodes__' ),
-					'desc'    => __( 'Choose a style for your tooltip. There are currently two options available. light and dark.', '__shortcodes__' ),
-					'key'     => 'tooltip-style',
-					'type'    => 'select',
-					'options' => array(
-						'light' => __( 'Light Tooltip', '__shortcodes__' ),
-						'dark'  => __( 'Dark Tooltip', '__shortcodes__' ),
-					),
-				),
-				'class' => array(
-					'std'  => __( 'my-custom-class', '__shortcodes__' ),
-					'name' => __( 'Add a Custom CSS Class', '__shortcodes__ ' ),
-					'desc' => __( 'If you would like to add and/or override the styles for this element, you may add a custom class to make doing so easier.', '__shortcodes__' ),
-					'key'  => 'tooltip-class',
-					'type' => 'text',
 				),
 			)
 		);

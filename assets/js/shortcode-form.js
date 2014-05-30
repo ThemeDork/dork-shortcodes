@@ -84,7 +84,7 @@
             progressAnimated = $('#progress-animated-checkbox').prop('checked'),
             progressClass    = $('#progress-class-text').val();
 
-        // Content heading shortcode parameters
+        // Heading shortcode parameters
         var headingText      = $('#heading-text-text').val(),
             headingIcon      = $('#heading-icon-icon-select').find('.selected').data('id'),
             headingPosition  = $('#heading-position-select').val(),
@@ -95,12 +95,26 @@
             headingBotMargin = $('#heading-bottom-margin-slider-value').html(),
             headingClass     = $('#heading-class-text').val();
 
+        // Highlight shortcode parameters
+        var highlightContent = $('#highlight-content-text').val(),
+            highlightColor = $('#highlight-color-text').val(),
+            highlightFontColor = $('#highlight-font-color-text').val(),
+            highlightRounded = $('#highlight-rounded-checkbox').prop('checked'),
+            highlightClass = $('#highlight-class-text').val();
+
+        // List shortcode parameters
+        var listItems = $('#list-items-select').val(),
+            listIcon = $('#list-icon-icon-select').find('.selected').data('id'),
+            listColor = $('#list-color-text').val(),
+            listCircular = $('#list-circular-checkbox').prop('checked'),
+            listAnimated = $('#list-animated-checkbox').prop('checked'),
+            listDivided = $('#list-divided-checkbox').prop('checked'),
+            listSize = $('#list-size-select').val(),
+            listClass = $('#list-class-text').val();
+
         // Tooltip shortcode parameters
         var tooltipTitle = $('#tooltip-title-text').val(),
-            tooltipContent = $('#tooltip-content-textarea').val(),
-            tooltipSize = $('#tooltip-size-select').val(),
-            tooltipStyle = $('#tooltip-style-select').val(),
-            tooltipClass = $('#tooltip-class-text').val();
+            tooltipPlacement = $('#tooltip-placement-select').val();
 
         // No need to run anything if a shortcode hasn't been selected
         if (shortcode !== '') {
@@ -142,6 +156,32 @@
                 output = '[heading icon="' + headingIcon + '" position="' + headingPosition + '" size="' + headingSize + '" style="' + headingStyle + '" color="' + headingColor + '" top_margin="' + headingTopMargin + '" bottom_margin="' + headingBotMargin + '" class="' + headingClass + '"]' + headingText + '[/heading]';
 
                 /**
+                 * Highlight shortcode.
+                 *
+                 * @since v1.0.0
+                 */
+            } else if (shortcode === 'dork-highlight') {
+
+                // Form output
+                output = '[highlight color="' + highlightColor + '" font_color="' + highlightFontColor + '" rounded="' + highlightRounded + '" class="' + highlightClass + '"]' + highlightContent + '[/highlight]';
+
+                /**
+                 * List shortcode.
+                 *
+                 * @since v1.0.0
+                 */
+            } else if (shortcode === 'dork-list') {
+
+                // Form output
+                output = '[list animated="' + listAnimated + '" divided="' + listDivided + '" size="' + listSize + '" class="' + listClass + '"]' + '<br/>';
+
+                for (var i = 1; i <= listItems; i++) {
+                    output += '[list_item title="" icon="' + listIcon + '" color="' + listColor + '" circular="' + listCircular + '"]List Content #' + i + '[/list_item]' + '<br/>';
+                } // End for
+
+                output += '[/list]';
+
+                /**
                  * Progress bar shortcode.
                  *
                  * @since v1.0.0
@@ -159,7 +199,7 @@
             } else if (shortcode === 'dork-tooltip') {
 
                 // Form output
-                output = '[tooltip title="' + tooltipTitle + '" description="' + tooltipContent + '" size="' + tooltipSize + '" style="' + tooltipStyle + '" class="' + tooltipClass + '"][/tooltip]';
+                output = '[tooltip title="' + tooltipTitle + '" placement="' + tooltipPlacement + '"][/tooltip]';
 
             }
 
