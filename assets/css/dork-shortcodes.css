@@ -323,6 +323,94 @@ h5.dork-heading {
 	border-radius: 0.3125em;
 }
 
+/**
+ * List shortcode.
+ *
+ * @since v1.0.0
+ */
+.dork-list {
+	list-style-type: none;
+	margin: 1em 0;
+	padding: 0;
+}
+
+.dork-list li {
+	display: list-item;
+	list-style-type: none;
+	list-style-position: inside;
+	padding: 0.3em 0;
+	margin: 0;
+	line-height: 1.2em;
+	color: #555555;
+	font-size: 1rem;
+}
+
+.dork-list li:after {
+	content: '';
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.dork-list li > .dork-icon {
+	display: inline-block;
+	vertical-align: baseline;
+	font-size: 1em;
+	margin-right: 0.85em;
+}
+
+.dork-list li > .dork-icon.circular {
+	color: #FFFFFF;
+	font-size: 0.95em;
+	width: 1.5em !important;
+	height: 1.5em !important;
+	padding: 0.3em 0.35em !important;
+}
+
+.dork-list.list-animated li {
+	-webkit-transition: color 0.2s ease, padding-left 0.2s ease, background-color 0.2s ease;
+	-moz-transition: color 0.2s ease, padding-left 0.2s ease, background-color 0.2s ease;
+	transition: color 0.2s ease, padding-left 0.2s ease, background-color 0.2s ease;
+}
+
+.dork-list.list-animated li:hover {
+	padding-left: 1em;
+}
+
+.dork-list.list-divided li {
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	padding: 0.5em 0.5em;
+}
+
+.dork-list.list-divided li:first-child {
+	border-top: none;
+	padding-top: 0;
+}
+
+.dork-list.list-divided li:last-child {
+	padding-bottom: 0;
+}
+
+.dork-list.list-tiny li {
+	font-size: 0.7125rem;
+}
+
+.dork-list.list-small li {
+	font-size: 0.875rem;
+}
+
+.dork-list.list-default li {
+	font-size: 1rem;
+}
+
+.dork-list.list-large li {
+	font-size: 1.125rem;
+}
+
+.dork-list.list-huge li {
+	font-size: 1.375rem;
+}
 
 /**
  * Progress bar shortcode.

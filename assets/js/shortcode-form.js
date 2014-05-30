@@ -75,6 +75,16 @@
             alertSize      = $('#alert-size-select').val(),
             alertClass     = $('#alert-class-text').val();
 
+        // Divider shortcode parameters
+        var dividerText = $('#divider-text-text').val(),
+            dividerIcon = $('#divider-icon-icon-select').find('.selected').data('id'),
+            dividerStyle = $('#divider-style-select').val(),
+            dividerColor = $('#divider-color-text').val(),
+            dividerMTop = $('#divider-margin-top-slider-value').html(),
+            dividerMBot = $('#divider-margin-bottom-slider-value').html(),
+            dividerClass = $('#divider-class-text').val();
+
+
         // Progress bar shortcode parameters
         var progressLabel    = $('#progress-label-text').val(),
             progressPercent  = $('#progress-completion-slider-value').html(),
@@ -146,6 +156,16 @@
                 output = '[alert heading="' + alertHeading + '" icon="' + alertIcon + '" dismiss="' + alertDismiss + '" compact="' + alertCompact + '" shadow="' + alertShadow + '" color_scheme="' + alertPreColor + '" bg_color="' + alertColor + '" font_color="' + alertFontColor + '" size="' + alertSize + '" class="' + alertClass + '"]' + alertContent + '[/alert]';
 
                 /**
+                 * Divider shortcode.
+                 *
+                 * @since v1.0.0
+                 */
+            } else if (shortcode === 'dork-divider') {
+
+                // Form output
+                output = '[divider text="' + dividerText + '" icon="' + dividerIcon + '" style="' + dividerStyle + '" color="' + dividerColor + '" margin_top="' + dividerMTop + '" margin_bottom="' + dividerMBot + '" class="' + dividerClass + '"]';
+
+                /**
                  * Heading shortcode.
                  *
                  * @since v1.0.0
@@ -176,7 +196,7 @@
                 output = '[list animated="' + listAnimated + '" divided="' + listDivided + '" size="' + listSize + '" class="' + listClass + '"]' + '<br/>';
 
                 for (var i = 1; i <= listItems; i++) {
-                    output += '[list_item title="" icon="' + listIcon + '" color="' + listColor + '" circular="' + listCircular + '"]List Content #' + i + '[/list_item]' + '<br/>';
+                    output += '[list_item icon="' + listIcon + '" color="' + listColor + '" circular="' + listCircular + '"]List Content #' + i + '[/list_item]' + '<br/>';
                 } // End for
 
                 output += '[/list]';

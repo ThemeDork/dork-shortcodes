@@ -184,6 +184,82 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 
 
 		/**
+		 * Divider shortcode config.
+		 *
+		 * @since v1.0.0
+		 */
+
+		$dork_shortcodes['dork-divider'] = array(
+			'name'   => __( 'Divider', '__shortcodes__' ),
+			'desc'   => __( '', '__shortcodes__' ),
+			'params' => array(
+				'text' => array(
+					'std' => __( 'The great divide...', '__shortcodes__' ),
+					'name' => __( 'Divider Text', '__shortcodes__' ),
+					'desc' => __( 'Optional. If you would like to add some text to your divider, you may define that here.', '__shortcodes__' ),
+					'key'  => 'divider-text',
+					'type' => 'text',
+				),
+				'icon' => array(
+					'std' => 'no-icon',
+					'name' => __( 'Divider Icon', '__shortcodes__' ),
+					'desc' => __( 'Optional. If you would like to add an icon to your divider, you may choose one here. These work with text or by themselves.', '__shortcodes__' ),
+					'key'  => 'divider-icon',
+					'type' => 'icon-select',
+				),
+				'style' => array(
+					'std' => 'double',
+					'name' => __( 'Divider Style', '__shortcodes__' ),
+					'desc' => __( 'Choose a style for your divider. There are several to choose from, depending on your preferences.', '__shortcodes__' ),
+					'key'  => 'divider-style',
+					'type' => 'select',
+					'options' => array(
+						'single' => __( 'Divider with Single Line', '__shortcodes__' ),
+						'double' => __( 'Divider with Double Line', '__shortcodes__' ),
+						'dashed' => __( 'Divider with Dashed Line', '__shortcodes__' ),
+						'dotted' => __( 'Divider with Dotted Line', '__shortcodes__' ),
+						'faded'  => __( 'Divider with Faded Line - No Text or Icons', '__shortcodes__' ),
+					),
+				),
+				'color' => array(
+					'std' => '#555555',
+					'name' => __( 'Divider Color', '__shortcodes__' ),
+					'desc' => __( 'Modify the color of your divider. This will change the divider color only, not text or icons.', '__shortcodes__' ),
+					'key' => 'divider-color',
+					'type' => 'color',
+				),
+				'margin-top' => array(
+					'std' => '20',
+					'name' => __( 'Divider Margin Top', '__shortcodes__' ),
+					'desc' => __( 'Adjust the margin, or space, above your new divider. Allows for greater spacing between content.', '__shortcodes__' ),
+					'key'  => 'divider-margin-top',
+					'type' => 'slider',
+					'options' => array(
+						'type' => 'px',
+					),
+				),
+				'margin-bottom' => array(
+					'std' => '20',
+					'name' => __( 'Divider Margin Bottom', '__shortcodes__' ),
+					'desc' => __( 'Adjust the margin, or space, below your new divider. Allows for greater spacing between content.', '__shortcodes__' ),
+					'key'  => 'divider-margin-bottom',
+					'type' => 'slider',
+					'options' => array(
+						'type' => 'px',
+					),
+				),
+				'class' => array(
+					'std'  => __( 'my-custom-class', '__shortcodes__' ),
+					'name' => __( 'Add a Custom CSS Class', '__shortcodes__ ' ),
+					'desc' => __( 'If you would like to add and/or override the styles for this element, you may add a custom class to make doing so easier.', '__shortcodes__' ),
+					'key'  => 'divider-class',
+					'type' => 'text',
+				),
+			)
+		);
+
+
+		/**
 		 * Heading shortcode config.
 		 *
 		 * @since v1.0.0
