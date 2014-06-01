@@ -79,9 +79,8 @@ if ( ! function_exists( 'dork_shortcodes_front_enqueue' ) ) {
 		wp_register_style( 'dork-shortcodes', DORK_SHORTCODES_URI . '/assets/css/dork-shortcodes.min.css', null, time(), 'all' );
 
 		// Register our front-end scripts
-		wp_register_script( 'dork-easing', DORK_SHORTCODES_URI . '/assets/js/jquery.easing.js', array( 'jquery' ), time(), true);
-		wp_register_script( 'dork-jquery-ui', DORK_SHORTCODES_URI . '/assets/js/jquery-ui-1.10.4.min.js', array( 'jquery' ), time(), true );
-		wp_register_script( 'dork-accordion', DORK_SHORTCODES_URI . '/assets/js/shortcodes/accordion.js', array( 'jquery' ), time(), true );
+		wp_register_script( 'dork-easing', DORK_SHORTCODES_URI . '/assets/js/jquery.easing.min.js', array( 'jquery' ), time(), true );
+		wp_register_script( 'dork-accordion', DORK_SHORTCODES_URI . '/assets/js/shortcodes/accordion.min.js', array( 'jquery' ), time(), true );
 
 		// Enqueue our front-end styles
 		wp_enqueue_style( 'icon-font' );

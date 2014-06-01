@@ -18,7 +18,7 @@ if ( ! function_exists( 'dork_shortcodes_accordion' ) ) {
 
 		// Default shortcode attributes
 		$defaults = array(
-			'color'         => '',
+			'color'         => '#00C8D7',
 			'margin_top'    => '20px',
 			'margin_bottom' => '20px',
 			'class'         => '',
@@ -28,18 +28,18 @@ if ( ! function_exists( 'dork_shortcodes_accordion' ) ) {
 		extract( shortcode_atts( $defaults, $atts ) );
 
 		// Enqueue accordion scripts
-		wp_enqueue_script( 'dork-jquery-ui' );
+		wp_enqueue_script( 'dork-easing' );
 		wp_enqueue_script( 'dork-accordion' );
 
 		// Set defaults to avoid errors
-		$color         = ( ( isset( $atts['color'] ) && $atts['color'] != '' ) ? $atts['color'] : '' );
+		$color         = ( ( isset( $atts['color'] ) && $atts['color'] != '' ) ? $atts['color'] : '#00C8D7' );
 		$margin_top    = ( ( isset( $atts['margin_top'] ) && $atts['margin_top'] != '' ) ? $atts['margin_top'] : '20px' );
 		$margin_bottom = ( ( isset( $atts['margin_bottom'] ) && $atts['margin_bottom'] != '' ) ? $atts['margin_bottom'] : '20px' );
 		$class         = ( ( isset( $atts['class'] ) && $atts['class'] != '' ) ? ' ' . $atts['class'] : '' );
 
 		// Begin building the shortcode output
 		$output = '';
-		$output .= '<div class="dork-accordion" style="margin-top: ' . esc_attr( $margin_top ) . '; margin-bottom: ' . esc_attr( $margin_bottom ) . ';">';
+		$output .= '<div class="dork-accordion' . esc_attr( $class ) . '" data-color="' . esc_attr( $color ) . '" style="margin-top: ' . esc_attr( $margin_top ) . '; margin-bottom: ' . esc_attr( $margin_bottom ) . ';">';
 		$output .= do_shortcode( $content );
 		$output .= '</div>';
 
@@ -71,13 +71,20 @@ if ( ! function_exists( 'dork_shortcodes_accordion_item' ) ) {
 		$title = ( ( isset( $atts['title'] ) && $atts['title'] != '' ) ? $atts['title'] : '' );
 		$icon  = ( ( isset( $atts['icon'] ) && $atts['icon'] != 'no-icon' ) ? $atts['icon'] : '' );
 
+		// User defined icon support
+		if ( $icon ) {
+			$acc_icon = '<i class="dork-icon ' . esc_attr( $icon ) . '"></i>';
+		} else {
+			$acc_icon = '';
+		}
+
 		// Begin building the shortcode output
 		$output = '';
-		$output .= '<div class="dork-accordion-header">';
-		$output .= '<h4>' . esc_attr( $title ) . '</h4>';
-		$output .= '</div>';
-		$output .= '<div class="dork-accordion-body">';
+		$output .= '<div class="dork-accordion-item">';
+		$output .= '<a href="#" class="accordion-title">' . $acc_icon . esc_attr( $title ) . '</a>';
+		$output .= '<div class="accordion-content">';
 		$output .= do_shortcode( $content );
+		$output .= '</div>';
 		$output .= '</div>';
 
 		// Return the shortcode output

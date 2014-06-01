@@ -1,4 +1,4 @@
-(function($) {
+;(function($) {
     "use strict";
 
     var shortcodeSelect = $('#shortcode-select'),
@@ -8,6 +8,100 @@
         colorPicker     = $('.dork-color-picker'),
         colorPreview    = $('.color-picker-preview'),
         rangeSlider     = $('.dork-range-slider');
+
+
+    /**
+     * Begin compiling the parameters for our shortcode output.
+     *
+     * @since v1.0.0
+     */
+    $.fn.shortcodes = {
+
+        // Accordion shortcode
+        accordion: function () {
+
+            // Accordion shortcode parameters
+            var accordionItems = $('#accordion-items-select').val(),
+                accordionIcon  = $('#accordion-icon-icon-select').find('.selected').data('id'),
+                accordionColor = $('#accordion-color-text').val(),
+                accordionMTop  = $('#accordion-margin-top-slider-value').html(),
+                accordionMBot  = $('#accordion-margin-bottom-slider-value').html(),
+                accordionClass = $('#accordion-class-text').val(),
+                output;
+
+            // Shortcode form output
+            output = '[accordion color="' + accordionColor + '" margin_top="' + accordionMTop + '" margin_bottom="' + accordionMBot + '" class="' + accordionClass + '"]' + '<br/>';
+
+            for (var i = 1; i <= accordionItems; i++) {
+
+                output += '[accordion_item title="Accordion Title #' + i + '" icon="' + accordionIcon + '"]Accordion Content #' + i + '[/accordion_item]' + '<br/>';
+
+            }
+
+            output += '[/accordion]';
+
+            // Return the shortcode output
+            return output;
+
+        },
+
+        // Alert shortcode
+        alert: function () {
+
+            // Alert shortcode parameters
+            var alertContent   = $('#alert-content-textarea').val(),
+                alertColor     = $('#alert-color-text').val(),
+                alertFontColor = $('#alert-font-color-text').val(),
+                alertIcon      = $('#alert-icon-icon-select').find('.selected').data('id'),
+                alertRounded   = $('#alert-rounded-checkbox').prop('checked'),
+                alertDismiss   = $('#alert-dismiss-checkbox').prop('checked'),
+                alertMTop      = $('#alert-margin-top-slider-value').html(),
+                alertMBot      = $('#alert-margin-bottom-slider-value').html(),
+                alertClass     = $('#alert-class-text').val(),
+                output;
+
+            // Shortcode form output
+            output = '[alert color="' + alertColor + '" font_color="' + alertFontColor + '" icon="' + alertIcon + '" rounded="' + alertRounded + '" dismiss="' + alertDismiss + '" margin_top="' + alertMTop + '" margin_bottom="' + alertMBot + '" class="' + alertClass + '"]' + alertContent + '[/alert]';
+
+            // Return the shortcode output
+            return output;
+
+        }
+
+    };
+
+
+    /**
+     * Send the shortcode output to the WordPress editor once the submit button has
+     * been clicked.
+     *
+     * @since v1.0.0
+     */
+    shortcodeSubmit.unbind().on('click', function (e) {
+
+        // Get the currently selected shortcode
+        var shortcodeSelect = $('#shortcode-select'),
+            shortcode       = shortcodeSelect.val().replace('dork-', ''),
+            output          = $.fn.shortcodes[shortcode](),
+            wysiwyg;
+
+        // Determine if the tinyMCE editor is active
+        if  (typeof 'undefined' !== tinyMCE && tinyMCE.activeEditor && !tinyMCE.activeEditor.isHidden() ) {
+            wysiwyg = true;
+        }
+
+        // Remove the line breaks if plain text editor is active
+        if (!wysiwyg) {
+            output = output.replace(/<br\/>/g, '\n');
+        }
+
+        // Send the shortcode output to the editor
+        window.send_to_editor(output);
+
+        // Prevent default click behavior
+        e.preventDefault();
+
+    });
 
 
     /**
@@ -36,61 +130,6 @@
             shortcodeSubmit.removeAttr('disabled');
 
         } // End if
-
-        // Prevent default
-        e.preventDefault();
-
-    });
-
-
-    /**
-     * Begin compiling each of our shortcodes so that they can be sent to the tinyMCE
-     * editor when the user clicks the submit button.
-     *
-     * @since v1.0.0
-     */
-    shortcodeSubmit.on('click', function (e) {
-
-        // Get the currently selected shortcode
-        var shortcodeSelect = $('#shortcode-select'),
-            shortcode       = shortcodeSelect.val(),
-            output;
-
-        // Accordion shortcode parameters
-        var accordionItems = $('#accordion-items-select').val(),
-            accordionIcon = $('#accordion-icon-icon-select').find('.selected').data('id'),
-            accordionColor = $('#accordion-color-text').val(),
-            accordionMTop = $('#accordion-margin-top-slider-value').html(),
-            accordionMBot = $('#accordion-margin-bottom-slider-value').html(),
-            accordionClass = $('#accordion-class-text').val();
-
-        // No need to run anything if a shortcode hasn't been selected
-        if (shortcode !== '') {
-
-            /**
-             * Accordion shortcode.
-             *
-             * @since v1.0.0
-             */
-            if (shortcode === 'dork-accordion') {
-
-                // Form output
-                output = '[accordion color="' + accordionColor + '" margin_top="' + accordionMTop + '" margin_bottom="' + accordionMBot + '" class="' + accordionClass + '"]' + '<br/>';
-
-                for (var i = 1; i <= accordionItems; i++) {
-
-                    output += '[accordion_item title="Accordion Title #' + i + '" icon="' + accordionIcon + '"]Accordion Content #' + i + '[/accordion_item]' + '<br/>';
-
-                }
-
-                output += '[/accordion]';
-
-            }
-
-            // Insert our shortcode into the tinyMCE editor
-            window.send_to_editor(output);
-
-        }
 
         // Prevent default
         e.preventDefault();
