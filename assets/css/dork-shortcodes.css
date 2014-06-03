@@ -9,10 +9,10 @@
 	width: 100%;
 	clear: both;
 	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-ms-box-sizing: border-box;
-	-o-box-sizing: border-box;
-	box-sizing: border-box;
+	-moz-box-sizing:    border-box;
+	-ms-box-sizing:     border-box;
+	-o-box-sizing:      border-box;
+	box-sizing:         border-box;
 }
 
 .dork-accordion-item {
@@ -36,12 +36,10 @@
 	padding: 10px 0 10px 20px;
 	border-radius: 4px;
 	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+	box-shadow:         0 1px 1px rgba(0, 0, 0, 0.1);
 	-webkit-transition: all .2s linear;
-	-moz-transition: all .2s linear;
-	-ms-transition: all .2s linear;
-	-o-transition: all .2s linear;
-	transition: all .2s linear;
+	-moz-transition:    all .2s linear;
+	transition:         all .2s linear;
 }
 
 .dork-accordion-item > a.accordion-title > .dork-icon {
@@ -76,10 +74,8 @@
 	content: '\f105';
 	padding: 0 20px;
 	-webkit-transition: all .2s ease;
-	-moz-transition: all .2s ease;
-	-ms-transition: all .2s ease;
-	-o-transition: all .2s ease;
-	transition: all .2s ease;
+	-moz-transition:    all .2s ease;
+	transition:         all .2s ease;
 }
 
 .dork-accordion-item > a.accordion-title.active:after {
@@ -108,46 +104,182 @@
  * @since v1.0.0
  */
 .dork-alert {
-	position: relative;
+	position: relative !important;
 	display: block;
-	margin: 20px 0;
-	width: 100%;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-ms-box-sizing: border-box;
-	-o-box-sizing: border-box;
-	box-sizing: border-box;
+	height: auto;
+	overflow: hidden;
+	line-height: 1.4;
+	color: #729640;
+	margin: 1em 0;
+	padding: 1em;
+	background-color: #D3EDA3;
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+	box-shadow:         0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.dork-alert.alert-rounded {
+	-webkit-border-radius: 0.4em;
+	-moz-border-radius:    0.4em;
+	border-radius:         0.4em;
 }
 
 .dork-alert > i.alert-close {
 	position: absolute;
-	display: block;
-	float: none;
 	cursor: pointer;
 	top: 0;
 	right: 0;
-	height: 2em;
-	width: 2em;
+	height: 2.5em;
+	width: 2.5em;
 	font-size: 14px;
-	padding: 10px 8px 0 0;
-	text-align: right;
-	vertical-align: top;
+	padding: .75em 0 0 .75em;
 	color: inherit;
 	font-weight: normal;
 	opacity: 0.65;
-	-webkit-transition: all .2s ease;
-	-moz-transition: all .2s ease;
-	-ms-transition: all .2s ease;
-	-o-transition: all .2s ease;
-	transition: all .2s ease;
+	-webkit-transition: all .2s linear;
+	-moz-transition:    all .2s linear;
+	transition:         all .2s linear;
 }
 
 .dork-alert > i.alert-close:hover {
 	opacity: 1;
 	-webkit-transform: scale(1.2);
-	-moz-transform: scale(1.2);
-	-ms-transform: scale(1.2);
-	-o-transform: scale(1.2);
-	transform: scale(1.2);
+	-moz-transform:    scale(1.2);
+	-ms-transform:     scale(1.2);
+	-o-transform:      scale(1.2);
+	transform:         scale(1.2);
 	-webkit-backface-visibility: hidden;
+}
+
+.dork-alert > i.alert-close + .alert-content {
+	padding-right: 1.5em;
+}
+
+.dork-alert > .alert-content {
+	display: table;
+	text-align: left;
+	font-family: inherit;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 1em;
+	color: inherit;
+}
+
+.dork-alert > .alert-content > i.alert-icon {
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 3em;
+	padding-right: 0.5em;
+}
+
+.dork-alert > .alert-content > .alert-content-inner {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+/**
+ * Button shortcode.
+ *
+ * @since v1.0.0
+ */
+.dork-button {
+	position: relative;
+	display: inline-block;
+	margin: 15px;
+	vertical-align: middle;
+	text-align: center;
+	cursor: pointer;
+	font-family: inherit;
+	border: none;
+	zoom: 1;
+	outline: none;
+	white-space: nowrap;
+	text-decoration: none;
+	padding: 5px 15px;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.dork-button.button-rounded {
+	-webkit-border-radius: 0.3em;
+	-moz-border-radius:    0.3em;
+	border-radius:         0.3em;
+}
+
+.dork-button.button-flat {
+	-webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+	box-shadow:         0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.dork-button.button-flat::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 0;
+	width: 100%;
+	z-index: 10;
+	background-color: rgba(0, 0, 0, 0.08);
+	-webkit-transition: height .4s ease-in-out;
+	-moz-transition:    height .4s ease-in-out;
+	-ms-transition:     height .4s ease-in-out;
+	-o-transition:      height .4s ease-in-out;
+	transition:         height .4s ease-in-out;
+}
+
+.dork-button.button-flat:hover::after {
+	height: 100%;
+}
+
+.dork-button > .button-icon {
+	float: left;
+	display: inline-block;
+	text-align: center;
+	vertical-align: baseline;
+	padding-right: 10px;
+	width: 1em;
+	height: auto;
+}
+
+.dork-button.icon-right > .button-icon {
+	float: right;
+	padding-right: 0;
+	padding-left: 10px;
+	display: inline-block;
+	margin-right: -4px;
+}
+
+.dork-button.icon-only {
+	padding: 5px 10px;
+}
+
+.dork-button.icon-only > .button-icon {
+	padding: 0;
+	margin-right: 5px;
+}
+
+.dork-button.animated:hover > .button-icon {
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-name: wobble;
+	animation-name: wobble;
+}
+
+.dork-button.button-large, .dork-button.button-large > .button-icon {
+	font-size: 22px;
+	line-height: 38px;
+}
+
+.dork-button.button-medium, .dork-button.button-medium > .button-icon {
+	font-size: 16px;
+	line-height: 28px;
+}
+
+.dork-button.button-small, .dork-button.button-small > .button-icon {
+	font-size: 13px;
+	line-height: 18px;
 }

@@ -117,7 +117,7 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 					'type' => 'color',
 				),
 				'font-color' => array(
-					'std' => '#729640',
+					'std'  => '#729640',
 					'name' => __( 'Alert Font Color', '__shortcodes__' ),
 					'desc' => __( 'Choose a font color for your alert message. Particularly helpful when you have a dark background and need a lighter font.', '__shortcodes__' ),
 					'key'  => 'alert-font-color',
@@ -131,14 +131,14 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 					'type' => 'icon-select',
 				),
 				'rounded' => array(
-					'std' => 1,
+					'std'  => 1,
 					'name' => __( 'Add rounded corners to alert?', '__shortcodes__' ),
 					'desc' => __( '', '__shortcodes__' ),
 					'key'  => 'alert-rounded',
 					'type' => 'checkbox',
 				),
 				'dismiss' => array(
-					'std' => 1,
+					'std'  => 1,
 					'name' => __( 'Allow user to dismiss alert?', '__shortcodes__' ),
 					'desc' => __( '', '__shortcodes__' ),
 					'key'  => 'alert-dismiss',
@@ -148,7 +148,7 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 					'type' => 'spacer',
 				),
 				'margin-top' => array(
-					'std' => '20',
+					'std'  => '20',
 					'name' => __( 'Alert Margin Top', '__shortcodes__' ),
 					'desc' => __( 'Adjust the margin, or space, above your new alert. Allows for greater spacing between content.', '__shortcodes__' ),
 					'key'  => 'alert-margin-top',
@@ -158,7 +158,7 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 					),
 				),
 				'margin-bottom' => array(
-					'std' => '20',
+					'std'  => '20',
 					'name' => __( 'Alert Margin Bottom', '__shortcodes__' ),
 					'desc' => __( 'Adjust the margin, or space, below your new alert. Allows for greater spacing between content.', '__shortcodes__' ),
 					'key'  => 'alert-margin-bottom',
@@ -174,6 +174,135 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 					'key'  => 'alert-class',
 					'type' => 'text',
 				),
+			)
+		);
+
+
+		/**
+		 * Button shortcode config.
+		 *
+		 * @since v1.0.0
+		 */
+
+		$dork_shortcodes['dork-button'] = array(
+			'name'   => __( 'Button', '__shortcodes__' ),
+			'desc'   => __( '', '__shortcodes__' ),
+			'params' => array(
+				'text' => array(
+					'std'  => __( 'Please click me mister...', '__shortcodes__' ),
+					'name' => __( 'Button Text', '__shortcodes__' ),
+					'desc' => __( 'What would you like your button to say? The text can be as creative, or as boring as you like.', '__shortcodes__' ),
+					'key'  => 'button-text',
+					'type' => 'text',
+				),
+				'link' => array(
+					'std'  => __( 'http://www.google.com', '__shortcodes__' ),
+					'name' => __( 'Button Link', '__shortcodes__' ),
+					'desc' => __( 'Create the link you would like to send your visitor to when they click this button.', '__shortcodes__' ),
+					'key'  => 'button-link',
+					'type' => 'text',
+				),
+				'icon' => array(
+					'std'  => 'no-icon',
+					'name' => __( 'Button Icon', '__shortcodes__' ),
+					'desc' => __( 'Optional. If you would like to add a custom icon to your new button, you may choose your favorite here.', '__shortcodes__' ),
+					'key'  => 'button-icon',
+					'type' => 'icon-select',
+				),
+				'position' => array(
+					'std'     => 'left',
+					'name'    => __( 'Button Icon Position', '__shortcodes__' ),
+					'desc'    => __( 'If you are using an icon on your button, you may choose whether to align it to the left or right.', '__shortcodes__' ),
+					'key'     => 'button-pos',
+					'type'    => 'select',
+					'options' => array(
+						'left'  => __( 'Align Icon to the Left', '__shortcodes__' ),
+						'right' => __( 'Align Icon to the Right', '__shortcodes__' ),
+					),
+				),
+				'color' => array(
+					'std'  => '#00C8D7',
+					'name' => __( 'Button Color', '__shortcodes__' ),
+					'desc' => __( 'Choose a color for the background of your new button, Make it bright or keep it simple, the choice is yours.', '__shortcodes__' ),
+					'key'  => 'button-color',
+					'type' => 'color',
+				),
+				'font-color' => array(
+					'std'  => '#FFFFFF',
+					'name' => __( 'Button Font Color', '__shortcodes__' ),
+					'desc' => __( 'Choose a font color for your new button. Particularly helpful if you need a light font for a darker background.', '__shortcodes__' ),
+					'key'  => 'button-font-color',
+					'type' => 'color',
+				),
+				'style' => array(
+					'std'     => 'flat',
+					'name'    => __( 'Button Style', '__shortcodes__' ),
+					'desc'    => __( 'Choose a style for your button. There are several pre-defined styles to choose from, depending on your needs.', '__shortcodes__' ),
+					'key'     => 'button-style',
+					'type'    => 'select',
+					'options' => array(
+						'flat'     => __( 'Flat / Metro Styled Button', '__shortcodes__' ),
+						'gradient' => __( 'Gradient Styled button', '__shortcodes__' ),
+					),
+				),
+				'size' => array(
+					'std'     => 'medium',
+					'name'    => __( 'Button Size', '__shortcodes__' ),
+					'desc'    => __( 'Choose a size for your new button. There are currently three sizes to choose from, small, medium, and large.', '__shortcodes__' ),
+					'key'     => 'button-size',
+					'type'    => 'select',
+					'options' => array(
+						'small'  => __( 'Small Button', '__shortcodes__' ),
+						'medium' => __( 'Medium Button', '__shortcodes__' ),
+						'large'  => __( 'Large Button', '__shortcodes__' ),
+					),
+				),
+				'rounded' => array(
+					'std'  => 0,
+					'name' => __( 'Add rounded corners to button?', '__shortcodes__' ),
+					'desc' => __( '', '__shortcodes__' ),
+					'key'  => 'button-rounded',
+					'type' => 'checkbox',
+				),
+				'target' => array(
+					'std'  => 1,
+					'name' => __( 'Open button link in new window?', '__shortcodes__' ),
+					'desc' => __( '', '__shortcodes__' ),
+					'key'  => 'button-target',
+					'type' => 'checkbox',
+				),
+				'animated' => array(
+					'std'  => 1,
+					'name' => __( 'Animate the button icon?', '__shortcodes__' ),
+					'desc' => __( '', '__shortcodes__' ),
+					'key'  => 'button-animated',
+					'type' => 'checkbox',
+				),
+				'spacer' => array(
+					'type' => 'spacer',
+				),
+				'class' => array(
+					'std'  => __( 'my-custom-class', '__shortcodes__' ),
+					'name' => __( 'Add a Custom CSS Class', '__shortcodes__ ' ),
+					'desc' => __( 'If you would like to add and/or override the styles for this element, you may add a custom class to make doing so easier.', '__shortcodes__' ),
+					'key'  => 'button-class',
+					'type' => 'text',
+				),
+			)
+		);
+
+
+		/**
+		 * Callout shortcode config.
+		 *
+		 * @since v1.0.0
+		 */
+
+		$dork_shortcodes['dork-callout'] = array(
+			'name'   => __( 'Callout Block', '__shortcodes__' ),
+			'desc'   => __( '', '__shortcodes__' ),
+			'params' => array(
+
 			)
 		);
 

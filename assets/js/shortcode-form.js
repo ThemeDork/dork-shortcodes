@@ -66,6 +66,32 @@
             // Return the shortcode output
             return output;
 
+        },
+
+        // Button shortcode
+        button: function () {
+
+            // Button shortcode parameters
+            var buttonText      = $('#button-text-text').val(),
+                buttonLink      = $('#button-link-text').val(),
+                buttonIcon      = $('#button-icon-icon-select').find('.selected').data('id'),
+                buttonPos       = $('#button-pos-select').val(),
+                buttonColor     = $('#button-color-text').val(),
+                buttonFontColor = $('#button-font-color-text').val(),
+                buttonStyle     = $('#button-style-select').val(),
+                buttonSize      = $('#button-size-select').val(),
+                buttonRounded   = $('#button-rounded-checkbox').prop('checked'),
+                buttonTarget    = $('#button-target-checkbox').prop('checked'),
+                buttonAnimated  = $('#button-animated-checkbox').prop('checked'),
+                buttonClass     = $('#button-class-text').val(),
+                output;
+
+            // Shortcode form output
+            output = '[button link="' + buttonLink + '" icon="' + buttonIcon + '" position="' + buttonPos + '" color="' + buttonColor + '" font_color="' + buttonFontColor + '" style="' + buttonStyle + '" size="' + buttonSize + '" rounded="' + buttonRounded + '" new_window="' + buttonTarget + '" animated="' + buttonAnimated + '" class="' + buttonClass + '"]' + buttonText + '[/button]';
+
+            // Return the shortcode output
+            return output;
+
         }
 
     };

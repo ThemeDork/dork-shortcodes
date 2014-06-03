@@ -31,6 +31,10 @@ if ( ! function_exists( 'dork_shortcodes_alert' ) ) {
 		// Extract shortcode attributes
 		extract( shortcode_atts( $defaults, $atts ) );
 
+		// Enqueue alert scripts
+		wp_enqueue_script( 'dork-easing' );
+		wp_enqueue_script( 'dork-alert' );
+
 		// Set defaults to avoid errors
 		$color      = ( ( isset( $atts['color'] ) && $atts['color'] != '' ) ? $atts['color'] : '#D3EDA3' );
 		$font_color = ( ( isset( $atts['font_color'] ) && $atts['font_color'] != '' ) ? $atts['font_color'] : '#729640' );
@@ -49,12 +53,15 @@ if ( ! function_exists( 'dork_shortcodes_alert' ) ) {
 			$output .= '<i class="dork-icon alert-close times"></i>';
 		} // End if
 
+		$output .= '<div class="alert-content">';
+
 		if ( $icon ) {
-			$output .= '<i class="dork-icon ' . esc_attr( $icon ) . '"></i>';
+			$output .= '<i class="dork-icon alert-icon ' . esc_attr( $icon ) . '"></i>';
 		} // End if
 
-		$output .= '<div class="alert-content">';
+		$output .= '<div class="alert-content-inner">';
 		$output .= do_shortcode( $content );
+		$output .= '</div>';
 		$output .= '</div>';
 		$output .= '</div>';
 
