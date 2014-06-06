@@ -546,6 +546,7 @@ input[type=checkbox] {
 .dork-range-slider .noUi-handle {
 	background: #2EA2CC;
 	border: 1px solid #0074A2;
+	cursor: pointer;
 }
 
 span.range-slider-value {

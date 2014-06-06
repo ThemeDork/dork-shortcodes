@@ -83,6 +83,8 @@ if ( ! function_exists( 'dork_shortcodes_front_enqueue' ) ) {
 		wp_register_script( 'dork-easing', DORK_SHORTCODES_URI . '/assets/js/jquery.easing.min.js', array( 'jquery' ), time(), true );
 		wp_register_script( 'dork-accordion', DORK_SHORTCODES_URI . '/assets/js/shortcodes/accordion.min.js', array( 'jquery' ), time(), true );
 		wp_register_script( 'dork-alert', DORK_SHORTCODES_URI . '/assets/js/shortcodes/alert.min.js', array( 'jquery' ), time(), true );
+		wp_register_script( 'dork-divider', DORK_SHORTCODES_URI . '/assets/js/shortcodes/divider.min.js', array( 'jquery' ), time(), true );
+		wp_register_script( 'dork-tooltip', DORK_SHORTCODES_URI . '/assets/js/shortcodes/tooltip.min.js', array( 'jquery' ), time(), true );
 
 		// Enqueue our front-end styles
 		wp_enqueue_style( 'icon-font' );

@@ -19,272 +19,102 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 	function dork_shortcodes_config() {
 
 		/**
-		 * Accordion shortcode config.
-		 *
-		 * @since v1.0.0
-		 */
-
-		$dork_shortcodes['dork-accordion'] = array(
-			'name'   => __( 'Accordion', '__shortcodes__' ),
-			'desc'   => __( '', '__shortcodes__' ),
-			'params' => array(
-				'items' => array(
-					'std'     => '3',
-					'name'    => __( 'Number of Accordion Items', '__shortcodes__' ),
-					'desc'    => __( 'Choose the number of accordion items that you would like to create. You can always add more items later.', '__shortcodes__' ),
-					'key'     => 'accordion-items',
-					'type'    => 'select',
-					'options' => array(
-						'1'  => __( 'One Item', '__shortcodes__' ),
-						'2'  => __( 'Two Items', '__shortcodes__' ),
-						'3'  => __( 'Three Items', '__shortcodes__' ),
-						'4'  => __( 'Four Items', '__shortcodes__' ),
-						'5'  => __( 'Five Items', '__shortcodes__' ),
-						'6'  => __( 'Six Items', '__shortcodes__' ),
-						'7'  => __( 'Seven Items', '__shortcodes__' ),
-						'8'  => __( 'Eight Items', '__shortcodes__' ),
-						'9'  => __( 'Nine Items', '__shortcodes__' ),
-						'10' => __( 'Ten Items', '__shortcodes__' ),
-					),
-				),
-				'icon' => array(
-					'std' => 'no-icon',
-					'name' => __( 'Accordion Icon', '__shortcodes__' ),
-					'desc' => __( 'Optional. If you would like to choose an icon for your accordion items, you may do so here.', '__shortcodes__' ),
-					'key'  => 'accordion-icon',
-					'type' => 'icon-select',
-				),
-				'margin-top' => array(
-					'std' => '20',
-					'name' => __( 'Accordion Margin Top', '__shortcodes__' ),
-					'desc' => __( 'Adjust the margin, or space, above your new accordion. Allows for greater spacing between content.', '__shortcodes__' ),
-					'key'  => 'accordion-margin-top',
-					'type' => 'slider',
-					'options' => array(
-						'type' => 'px',
-					),
-				),
-				'margin-bottom' => array(
-					'std' => '20',
-					'name' => __( 'Accordion Margin Bottom', '__shortcodes__' ),
-					'desc' => __( 'Adjust the margin, or space, below your new accordion. Allows for greater spacing between content.', '__shortcodes__' ),
-					'key'  => 'accordion-margin-bottom',
-					'type' => 'slider',
-					'options' => array(
-						'type' => 'px',
-					),
-				),
-				'color' => array(
-					'std' => '#00C8D7',
-					'name' => __( 'Accordion Accent Color', '__shortcodes__' ),
-					'desc' => __( 'Choose an accent color for your accordion items. This will be visible when the item is open / active.', '__shortcodes__' ),
-					'key'  => 'accordion-color',
-					'type' => 'color',
-				),
-				'class' => array(
-					'std'  => __( 'my-custom-class', '__shortcodes__' ),
-					'name' => __( 'Add a Custom CSS Class', '__shortcodes__ ' ),
-					'desc' => __( 'If you would like to add and/or override the styles for this element, you may add a custom class to make doing so easier.', '__shortcodes__' ),
-					'key'  => 'accordion-class',
-					'type' => 'text',
-				),
-			)
-		);
-
-
-		/**
-		 * Alert shortcode config.
-		 *
-		 * @since v1.0.0
-		 */
-
-		$dork_shortcodes['dork-alert'] = array(
-			'name'   => __( 'Alert Message', '__shortcodes__' ),
-			'desc'   => __( '', '__shortcodes__' ),
-			'params' => array(
-				'content' => array(
-					'std'  => __( 'Finally, I get some attention around here!', '__shortcodes__' ),
-					'name' => __( 'Alert Content', '__shortcodes__' ),
-					'desc' => __( 'Create the content, or message, to be displayed on your new alert. This can be just about anything, so get creative.', '__shortcodes__' ),
-					'key'  => 'alert-content',
-					'type' => 'textarea',
-				),
-				'color' => array(
-					'std'  => '#D3EDA3',
-					'name' => __( 'Alert Color', '__shortcodes__' ),
-					'desc' => __( 'Choose a background color for your alert message. You might consider ( #D3EDA3 - success ), ( #E1F2FA - info ), and ( #F5AB9E - error ).', '__shortcodes__' ),
-					'key'  => 'alert-color',
-					'type' => 'color',
-				),
-				'font-color' => array(
-					'std'  => '#729640',
-					'name' => __( 'Alert Font Color', '__shortcodes__' ),
-					'desc' => __( 'Choose a font color for your alert message. Particularly helpful when you have a dark background and need a lighter font.', '__shortcodes__' ),
-					'key'  => 'alert-font-color',
-					'type' => 'color',
-				),
-				'icon' => array(
-					'std'  => 'no-icon',
-					'name' => __( 'Alert Icon', '__shortcodes__' ),
-					'desc' => __( 'Optional. If you would like to display a custom icon beside your alert content, you may choose one here.', '__shortcodes__' ),
-					'key'  => 'alert-icon',
-					'type' => 'icon-select',
-				),
-				'rounded' => array(
-					'std'  => 1,
-					'name' => __( 'Add rounded corners to alert?', '__shortcodes__' ),
-					'desc' => __( '', '__shortcodes__' ),
-					'key'  => 'alert-rounded',
-					'type' => 'checkbox',
-				),
-				'dismiss' => array(
-					'std'  => 1,
-					'name' => __( 'Allow user to dismiss alert?', '__shortcodes__' ),
-					'desc' => __( '', '__shortcodes__' ),
-					'key'  => 'alert-dismiss',
-					'type' => 'checkbox',
-				),
-				'spacer' => array(
-					'type' => 'spacer',
-				),
-				'margin-top' => array(
-					'std'  => '20',
-					'name' => __( 'Alert Margin Top', '__shortcodes__' ),
-					'desc' => __( 'Adjust the margin, or space, above your new alert. Allows for greater spacing between content.', '__shortcodes__' ),
-					'key'  => 'alert-margin-top',
-					'type' => 'slider',
-					'options' => array(
-						'type' => 'px',
-					),
-				),
-				'margin-bottom' => array(
-					'std'  => '20',
-					'name' => __( 'Alert Margin Bottom', '__shortcodes__' ),
-					'desc' => __( 'Adjust the margin, or space, below your new alert. Allows for greater spacing between content.', '__shortcodes__' ),
-					'key'  => 'alert-margin-bottom',
-					'type' => 'slider',
-					'options' => array(
-						'type' => 'px',
-					),
-				),
-				'class' => array(
-					'std'  => __( 'my-custom-class', '__shortcodes__' ),
-					'name' => __( 'Add a Custom CSS Class', '__shortcodes__ ' ),
-					'desc' => __( 'If you would like to add and/or override the styles for this element, you may add a custom class to make doing so easier.', '__shortcodes__' ),
-					'key'  => 'alert-class',
-					'type' => 'text',
-				),
-			)
-		);
-
-
-		/**
 		 * Button shortcode config.
 		 *
 		 * @since v1.0.0
 		 */
 
 		$dork_shortcodes['dork-button'] = array(
-			'name'   => __( 'Button', '__shortcodes__' ),
-			'desc'   => __( '', '__shortcodes__' ),
+			'name'   => __( 'Button', '__scLang__' ),
+			'desc'   => __( '', '__scLang__' ),
 			'params' => array(
 				'text' => array(
-					'std'  => __( 'Please click me mister...', '__shortcodes__' ),
+					'std'  => __( 'Please click me mister...', '__scLang__' ),
 					'name' => __( 'Button Text', '__shortcodes__' ),
-					'desc' => __( 'What would you like your button to say? The text can be as creative, or as boring as you like.', '__shortcodes__' ),
+					'desc' => __( 'Define the text that you would like to display on your new button. It can say just about anything so have some fun with it.', '__scLang__' ),
 					'key'  => 'button-text',
 					'type' => 'text',
 				),
 				'link' => array(
-					'std'  => __( 'http://www.google.com', '__shortcodes__' ),
-					'name' => __( 'Button Link', '__shortcodes__' ),
-					'desc' => __( 'Create the link you would like to send your visitor to when they click this button.', '__shortcodes__' ),
+					'std'  => __( 'http://www.google.com', '__scLang__' ),
+					'name' => __( 'Button Link / URL', '__scLang__' ),
+					'desc' => __( 'Where would you like to send the user when they click on your button? You may define the link URL here.', '__scLang__' ),
 					'key'  => 'button-link',
 					'type' => 'text',
 				),
-				'icon' => array(
-					'std'  => 'no-icon',
-					'name' => __( 'Button Icon', '__shortcodes__' ),
-					'desc' => __( 'Optional. If you would like to add a custom icon to your new button, you may choose your favorite here.', '__shortcodes__' ),
-					'key'  => 'button-icon',
-					'type' => 'icon-select',
-				),
-				'position' => array(
-					'std'     => 'left',
-					'name'    => __( 'Button Icon Position', '__shortcodes__' ),
-					'desc'    => __( 'If you are using an icon on your button, you may choose whether to align it to the left or right.', '__shortcodes__' ),
-					'key'     => 'button-pos',
-					'type'    => 'select',
-					'options' => array(
-						'left'  => __( 'Align Icon to the Left', '__shortcodes__' ),
-						'right' => __( 'Align Icon to the Right', '__shortcodes__' ),
-					),
-				),
 				'color' => array(
 					'std'  => '#00C8D7',
-					'name' => __( 'Button Color', '__shortcodes__' ),
-					'desc' => __( 'Choose a color for the background of your new button, Make it bright or keep it simple, the choice is yours.', '__shortcodes__' ),
+					'name' => __( 'Button Color', '__scLang__' ),
+					'desc' => __( 'Choose a custom color for your new button. This can be any color of your choosing, bright or dull, its up to you.', '__scLang__' ),
 					'key'  => 'button-color',
 					'type' => 'color',
 				),
 				'font-color' => array(
 					'std'  => '#FFFFFF',
-					'name' => __( 'Button Font Color', '__shortcodes__' ),
-					'desc' => __( 'Choose a font color for your new button. Particularly helpful if you need a light font for a darker background.', '__shortcodes__' ),
+					'name' => __( 'Button Font Color', '__scLang__' ),
+					'desc' => __( 'Choose a font color for your new button. Great for adding light text to a darker button! Hint...hint...', '__scLang__' ),
 					'key'  => 'button-font-color',
 					'type' => 'color',
 				),
-				'style' => array(
-					'std'     => 'flat',
-					'name'    => __( 'Button Style', '__shortcodes__' ),
-					'desc'    => __( 'Choose a style for your button. There are several pre-defined styles to choose from, depending on your needs.', '__shortcodes__' ),
-					'key'     => 'button-style',
-					'type'    => 'select',
-					'options' => array(
-						'flat'     => __( 'Flat / Metro Styled Button', '__shortcodes__' ),
-						'gradient' => __( 'Gradient Styled button', '__shortcodes__' ),
-					),
-				),
 				'size' => array(
 					'std'     => 'medium',
-					'name'    => __( 'Button Size', '__shortcodes__' ),
-					'desc'    => __( 'Choose a size for your new button. There are currently three sizes to choose from, small, medium, and large.', '__shortcodes__' ),
+					'name'    => __( 'Button Size', '__scLang__' ),
+					'desc'    => __( 'What size would you like your button to be? Small, medium or large, you get to decide...', '__scLang__' ),
 					'key'     => 'button-size',
 					'type'    => 'select',
 					'options' => array(
-						'small'  => __( 'Small Button', '__shortcodes__' ),
-						'medium' => __( 'Medium Button', '__shortcodes__' ),
-						'large'  => __( 'Large Button', '__shortcodes__' ),
+						'small'  => __( 'Small Button', '__scLang__' ),
+						'medium' => __( 'Medium Button', '__scLang__' ),
+						'large'  => __( 'Large Button', '__scLang__' ),
 					),
 				),
-				'rounded' => array(
-					'std'  => 0,
-					'name' => __( 'Add rounded corners to button?', '__shortcodes__' ),
-					'desc' => __( '', '__shortcodes__' ),
-					'key'  => 'button-rounded',
+				'style' => array(
+					'std'     => 'standard',
+					'name'    => __( 'Button Style', '__scLang__' ),
+					'desc'    => __( 'Choose a style for your new button. There are several styles to choose from, depending on your preferences.', '__scLang__' ),
+					'key'     => 'button-style',
+					'type'    => 'select',
+					'options' => array(
+						'standard' => __( 'Standard Button', '__scLang__' ),
+						'outlined' => __( 'Outlined Button', '__scLang__' ),
+						'animated' => __( 'Animated Button', '__scLang__' ),
+					),
+				),
+				'icon' => array(
+					'std'  => 'no-icon',
+					'name' => __( 'Button Icon', '__scLang__' ),
+					'desc' => __( 'If you would like to add an icon to your button, or have chosen the animated button from the style list, you may choose your icon here.', '__scLang__' ),
+					'key'  => 'button-icon',
+					'type' => 'icon-select',
+				),
+				'shadow' => array(
+					'std'  => 1,
+					'name' => __( 'Add a drop shadow to this button?', '__scLang__' ),
+					'desc' => __( '', '__scLang__' ),
+					'key'  => 'button-shadow',
 					'type' => 'checkbox',
 				),
 				'target' => array(
 					'std'  => 1,
-					'name' => __( 'Open button link in new window?', '__shortcodes__' ),
-					'desc' => __( '', '__shortcodes__' ),
+					'name' => __( 'Open link in new window?', '__scLang__' ),
+					'desc' => __( '', '__scLang__' ),
 					'key'  => 'button-target',
 					'type' => 'checkbox',
 				),
-				'animated' => array(
-					'std'  => 1,
-					'name' => __( 'Animate the button icon?', '__shortcodes__' ),
-					'desc' => __( '', '__shortcodes__' ),
-					'key'  => 'button-animated',
+				'rounded' => array(
+					'std'  => 0,
+					'name' => __( 'Add rounded corners to this button?', '__scLang__' ),
+					'desc' => __( '', '__scLang__' ),
+					'key'  => 'button-rounded',
 					'type' => 'checkbox',
 				),
 				'spacer' => array(
 					'type' => 'spacer',
 				),
 				'class' => array(
-					'std'  => __( 'my-custom-class', '__shortcodes__' ),
-					'name' => __( 'Add a Custom CSS Class', '__shortcodes__ ' ),
-					'desc' => __( 'If you would like to add and/or override the styles for this element, you may add a custom class to make doing so easier.', '__shortcodes__' ),
+					'std'  => __( 'custom-css-class', '__scLang__' ),
+					'name' => __( 'Custom CSS Class', '__scLang__' ),
+					'desc' => __( 'Here you have the option to add a custom CSS class. This would allow you to override, or add to, the default styles of this element.', '__scLang__' ),
 					'key'  => 'button-class',
 					'type' => 'text',
 				),
@@ -293,16 +123,252 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 
 
 		/**
-		 * Callout shortcode config.
+		 * Divider shortcode config.
 		 *
 		 * @since v1.0.0
 		 */
 
-		$dork_shortcodes['dork-callout'] = array(
-			'name'   => __( 'Callout Block', '__shortcodes__' ),
-			'desc'   => __( '', '__shortcodes__' ),
+		$dork_shortcodes['dork-divider'] = array(
+			'name'   => __( 'Divider', '__scLang__' ),
+			'desc'   => __( '', '__scLang__' ),
 			'params' => array(
+				'style' => array(
+					'std'     => 'single',
+					'name'    => __( 'Divider Style', '__scLang__' ),
+					'desc'    => __( 'Choose the style of divider that you would like to create. There are several styles to choose from.', '__scLang__' ),
+					'key'     => 'divider-style',
+					'type'    => 'select',
+					'options' => array(
+						'blank'  => __( 'Blank Spacer / No Line' ),
+						'single' => __( 'Single Divider', '__scLang__' ),
+						'thick'  => __( 'Single Thick Divider', '__scLang__' ),
+						'dashed' => __( 'Single Dashed Divider', '__scLang__' ),
+						'dotted' => __( 'Single Dotted Divider', '__scLang__' ),
+						'double' => __( 'Double Divider', '__scLang__' ),
+						'shadow' => __( 'Shadow Divider', '__scLang__' ),
+					),
+				),
+				'margin-top' => array(
+					'std'     => '20',
+					'name'    => __( 'Divider Top Margin', '__scLang__' ),
+					'desc'    => __( 'Adjust the margin, or space, above your new divider. Helpful if you would like to add more space between content.', '__scLang__' ),
+					'key'     => 'divider-margin-top',
+					'type'    => 'slider',
+					'options' => array(
+						'type' => 'px',
+					),
+				),
+				'margin-bottom' => array(
+					'std'     => '20',
+					'name'    => __( 'Divider Bottom Margin', '__scLang__' ),
+					'desc'    => __( 'Adjust the margin, or space, below your new divider. Helpful if you would like to add more space between content.', '__scLang__' ),
+					'key'     => 'divider-margin-bottom',
+					'type'    => 'slider',
+					'options' => array(
+						'type' => 'px',
+					),
+				),
+				'to-top' => array(
+					'std'  => 0,
+					'name' => __( 'Add a "Go to top" link to divider?', '__scLang__' ),
+					'desc' => __( '', '__scLang__' ),
+					'key'  => 'divider-to-top',
+					'type' => 'checkbox',
+				),
+				'spacer' => array(
+					'type' => 'spacer',
+				),
+				'class' => array(
+					'std'  => __( 'custom-css-class', '__scLang__' ),
+					'name' => __( 'Custom CSS Class', '__scLang__' ),
+					'desc' => __( 'Here you have the option to add a custom CSS class. This would allow you to override, or add to, the default styles of this element.', '__scLang__' ),
+					'key'  => 'divider-class',
+					'type' => 'text',
+				),
 
+			)
+		);
+
+
+		/**
+		 * Dropcap shortcode config.
+		 *
+		 * @since v1.0.0
+		 */
+
+		$dork_shortcodes['dork-dropcap'] = array(
+			'name'   => __( 'Dropcap', '__scLang__' ),
+			'desc'   => __( '', '__scLang__' ),
+			'params' => array(
+				'symbol' => array(
+					'std'  => 'R',
+					'name' => __( 'Dropcap Symbol', '__scLang__' ),
+					'desc' => __( 'Define the symbol, or letter, for your new dropcap. Typically the first letter of your sentence.', '__scLang__' ),
+					'key'  => 'dropcap-symbol',
+					'type' => 'text',
+				),
+				'style' => array(
+					'std'     => 'round',
+					'name'    => __( 'Dropcap Style', '__scLang__' ),
+					'desc'    => __( 'Choose a style for your new dropcap. There are several styles to choose from depending on your preferences.', '__scLang__' ),
+					'key'     => 'dropcap-style',
+					'type'    => 'select',
+					'options' => array(
+						'plain'  => __( 'Plain Dropcap / No Background', '__scLang__' ),
+						'round'  => __( 'Dropcap with Round Background', '__scLang__' ),
+						'square' => __( 'Dropcap with Square Background', '__scLang__' ),
+					),
+				),
+				'size' => array(
+					'std'     => 'medium',
+					'name'    => __( 'Dropcap Size', '__scLang__' ),
+					'desc'    => __( 'Choose a size for your dropcap. You can choose from small, medium or large.', '__scLang__' ),
+					'key'     => 'dropcap-size',
+					'type'    => 'select',
+					'options' => array(
+						'small'  => __( 'Small Dropcap', '__scLang__' ),
+						'medium' => __( 'Medium Dropcap', '__scLang__' ),
+						'large'  => __( 'Large Dropcap', '__scLang__' ),
+					),
+				),
+				'color' => array(
+					'std'  => '#777777',
+					'name' => __( 'Dropcap Font Color', '__scLang__' ),
+					'desc' => __( 'Choose a font color for your new dropcap. If you are using a dark background, you may want to use a lighter font.', '__scLang__' ),
+					'key'  => 'dropcap-color',
+					'type' => 'color',
+				),
+				'bg-color' => array(
+					'std'  => '#E5E5E5',
+					'name' => __( 'Dropcap Background Color', '__scLang__' ),
+					'desc' => __( 'If you have chosen a dropcap style with a background, you can pick a color for that background here.', '__scLang__' ),
+					'key'  => 'dropcap-bg-color',
+					'type' => 'color',
+				),
+				'class' => array(
+					'std'  => __( 'custom-css-class', '__scLang__' ),
+					'name' => __( 'Custom CSS Class', '__scLang__' ),
+					'desc' => __( 'Here you have the option to add a custom CSS class. This would allow you to override, or add to, the default styles of this element.', '__scLang__' ),
+					'key'  => 'dropcap-class',
+					'type' => 'text',
+				),
+			)
+		);
+
+
+		/**
+		 * Highlight shortcode config.
+		 *
+		 * @since v1.0.0
+		 */
+
+		$dork_shortcodes['dork-highlight'] = array(
+			'name'   => __( 'Highlight', '__scLang__' ),
+			'desc'   => __( '', '__scLang__' ),
+			'params' => array(
+				'content' => array(
+					'std'  => __( 'I\'ll be the highlight of the party...', '__scLang__' ),
+					'name' => __( 'Highlight Content', '__scLang__' ),
+					'desc' => __( 'Create the content to be highlighted. You can write as much, or as little as you would like.', '__scLang__' ),
+					'key'  => 'highlight-content',
+					'type' => 'textarea',
+				),
+				'color' => array(
+					'std'  => '#00C8D7',
+					'name' => __( 'Highlight Color', '__scLang__' ),
+					'desc' => __( 'Choose a color for your highlight. Brighter colors tend to stand out and get noticed, but its up to you.', '__scLang__' ),
+					'key'  => 'highlight-color',
+					'type' => 'color',
+				),
+				'font-color' => array(
+					'std'  => '#FFFFFF',
+					'name' => __( 'Highlight Font Color', '__scLang__' ),
+					'desc' => __( 'Pick a font color for your highlight. You might consider using a lighter font on a dark background.', '__scLang__' ),
+					'key'  => 'highlight-font-color',
+					'type' => 'color',
+				),
+				'rounded' => array(
+					'std'  => 0,
+					'name' => __( 'Make this highlight rounded?', '__scLang__' ),
+					'desc' => __( '', '__scLang__' ),
+					'key'  => 'highlight-rounded',
+					'type' => 'checkbox',
+				),
+				'spacer' => array(
+					'type' => 'spacer',
+				),
+				'class' => array(
+					'std'  => __( 'custom-css-class', '__scLang__' ),
+					'name' => __( 'Custom CSS Class', '__scLang__' ),
+					'desc' => __( 'Here you have the option to add a custom CSS class. This would allow you to override, or add to, the default styles of this element.', '__scLang__' ),
+					'key'  => 'highlight-class',
+					'type' => 'text',
+				),
+			)
+		);
+
+
+		/**
+		 * Tooltip shortcode config.
+		 *
+		 * @since v1.0.0
+		 */
+
+		$dork_shortcodes['dork-tooltip'] = array(
+			'name'   => __( 'Tooltip', '__scLang__' ),
+			'desc'   => __( '', '__scLang__' ),
+			'params' => array(
+				'text' => array(
+					'std'  => __( 'Hi there! I am a tooltip...', '__scLang__' ),
+					'name' => __( 'Tooltip Text', '__scLang__' ),
+					'desc' => __( 'This will be the text that is displayed on your tooltip. So when the user opens the tooltip, they will see what you put here.', '__scLang__' ),
+					'key'  => 'tooltip-text',
+					'type' => 'text',
+				),
+				'content' => array(
+					'std'  => __( 'Hover me to see a tooltip...Yay!', '__scLang__' ),
+					'name' => __( 'Tooltip Content', '__scLang__' ),
+					'desc' => __( 'Here you will create the content that the user will hover over to see your new tooltip. It can be a few words or a whole paragraph if you want.', '__scLang__' ),
+					'key'  => 'tooltip-content',
+					'type' => 'textarea',
+				),
+				'link' => array(
+					'std'  => __( 'http://www.google.com', '__scLang__' ),
+					'name' => __( 'Tooltip Link', '__scLang__' ),
+					'desc' => __( 'If you would like to send the user to another page when they click on your tooltip content created above, you may define the link to that page here. Or just leave it blank.', '__scLang__' ),
+					'key'  => 'tooltip-link',
+					'type' => 'text',
+				),
+				'direction' => array(
+					'std'     => 'top',
+					'name'    => __( 'Tooltip Direction', '__scLang__' ),
+					'desc'    => __( 'Choose the direction, or position, of where your tooltip will open. May need to be modified based on where your tooltip is placed.', '__scLang__' ),
+					'key'     => 'tooltip-direction',
+					'type'    => 'select',
+					'options' => array(
+						'top'    => __( 'Tooltip on Top', '__scLang__' ),
+						'bottom' => __( 'Tooltip on Bottom', '__scLang__' ),
+						'left'   => __( 'Tooltip to the Left', '__scLang__' ),
+						'right'  => __( 'Tooltip to the Right', '__scLang__' ),
+					),
+				),
+				'target' => array(
+					'std'  => 1,
+					'name' => __( 'Open tooltip link in new window?', '__scLang__' ),
+					'desc' => __( '', '__scLang__' ),
+					'key'  => 'tooltip-target',
+					'type' => 'checkbox',
+				),
+				'spacer' => array(
+					'type' => 'spacer',
+				),
+				'class' => array(
+					'std'  => __( 'custom-css-class', '__scLang__' ),
+					'name' => __( 'Custom CSS Class', '__scLang__' ),
+					'desc' => __( 'Here you have the option to add a custom CSS class. This would allow you to override, or add to, the default styles of this element.', '__scLang__' ),
+					'key'  => 'tooltip-class',
+					'type' => 'text',
+				),
 			)
 		);
 

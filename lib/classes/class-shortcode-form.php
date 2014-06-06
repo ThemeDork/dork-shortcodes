@@ -145,13 +145,13 @@ class Dork_Shortcodes_Form extends Dork_Shortcodes {
 
 				<div class="shortcode-toolbar-support">
 
-					<a class="submitdelete deletion" href="<?php esc_attr_e( DORK_SHORTCODES_SUPPORT ); ?>" target="_blank"><?php esc_html_e( 'Read the Documentation', '__shortcodes__' ); ?></a>
+					<a class="submitdelete deletion" href="<?php esc_attr_e( DORK_SHORTCODES_SUPPORT ); ?>" target="_blank"><?php esc_html_e( 'Read the Documentation', '__scLang__' ); ?></a>
 
 				</div><!-- End .shortcode-toolbar-support -->
 
 				<div class="shortcode-toolbar-submit">
 
-					<input type="submit" autocomplete="off" id="shortcode-submit" name="shortcode-submit" class="button button-primary" value="<?php esc_attr_e( 'Insert Shortcode', '__shortcodes__' ); ?>" disabled />
+					<input type="submit" autocomplete="off" id="shortcode-submit" name="shortcode-submit" class="button button-primary" value="<?php esc_attr_e( 'Insert Shortcode', '__scLang__' ); ?>" disabled />
 
 				</div><!-- End .shortcode-toolbar-submit -->
 

@@ -52,7 +52,7 @@ class Dork_Shortcodes {
 		} else {
 
 			// Generate an error if the configuration file was not found
-			$this->config_error = __( 'Hot diggity dog...ya broke it! That darn config file has gone missing!', '__shortcodes__' );
+			$this->config_error = __( 'Hot diggity dog...ya broke it! That darn config file has gone missing!', '__scLang__' );
 
 		} // End if / else
 
@@ -73,10 +73,10 @@ class Dork_Shortcodes {
 	public function setup_meta_boxes() {
 
 		// Add the meta box to WordPress posts
-		add_meta_box( 'dork_shortcodes_manager', __( 'Shortcode Manager', '__shortcodes__' ), array( $this, 'form_setup' ), 'post', 'normal', 'high', null );
+		add_meta_box( 'dork_shortcodes_manager', __( 'Shortcode Manager', '__scLang__' ), array( $this, 'form_setup' ), 'post', 'normal', 'high', null );
 
 		// Add the meta box to WordPress pages
-		add_meta_box( 'dork_shortcodes_manager', __( 'Shortcode Manager', '__shortcodes__' ), array( $this, 'form_setup' ), 'page', 'normal', 'high', null );
+		add_meta_box( 'dork_shortcodes_manager', __( 'Shortcode Manager', '__scLang__' ), array( $this, 'form_setup' ), 'page', 'normal', 'high', null );
 
 	} // End setup_meta_boxes()
 

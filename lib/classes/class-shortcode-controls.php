@@ -98,7 +98,7 @@ class Dork_Shortcodes_Controls {
 				$output .= '<div class="dork-control-field">';
 				$output .= '<label for="' . esc_attr( $key ) . '-select">' . esc_html( $pname ) . '</label>';
 				$output .= '<select id="' . esc_attr( $key ) . '-select" autocomplete="off">';
-				$output .= '<option value="">' . esc_html__( 'Choose One:', '__shortcodes__' ) . '</option>';
+				$output .= '<option value="">' . esc_html__( 'Choose One:', '__scLang__' ) . '</option>';
 
 				if ( ! empty( $options ) && is_array( $options ) ) {
 
@@ -166,12 +166,12 @@ class Dork_Shortcodes_Controls {
 				$output .= '<label for="' . esc_attr( $key ) . '-color-select">' . esc_html( $pname ) . '</label>';
 				$output .= '<ul id="' . esc_attr( $key ) . '-color-select" class="dork-color-select" autocomplete="off">';
 
-				$output .= '<li class="icon-select-option selected" data-id="alert-muted"><i class="dork-icon-circle icon-muted"></i>' . __( 'Muted / Grey', '__shortcodes__' ) . '</li>';
-				$output .= '<li class="icon-select-option" data-id="alert-info"><i class="dork-icon-circle icon-info"></i>' . __( 'Info / Blue', '__shortcodes__' ) . '</li>';
-				$output .= '<li class="icon-select-option" data-id="alert-success"><i class="dork-icon-circle icon-success"></i>' . __( 'Success / Green', '__shortcodes__' ) . '</li>';
-				$output .= '<li class="icon-select-option" data-id="alert-warning"><i class="dork-icon-circle icon-warning"></i>' . __( 'Warning / Yellow', '__shortcodes__' ) . '</li>';
-				$output .= '<li class="icon-select-option" data-id="alert-danger"><i class="dork-icon-circle icon-danger"></i>' . __( 'Danger / Red', '__shortcodes__' ) . '</li>';
-				$output .= '<li class="icon-select-option" data-id="alert-inverted"><i class="dork-icon-circle icon-inverted"></i>' . __( 'Inverted / Black', '__shortcodes__' ) . '</li>';
+				$output .= '<li class="icon-select-option selected" data-id="alert-muted"><i class="dork-icon-circle icon-muted"></i>' . __( 'Muted / Grey', '__scLang__' ) . '</li>';
+				$output .= '<li class="icon-select-option" data-id="alert-info"><i class="dork-icon-circle icon-info"></i>' . __( 'Info / Blue', '__scLang__' ) . '</li>';
+				$output .= '<li class="icon-select-option" data-id="alert-success"><i class="dork-icon-circle icon-success"></i>' . __( 'Success / Green', '__scLang__' ) . '</li>';
+				$output .= '<li class="icon-select-option" data-id="alert-warning"><i class="dork-icon-circle icon-warning"></i>' . __( 'Warning / Yellow', '__scLang__' ) . '</li>';
+				$output .= '<li class="icon-select-option" data-id="alert-danger"><i class="dork-icon-circle icon-danger"></i>' . __( 'Danger / Red', '__scLang__' ) . '</li>';
+				$output .= '<li class="icon-select-option" data-id="alert-inverted"><i class="dork-icon-circle icon-inverted"></i>' . __( 'Inverted / Black', '__scLang__' ) . '</li>';
 
 				$output .= '</ul>';
 				$output .= '<div class="control-field-desc">' . esc_html( $desc ) . '</div>';

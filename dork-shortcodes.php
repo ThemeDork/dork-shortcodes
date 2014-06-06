@@ -50,7 +50,7 @@ if ( ! function_exists( 'dork_shortcodes_locale' ) ) {
 	function dork_shortcodes_locale() {
 
 		// Register our new text domain, make it unique!
-		load_plugin_textdomain( '__shortcodes__', false, DORK_SHORTCODES_DIR . '/lib/lang' );
+		load_plugin_textdomain( '__scLang__', false, DORK_SHORTCODES_DIR . '/lib/lang' );
 
 	} // End dork_shortcodes_locale()
 
