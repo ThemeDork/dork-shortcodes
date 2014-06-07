@@ -1,15 +1,17 @@
-<?php if ( ! defined( 'ABSPATH' ) ) { die( 'Error! Unauthorized access is denied...!' ); }
+<?php if ( !defined( 'ABSPATH' ) ) {
+	die( 'Error! Unauthorized access is denied...!' );
+}
 
 /**
  * Tooltip.php
  *
  * Begin building our tooltip shortcode.
  *
- * @package Dork Shortcodes
- * @author ThemeDork <dork@themedork.com>
+ * @package   Dork Shortcodes
+ * @author    ThemeDork <dork@themedork.com>
  * @copyright 2014 ThemeDork
- * @link http://www.themedork.com
- * @since v1.0.0
+ * @link      http://www.themedork.com
+ * @since     v1.0.0
  */
 
 if ( ! function_exists( 'dork_shortcodes_tooltip' ) ) {
@@ -32,11 +34,11 @@ if ( ! function_exists( 'dork_shortcodes_tooltip' ) ) {
 		wp_enqueue_script( 'dork-tooltip' );
 
 		// Set defaults to avoid errors
-		$text = ( ( isset( $atts['text'] ) && $atts['text'] != '' ) ? $atts['text'] : '' );
-		$link = ( ( isset( $atts['link'] ) && $atts['link'] != '' ) ? $atts['link'] : '#' );
-		$direc = ( ( isset( $atts['direction'] ) && $atts['direction'] != '' ) ? $atts['direction'] : 'top' );
+		$text   = ( ( isset( $atts['text'] ) && $atts['text'] != '' ) ? $atts['text'] : '' );
+		$link   = ( ( isset( $atts['link'] ) && $atts['link'] != '' ) ? $atts['link'] : '#' );
+		$direc  = ( ( isset( $atts['direction'] ) && $atts['direction'] != '' ) ? $atts['direction'] : 'top' );
 		$target = ( ( isset( $atts['new_window'] ) && $atts['new_window'] != 'true' ) ? '_self' : '_blank' );
-		$class = ( ( isset( $atts['class'] ) && $atts['class'] != '' ) ? ' ' . $atts['class'] : '' );
+		$class  = ( ( isset( $atts['class'] ) && $atts['class'] != '' ) ? ' ' . $atts['class'] : '' );
 
 		// Begin building the shortcode output
 		$output = '';

@@ -51,9 +51,10 @@ a.dork-button.button-standard:hover::after {
 	height: 100%;
 }
 
-a.dork-button.button-standard i {
-	margin: 0;
+a.dork-button.button-standard i, a.dork-button.button-outlined i {
+	margin-top: -2px;
 	padding-right: 5px;
+	display: inline-block;
 }
 
 a.dork-button.button-animated i {

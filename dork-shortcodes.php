@@ -1,4 +1,6 @@
-<?php if ( ! defined( 'ABSPATH' ) ) { die( 'Error! Unauthorized access is denied...!' ); }
+<?php if ( ! defined( 'ABSPATH' ) ) {
+	die( 'Error! Unauthorized access is denied...!' );
+}
 
 /**
  * Plugin Name: Dork Shortcodes
@@ -9,11 +11,11 @@
  * Author URI: http://www.themedork.com
  * License: GNU General Public License v3
  *
- * @package Dork Shortcodes
- * @author ThemeDork <dork@themedork.com>
+ * @package   Dork Shortcodes
+ * @author    ThemeDork <dork@themedork.com>
  * @copyright 2014 ThemeDork
- * @link http://www.themedork.com
- * @since v1.0.0
+ * @link      http://www.themedork.com
+ * @since     v1.0.0
  */
 
 /**

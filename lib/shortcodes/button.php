@@ -1,15 +1,17 @@
-<?php if ( ! defined( 'ABSPATH' ) ) { die( 'Error! Unauthorized access is denied...!' ); }
+<?php if ( ! defined( 'ABSPATH' ) ) {
+	die( 'Error! Unauthorized access is denied...!' );
+}
 
 /**
  * Button.php
  *
  * Begin building our button shortcode.
  *
- * @package Dork Shortcodes
- * @author ThemeDork <dork@themedork.com>
+ * @package   Dork Shortcodes
+ * @author    ThemeDork <dork@themedork.com>
  * @copyright 2014 ThemeDork
- * @link http://www.themedork.com
- * @since v1.0.0
+ * @link      http://www.themedork.com
+ * @since     v1.0.0
  */
 
 if ( ! function_exists( 'dork_shortcodes_button' ) ) {
@@ -19,7 +21,7 @@ if ( ! function_exists( 'dork_shortcodes_button' ) ) {
 		// Default shortcode attributes
 		$defaults = array(
 			'link'       => '',
-			'icon'       => 'no-icon',
+			'icon'       => '',
 			'color'      => '#00C8D7',
 			'font_color' => '#FFFFFF',
 			'style'      => 'standard',
@@ -34,16 +36,16 @@ if ( ! function_exists( 'dork_shortcodes_button' ) ) {
 		extract( shortcode_atts( $defaults, $atts ) );
 
 		// Set defaults to avoid errors
-		$link     = ( ( isset( $atts['link'] ) && $atts['link'] != '' ) ? $atts['link'] : '#' );
-		$icon     = ( ( isset( $atts['icon'] ) && $atts['icon'] != 'no-icon' ) ? $atts['icon'] : '' );
-		$color    = ( ( isset( $atts['color'] ) && $atts['color'] != '' ) ? $atts['color'] : '#00C8D7' );
-		$f_color  = ( ( isset( $atts['font_color'] ) && $atts['font_color'] != '' ) ? $atts['font_color'] : '#FFFFFF' );
-		$style    = ( ( isset( $atts['style'] ) && $atts['style'] != '' ) ? 'button-' . $atts['style'] : 'button-standard' );
-		$size     = ( ( isset( $atts['size'] ) && $atts['size'] != '' ) ? ' ' . 'button-' . $atts['size'] : ' ' . 'button-medium' );
-		$shadow   = ( ( isset( $atts['shadow'] ) && $atts['shadow'] != 'true' ) ? '' : ' ' . 'button-shadow' );
-		$rounded  = ( ( isset( $atts['rounded'] ) && $atts['rounded'] != 'false' ) ? ' ' . 'button-rounded' : '' );
-		$new_win  = ( ( isset( $atts['new_window'] ) && $atts['new_window'] != 'true' ) ? '_self' : '_blank' );
-		$class    = ( ( isset( $atts['class'] ) && $atts['class'] != '' ) ? ' ' . $atts['class'] : '' );
+		$link    = ( ( isset( $atts['link'] ) && $atts['link'] != '' ) ? $atts['link'] : '#' );
+		$icon    = ( ( isset( $atts['icon'] ) && $atts['icon'] != '' ) ? $atts['icon'] : '' );
+		$color   = ( ( isset( $atts['color'] ) && $atts['color'] != '' ) ? $atts['color'] : '#00C8D7' );
+		$f_color = ( ( isset( $atts['font_color'] ) && $atts['font_color'] != '' ) ? $atts['font_color'] : '#FFFFFF' );
+		$style   = ( ( isset( $atts['style'] ) && $atts['style'] != '' ) ? 'button-' . $atts['style'] : 'button-standard' );
+		$size    = ( ( isset( $atts['size'] ) && $atts['size'] != '' ) ? ' ' . 'button-' . $atts['size'] : ' ' . 'button-medium' );
+		$shadow  = ( ( isset( $atts['shadow'] ) && $atts['shadow'] != 'true' ) ? '' : ' ' . 'button-shadow' );
+		$rounded = ( ( isset( $atts['rounded'] ) && $atts['rounded'] != 'false' ) ? ' ' . 'button-rounded' : '' );
+		$new_win = ( ( isset( $atts['new_window'] ) && $atts['new_window'] != 'true' ) ? '_self' : '_blank' );
+		$class   = ( ( isset( $atts['class'] ) && $atts['class'] != '' ) ? ' ' . $atts['class'] : '' );
 
 		//
 		if ( $style != 'button-outlined' ) {
@@ -58,7 +60,7 @@ if ( ! function_exists( 'dork_shortcodes_button' ) ) {
 
 		if ( $icon ) {
 			$output .= '<span class="button-icon">';
-			$output .= '<i class="dork-icon ' . esc_attr( $icon ) . '"></i>' . ' ';
+			$output .= '<i class="dork-icon-' . esc_attr( $icon ) . '"></i>' . ' ';
 			$output .= '</span>';
 		} // End if
 

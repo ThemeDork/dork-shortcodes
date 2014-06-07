@@ -123,6 +123,21 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 
 
 		/**
+		 * Column shortcode config.
+		 *
+		 * @since v1.0.0
+		 */
+
+		$dork_shortcodes['dork-column'] = array(
+			'name'   => __( 'Column', '__scLang__' ),
+			'desc'   => __( '', '__scLang__' ),
+			'params' => array(
+
+			)
+		);
+
+
+		/**
 		 * Divider shortcode config.
 		 *
 		 * @since v1.0.0
