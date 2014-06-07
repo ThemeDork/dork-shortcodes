@@ -17,57 +17,6 @@
      */
     $.fn.shortcodes = {
 
-        // Accordion shortcode
-        accordion: function () {
-
-            // Accordion shortcode parameters
-            var accordionItems = $('#accordion-items-select').val(),
-                accordionIcon  = $('#accordion-icon-icon-select').find('.selected').data('id'),
-                accordionColor = $('#accordion-color-text').val(),
-                accordionMTop  = $('#accordion-margin-top-slider-value').html(),
-                accordionMBot  = $('#accordion-margin-bottom-slider-value').html(),
-                accordionClass = $('#accordion-class-text').val(),
-                output;
-
-            // Shortcode form output
-            output = '[accordion color="' + accordionColor + '" margin_top="' + accordionMTop + '" margin_bottom="' + accordionMBot + '" class="' + accordionClass + '"]' + '<br/>';
-
-            for (var i = 1; i <= accordionItems; i++) {
-
-                output += '[accordion_item title="Accordion Title #' + i + '" icon="' + accordionIcon + '"]Accordion Content #' + i + '[/accordion_item]' + '<br/>';
-
-            }
-
-            output += '[/accordion]';
-
-            // Return the shortcode output
-            return output;
-
-        },
-
-        // Alert shortcode
-        alert: function () {
-
-            // Alert shortcode parameters
-            var alertContent   = $('#alert-content-textarea').val(),
-                alertColor     = $('#alert-color-text').val(),
-                alertFontColor = $('#alert-font-color-text').val(),
-                alertIcon      = $('#alert-icon-icon-select').find('.selected').data('id'),
-                alertRounded   = $('#alert-rounded-checkbox').prop('checked'),
-                alertDismiss   = $('#alert-dismiss-checkbox').prop('checked'),
-                alertMTop      = $('#alert-margin-top-slider-value').html(),
-                alertMBot      = $('#alert-margin-bottom-slider-value').html(),
-                alertClass     = $('#alert-class-text').val(),
-                output;
-
-            // Shortcode form output
-            output = '[alert color="' + alertColor + '" font_color="' + alertFontColor + '" icon="' + alertIcon + '" rounded="' + alertRounded + '" dismiss="' + alertDismiss + '" margin_top="' + alertMTop + '" margin_bottom="' + alertMBot + '" class="' + alertClass + '"]' + alertContent + '[/alert]';
-
-            // Return the shortcode output
-            return output;
-
-        },
-
         // Button shortcode
         button: function () {
 
@@ -84,6 +33,9 @@
                 buttonRounded   = $('#button-rounded-checkbox').prop('checked'),
                 buttonClass     = $('#button-class-text').val(),
                 output;
+
+            // Remove no-icon value if exists
+            if (buttonIcon === 'no-icon') { buttonIcon = ''; }
 
             // Shortcode form output
             output = '[button link="' + buttonLink + '" icon="' + buttonIcon + '" color="' + buttonColor + '" font_color="' + buttonFontColor + '" style="' + buttonStyle + '" size="' + buttonSize + '" shadow="' + buttonShadow + '" rounded="' + buttonRounded + '" new_window="' + buttonTarget + '" class="' + buttonClass + '"]' + buttonText + '[/button]';
@@ -245,7 +197,7 @@
      *
      * @since v1.0.0
      */
-    iconSelect.on('click', function() {
+    iconSelect.on('click', function(e) {
 
         var iconSiblings = $(this).siblings();
 
@@ -256,28 +208,7 @@
         $(this).addClass('selected');
 
         // Prevent default
-        return false;
-
-    });
-
-
-    /**
-     * Add select functionality to our custom color select fields.
-     *
-     * @since v1.0.0
-     */
-    colorSelect.on('click', function() {
-
-        var colorSiblings = $(this).siblings();
-
-        // Remove the selected class from items
-        colorSiblings.removeClass('selected');
-
-        // Add the selected class to the user selected item
-        $(this).addClass('selected');
-
-        // Prevent default
-        return false;
+        e.preventDefault();
 
     });
 

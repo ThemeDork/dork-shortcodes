@@ -128,7 +128,7 @@ class Dork_Shortcodes_Controls {
 				$output .= '<div class="dork-control-field">';
 				$output .= '<label for="' . esc_attr( $key ) . '-color">' . esc_html( $pname ) . '</label>';
 				$output .= '<input type="text" id="' . esc_attr( $key ) . '-text" class="dork-color-picker" name="' . esc_attr( $pname ) . '" value="' . esc_attr( $std ) . '" autocomplete="off" />';
-				$output .= '<div class="color-picker-preview"><i class="dork-icon circle"></i></div>';
+				$output .= '<div class="color-picker-preview"><i class="dork-icon-heart"></i></div>';
 				$output .= '<div class="control-field-desc">' . esc_html( $desc ) . '</div>';
 				$output .= '<div class="clear"></div>';
 				$output .= '</div>';
@@ -149,31 +149,6 @@ class Dork_Shortcodes_Controls {
 
 				$output .= '<div id="' . esc_attr( $key ) . '-slider" class="dork-range-slider" data-start="' . esc_attr( $std ) . '" data-units="' . esc_attr( $units ) . '"></div>';
 				$output .= '<span id="' . esc_attr( $key ) . '-slider-value" class="range-slider-value"></span>';
-				$output .= '<div class="control-field-desc">' . esc_html( $desc ) . '</div>';
-				$output .= '<div class="clear"></div>';
-				$output .= '</div>';
-				break;
-
-
-			/**
-			 * Build our custom color select control.
-			 *
-			 * @since v1.0.0
-			 */
-
-			case 'color-select':
-				$output .= '<div class="dork-control-field">';
-				$output .= '<label for="' . esc_attr( $key ) . '-color-select">' . esc_html( $pname ) . '</label>';
-				$output .= '<ul id="' . esc_attr( $key ) . '-color-select" class="dork-color-select" autocomplete="off">';
-
-				$output .= '<li class="icon-select-option selected" data-id="alert-muted"><i class="dork-icon-circle icon-muted"></i>' . __( 'Muted / Grey', '__scLang__' ) . '</li>';
-				$output .= '<li class="icon-select-option" data-id="alert-info"><i class="dork-icon-circle icon-info"></i>' . __( 'Info / Blue', '__scLang__' ) . '</li>';
-				$output .= '<li class="icon-select-option" data-id="alert-success"><i class="dork-icon-circle icon-success"></i>' . __( 'Success / Green', '__scLang__' ) . '</li>';
-				$output .= '<li class="icon-select-option" data-id="alert-warning"><i class="dork-icon-circle icon-warning"></i>' . __( 'Warning / Yellow', '__scLang__' ) . '</li>';
-				$output .= '<li class="icon-select-option" data-id="alert-danger"><i class="dork-icon-circle icon-danger"></i>' . __( 'Danger / Red', '__scLang__' ) . '</li>';
-				$output .= '<li class="icon-select-option" data-id="alert-inverted"><i class="dork-icon-circle icon-inverted"></i>' . __( 'Inverted / Black', '__scLang__' ) . '</li>';
-
-				$output .= '</ul>';
 				$output .= '<div class="control-field-desc">' . esc_html( $desc ) . '</div>';
 				$output .= '<div class="clear"></div>';
 				$output .= '</div>';
@@ -207,7 +182,7 @@ class Dork_Shortcodes_Controls {
 						if ( 'no-icon' == $icon_id ) { $icon_red = ' icon-red'; $selected = ' selected'; }
 
 						// Generate the individual options for each icon
-						$output .= '<li class="icon-select-option ' . esc_attr( $icon_red ) . esc_attr( $selected ) . '" data-id="' . esc_attr( $icon_id ) . '"><i class="dork-icon ' . esc_attr( $icon_id ) . '"></i>' . esc_html( $icon ) . '</li>';
+						$output .= '<li class="icon-select-option ' . esc_attr( $icon_red ) . esc_attr( $selected ) . '" data-id="' . esc_attr( $icon_id ) . '"><i class="dork-icon-' . esc_attr( $icon_id ) . '"></i>' . esc_html( $icon ) . '</li>';
 
 					} // End foreach
 
