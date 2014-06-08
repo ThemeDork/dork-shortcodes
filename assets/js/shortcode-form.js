@@ -4,7 +4,6 @@
     var shortcodeSelect = $('#shortcode-select'),
         shortcodeSubmit = $('#shortcode-submit'),
         iconSelect      = $('.dork-icon-select li'),
-        colorSelect     = $('.dork-color-select li'),
         colorPicker     = $('.dork-color-picker'),
         colorPreview    = $('.color-picker-preview'),
         rangeSlider     = $('.dork-range-slider');
@@ -41,6 +40,82 @@
             output = '[button link="' + buttonLink + '" icon="' + buttonIcon + '" color="' + buttonColor + '" font_color="' + buttonFontColor + '" style="' + buttonStyle + '" size="' + buttonSize + '" shadow="' + buttonShadow + '" rounded="' + buttonRounded + '" new_window="' + buttonTarget + '" class="' + buttonClass + '"]' + buttonText + '[/button]';
 
             // Return the shortcode output
+            return output;
+
+        },
+
+        // Column shortcode
+        column: function () {
+
+            // Column shortcode parameters
+            var columnLayout = $('#column-layout-select').val(),
+                columnClass  = $('#column-class-text').val(),
+                output;
+
+            // Shortcode form output
+            output = '[columns class="' + columnClass + '"]' + '<br/>';
+
+            if (columnLayout === 'one-whole') {
+                output += '[column size="grid-whole"]Column Content #1[/column]' + '<br/>';
+            } else if (columnLayout === 'half-half') {
+                output += '[column size="grid-half"]Column Content #1[/column]' + '<br/>';
+                output += '[column size="grid-half"]Column Content #2[/column]' + '<br/>';
+            } else if (columnLayout === 'half-quarter-quarter') {
+                output += '[column size="grid-half"]Column Content #1[/column]' + '<br/>';
+                output += '[column size="grid-quarter"]Column Content #2[/column]' + '<br/>';
+                output += '[column size="grid-quarter"]Column Content #3[/column]' + '<br/>';
+            } else if (columnLayout === 'three-thirds') {
+                output += '[column size="grid-third"]Column Content #1[/column]' + '<br/>';
+                output += '[column size="grid-third"]Column Content #2[/column]' + '<br/>';
+                output += '[column size="grid-third"]Column Content #3[/column]' + '<br/>';
+            } else if (columnLayout === 'third-two-thirds') {
+                output += '[column size="grid-third"]Column Content #1[/column]' + '<br/>';
+                output += '[column size="grid-two-thirds"]Column Content #2[/column]' + '<br/>';
+            } else if (columnLayout === 'two-thirds-third') {
+                output += '[column size="grid-two-thirds"]Column Content #1[/column]' + '<br/>';
+                output += '[column size="grid-third"]Column Content #2[/column]' + '<br/>';
+            } else if (columnLayout === 'four-quarters') {
+                output += '[column size="grid-quarter"]Column Content #1[/column]' + '<br/>';
+                output += '[column size="grid-quarter"]Column Content #2[/column]' + '<br/>';
+                output += '[column size="grid-quarter"]Column Content #3[/column]' + '<br/>';
+                output += '[column size="grid-quarter"]Column Content #4[/column]' + '<br/>';
+            } else if (columnLayout === 'quarter-three-quarters') {
+                output += '[column size="grid-quarter"]Column Content #1[/column]' + '<br/>';
+                output += '[column size="grid-three-quarters"]Column Content #2[/column]' + '<br/>';
+            } else if (columnLayout === 'three-quarters-quarter') {
+                output += '[column size="grid-three-quarters"]Column Content #1[/column]' + '<br/>';
+                output += '[column size="grid-quarter"]Column Content #2[/column]' + '<br/>';
+            } else if (columnLayout === 'quarter-quarter-half') {
+                output += '[column size="grid-quarter"]Column Content #1[/column]' + '<br/>';
+                output += '[column size="grid-quarter"]Column Content #2[/column]' + '<br/>';
+                output += '[column size="grid-half"]Column Content #3[/column]' + '<br/>';
+            } else if (columnLayout === 'quarter-half-quarter') {
+                output += '[column size="grid-quarter"]Column Content #1[/column]' + '<br/>';
+                output += '[column size="grid-half"]Column Content #2[/column]' + '<br/>';
+                output += '[column size="grid-quarter"]Column Content #3[/column]' + '<br/>';
+            } else if (columnLayout === 'five-fifths') {
+                output += '[column size="grid-fifth"]Column Content #1[/column]' + '<br/>';
+                output += '[column size="grid-fifth"]Column Content #2[/column]' + '<br/>';
+                output += '[column size="grid-fifth"]Column Content #3[/column]' + '<br/>';
+                output += '[column size="grid-fifth"]Column Content #4[/column]' + '<br/>';
+                output += '[column size="grid-fifth"]Column Content #5[/column]' + '<br/>';
+            } else if (columnLayout === 'fifth-four-fifths') {
+                output += '[column size="grid-fifth"]Column Content #1[/column]' + '<br/>';
+                output += '[column size="grid-four-fifths"]Column Content #2[/column]' + '<br/>';
+            } else if (columnLayout === 'four-fifths-fifth') {
+                output += '[column size="grid-four-fifths"]Column Content #1[/column]' + '<br/>';
+                output += '[column size="grid-fifth"]Column Content #2[/column]' + '<br/>';
+            } else if (columnLayout === 'two-fifths-three-fifths') {
+                output += '[column size="grid-two-fifths"]Column Content #1[/column]' + '<br/>';
+                output += '[column size="grid-three-fifths"]Column Content #2[/column]' + '<br/>';
+            } else if (columnLayout === 'three-fifths-two-fifths') {
+                output += '[column size="grid-three-fifths"]Column Content #1[/column]' + '<br/>';
+                output += '[column size="grid-two-fifths"]Column Content #2[/column]' + '<br/>';
+            }
+
+            output += '[/columns]';
+
+            // Return shortcode output
             return output;
 
         },
@@ -122,7 +197,6 @@
             return output;
         }
 
-
     };
 
 
@@ -175,18 +249,23 @@
         shortcodeSubmit.attr('disabled', true);
 
         // Verify that a shortcode is selected before continuing
-        if (shortcode !== '') {
+        if (shortcode === '') {
+
+            // No shortcode selected, fade out
+            shortcodeContent.fadeOut('fast');
+
+        } else {
 
             // Load our shortcode forms as needed
-            shortcodeContent.fadeOut('fast').delay(400);
-            shortcodeForm.slideDown(2000);
+            shortcodeContent.fadeOut('fast').delay(100);
+            shortcodeForm.slideToggle(1000);
 
             // Enable the shortcode submit button
             shortcodeSubmit.removeAttr('disabled');
 
         } // End if
 
-        // Prevent default
+        // Prevent default behavior
         e.preventDefault();
 
     });

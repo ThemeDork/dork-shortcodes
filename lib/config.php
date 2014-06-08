@@ -132,7 +132,38 @@ if ( ! function_exists( 'dork_shortcodes_config' ) ) {
 			'name'   => __( 'Column', '__scLang__' ),
 			'desc'   => __( '', '__scLang__' ),
 			'params' => array(
-
+				'layout' => array(
+					'std'     => '',
+					'name'    => __( 'Column Layout', '__scLang__' ),
+					'desc'    => __( 'Choose the layout that you would like to create. There are a variety of layouts available to accomodate virtually any content.', '__scLang__' ),
+					'key'     => 'column-layout',
+					'type'    => 'select',
+					'options' => array(
+						'one-whole'               => __( '1', '__scLang__' ),
+						'half-half'               => __( '1/2 x 1/2', '__scLang__' ),
+						'half-quarter-quarter'    => __( '1/2 x 1/4 x 1/4', '__scLang__' ),
+						'three-thirds'            => __( '1/3 x 1/3 x 1/3', '__scLang__' ),
+						'third-two-thirds'        => __( '1/3 x 2/3', '__scLang__' ),
+						'two-thirds-third'        => __( '2/3 x 1/3', '__scLang__' ),
+						'four-quarters'           => __( '1/4 x 1/4 x 1/4 x 1/4', '__scLang__' ),
+						'quarter-three-quarters'  => __( '1/4 x 3/4', '__scLang__' ),
+						'three-quarters-quarter'  => __( '3/4 x 1/4', '__scLang__' ),
+						'quarter-quarter-half'    => __( '1/4 x 1/4 x 1/2', '__scLang__' ),
+						'quarter-half-quarter'    => __( '1/4 x 1/2 x 1/4', '__scLang__' ),
+						'five-fifths'             => __( '1/5 x 1/5 x 1/5 x 1/5 x 1/5', '__scLang__' ),
+						'fifth-four-fifths'       => __( '1/5 x 4/5', '__scLang__' ),
+						'four-fifths-fifth'       => __( '4/5 x 1/5', '__scLang__' ),
+						'two-fifths-three-fifths' => __( '2/5 x 3/5', '__scLang__' ),
+						'three-fifths-two-fifths' => __( '3/5 x 2/5', '__scLang__' ),
+					),
+				),
+				'class' => array(
+					'std'  => __( 'custom-css-class', '__scLang__' ),
+					'name' => __( 'Custom CSS Class', '__scLang__' ),
+					'desc' => __( 'Here you have the option to add a custom CSS class. This would allow you to override, or add to, the default styles of this element.', '__scLang__' ),
+					'key'  => 'column-class',
+					'type' => 'text',
+				),
 			)
 		);
 

@@ -1,8 +1,5 @@
-/**
- * Button shortcode.
- *
- * @since v1.0.0
- */
+/* Button shortcode
+================================================================================== */
 a.dork-button {
 	position: relative;
 	display: inline-block;
@@ -197,11 +194,113 @@ a.dork-button.button-animated.button-large:hover i {
 	        transform: rotate(360deg);
 }
 
-/**
- * Divider shortcode.
- *
- * @since v1.0.0
- */
+/* Column shortcode
+================================================================================== */
+.dork-grid {
+	display: block;
+	clear: both;
+	*zoom: 1;
+}
+
+.dork-grid, .grid-unit {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing:    border-box;
+	box-sizing:         border-box;
+}
+
+.dork-grid .grid-unit {
+	float: left;
+	width: 100%;
+	padding: 10px;
+}
+
+.dork-grid::before, .dork-grid::after {
+	display: table;
+	content: '';
+	line-height: 0;
+}
+
+.dork-grid::after {
+	clear: both;
+}
+
+.dork-grid  .grid-unit:first-child {
+	padding-left: 0;
+}
+
+.dork-grid  .grid-unit:last-child {
+	padding-right: 0;
+}
+
+.grid-unit .grid-unit:first-child {
+	padding-left: 20px;
+}
+
+.grid-unit .grid-unit:last-child {
+	padding-right: 20px;
+}
+
+.dork-grid .grid-whole {
+	width: 100%;
+}
+
+.dork-grid .grid-half {
+	width: 50%;
+}
+
+.dork-grid .grid-third {
+	width: 33.3332%;
+}
+
+.dork-grid .grid-two-thirds {
+	width: 66.6665%;
+}
+
+.dork-grid .grid-quarter {
+	width: 25%;
+}
+
+.dork-grid .grid-three-quarters {
+	width: 75%;
+}
+
+.dork-grid .grid-fifth {
+	width: 20%;
+}
+
+.dork-grid .grid-two-fifths {
+	width: 40%;
+}
+
+.dork-grid .grid-three-fifths {
+	width: 60%;
+}
+
+.dork-grid .grid-four-fifths {
+	width: 80%;
+}
+
+@media screen and (max-width: 568px) {
+
+	.dork-grid .grid-unit {
+		width: 100% !important;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.dork-unit .dork-grid .grid-unit {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.hide-on-mobile {
+		display: none !important;
+	}
+
+}
+
+/* Divider shortcode
+================================================================================== */
 hr.dork-divider {
 	border: 0;
 	border-top: 1px solid #E5E5E5;
@@ -281,11 +380,8 @@ hr.dork-divider.divider-thick {
 	margin-top: 0;
 }
 
-/**
- * Dropcap shortcode.
- *
- * @since v1.0.0
- */
+/* Dropcap shortcode
+================================================================================== */
 .dork-dropcap {
 	display: inline-block;
 	float: left;
@@ -344,11 +440,8 @@ hr.dork-divider.divider-thick {
 	padding: 10px 14px;
 }
 
-/**
- * Highlight shortcode.
- *
- * @since v1.0.0
- */
+/* Highlight shortcode
+================================================================================== */
 span.dork-highlight {
 	padding: 2px 5px;
 	margin: 0 2px;
@@ -376,11 +469,8 @@ span.dork-highlight.highlight-rounded:hover {
 	        border-radius: 0;
 }
 
-/**
- * Tooltip shortcode
- *
- * @since v1.0.0
- */
+/* Tooltip shortcode
+================================================================================== */
 a.dork-tooltip {
 	text-decoration: none;
 	border-bottom: 1px dotted #777777;
